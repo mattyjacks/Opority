@@ -3,6 +3,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
+import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -58,12 +59,12 @@ export default function WebsiteCreationPage() {
       
       {/* Hero Section */}
       <section className="relative bg-background py-12 overflow-hidden">
-        <div className="absolute inset-0 opacity-20 dark:opacity-30">
-          <div className="absolute inset-0 dark:gradient-purple gradient-blue animate-gradient-xy" />
+        <div className="absolute inset-0">
+          <AnimatedGradientBackground />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-slide-up">
-            Web <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">design</span> quote
+            Web <span className="dark:text-gradient-purple text-gradient-blue">design</span> quote
           </h1>
           <p className="text-lg text-muted-foreground animate-slide-up" style={{animationDelay: "0.1s"}}>
             Fast, Free & Simple – Done in 3 Easy Steps

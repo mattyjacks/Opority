@@ -7,7 +7,7 @@ interface MarqueeProps {
 
 export function Marquee({ text, className = "" }: MarqueeProps) {
   return (
-    <div className={`relative overflow-hidden dark:gradient-purple-pink gradient-blue py-3 border-b border-border ${className}`}>
+    <div className={`relative overflow-hidden dark:gradient-purple gradient-blue py-3 border-b border-border ${className}`}>
       <div className="flex animate-marquee whitespace-nowrap">
         {/* Repeat the text multiple times for continuous scroll */}
         {Array.from({ length: 20 }).map((_, i) => (

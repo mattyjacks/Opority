@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
+import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import Link from "next/link";
 
 export default function PaidAdsPage() {
@@ -14,13 +15,13 @@ export default function PaidAdsPage() {
       {/* Hero Section */}
       <section className="relative bg-background py-20 md:py-32 overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-20 dark:opacity-30">
-          <div className="absolute inset-0 dark:gradient-purple gradient-blue animate-gradient-xy" />
+        <div className="absolute inset-0">
+          <AnimatedGradientBackground />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold text-center mb-6 leading-tight animate-slide-up">
-            Redefine Your <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">ROI</span>
+            Redefine Your <span className="dark:text-gradient-purple text-gradient-blue">ROI</span>
           </h1>
           <p className="text-xl text-center text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{animationDelay: "0.1s"}}>
             With return on investment for paid advertising continuing to grow, it&apos;s no wonder more businesses than ever are exploring the potential of paid ads.
@@ -34,7 +35,7 @@ export default function PaidAdsPage() {
           <div className="flex justify-center animate-slide-up" style={{animationDelay: "0.4s"}}>
             <Link
               href="/strategy-call"
-              className="dark:gradient-purple-pink gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
+              className="dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
             >
               Talk to us today
             </Link>
@@ -46,7 +47,7 @@ export default function PaidAdsPage() {
       <section className="py-20 bg-background relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 dark:bg-purple-500/10 bg-blue-500/10 rounded-full blur-3xl animate-float" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-slide-up">How we <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">do it</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 animate-slide-up">How we <span className="dark:text-gradient-purple text-gradient-blue">do it</span></h2>
           
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Ad Artwork and Design */}
@@ -142,14 +143,14 @@ export default function PaidAdsPage() {
         <div className="absolute inset-0 dark:gradient-purple gradient-blue opacity-10 animate-gradient-xy" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-scale-in">
-            Ready to <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Scale</span> Your Business with Meta Ads?
+            Ready to <span className="dark:text-gradient-purple text-gradient-blue">Scale</span> Your Business with Meta Ads?
           </h2>
           <p className="text-xl mb-8 text-muted-foreground animate-slide-up">
             Let&apos;s create a custom advertising strategy that delivers real results.
           </p>
           <Link
             href="/strategy-call"
-            className="inline-block dark:gradient-purple-pink gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
+            className="inline-block dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
           >
             Get Started Today
           </Link>

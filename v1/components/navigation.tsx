@@ -12,7 +12,7 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent hover:scale-105 transition-transform">
+          <Link href="/" className="text-2xl font-bold dark:text-gradient-purple text-gradient-blue hover:scale-105 transition-transform">
             OPORITY
           </Link>
 

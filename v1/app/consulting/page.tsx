@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
+import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import Link from "next/link";
 
 export default function ConsultingPage() {
@@ -14,13 +15,13 @@ export default function ConsultingPage() {
       {/* Hero Section */}
       <section className="relative bg-background py-20 md:py-32 overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 opacity-20 dark:opacity-30">
-          <div className="absolute inset-0 dark:gradient-purple gradient-blue animate-gradient-xy" />
+        <div className="absolute inset-0">
+          <AnimatedGradientBackground />
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
-            Business <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Growth</span> Consulting
+            Business <span className="dark:text-gradient-purple text-gradient-blue">Growth</span> Consulting
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
             Expert guidance to help you leverage digital marketing and social media to impact your personal and business growth.
@@ -103,11 +104,11 @@ export default function ConsultingPage() {
       <section className="py-20 bg-secondary/30 relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-96 h-96 dark:bg-pink-500/10 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: "2s"}} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-4xl font-bold text-center mb-12 animate-slide-up">Why <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Opority</span>?</h2>
+          <h2 className="text-4xl font-bold text-center mb-12 animate-slide-up">Why <span className="dark:text-gradient-purple text-gradient-blue">Opority</span>?</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-card border border-border rounded-xl p-6 hover:border-primary transition-all hover:shadow-xl animate-scale-in" style={{animationDelay: "0.1s"}}>
-              <div className="text-3xl font-bold dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent mb-3">01</div>
+              <div className="text-3xl font-bold dark:text-gradient-purple text-gradient-blue mb-3">01</div>
               <p className="text-muted-foreground">
                 One of the only agencies to have built a huge online community ourselves.
               </p>
@@ -156,14 +157,14 @@ export default function ConsultingPage() {
         <div className="absolute inset-0 dark:gradient-purple gradient-blue opacity-10 animate-gradient-xy" />
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-scale-in">
-            Ready to <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Transform</span> Your Business?
+            Ready to <span className="dark:text-gradient-purple text-gradient-blue">Transform</span> Your Business?
           </h2>
           <p className="text-xl mb-8 text-muted-foreground animate-slide-up">
             Book a free strategy call to discuss how we can help you achieve your goals.
           </p>
           <Link
             href="/strategy-call"
-            className="inline-block dark:gradient-purple-pink gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
+            className="inline-block dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
           >
             Book Your Free Consultation
           </Link>

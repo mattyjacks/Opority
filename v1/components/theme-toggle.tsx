@@ -28,7 +28,7 @@ export function ThemeToggle() {
       <div
         className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full transition-all duration-300 flex items-center justify-center ${
           isDark
-            ? "translate-x-7 gradient-purple-pink animate-pulse-glow"
+            ? "translate-x-7 gradient-purple animate-pulse-glow"
             : "translate-x-0 gradient-blue"
         }`}
       >
