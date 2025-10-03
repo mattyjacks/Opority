@@ -2,21 +2,22 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { ThemeToggle } from "./theme-toggle";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <nav className="w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 animate-slide-up">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-primary">
+          <Link href="/" className="text-2xl font-bold dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent hover:scale-105 transition-transform">
             OPORITY
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             <div className="relative group">
               <button className="text-foreground hover:text-primary transition-colors">
                 Solutions
@@ -54,9 +55,10 @@ export function Navigation() {
             >
               Team
             </Link>
+            <ThemeToggle />
             <Link 
               href="/strategy-call" 
-              className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-semibold"
+              className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-primary/90 transition-all transform hover:scale-105 font-semibold"
             >
               Contact Us
             </Link>
@@ -132,6 +134,9 @@ export function Navigation() {
               >
                 Contact Us
               </Link>
+              <div className="flex justify-center pt-2">
+                <ThemeToggle />
+              </div>
             </div>
           </div>
         )}

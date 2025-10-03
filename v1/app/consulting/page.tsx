@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { Marquee } from "@/components/marquee";
 import Link from "next/link";
 
 export default function ConsultingPage() {
@@ -7,24 +8,33 @@ export default function ConsultingPage() {
     <main className="min-h-screen flex flex-col">
       <Navigation />
       
+      {/* Marquee Section */}
+      <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
+      
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-background to-primary/5 py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Business Growth Consulting
+      <section className="relative bg-background py-20 md:py-32 overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 opacity-20 dark:opacity-30">
+          <div className="absolute inset-0 dark:gradient-purple gradient-blue animate-gradient-xy" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
+            Business <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Growth</span> Consulting
           </h1>
-          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
             Expert guidance to help you leverage digital marketing and social media to impact your personal and business growth.
           </p>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 dark:bg-purple-500/10 bg-blue-500/10 rounded-full blur-3xl animate-float" />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 mb-16">
             {/* Social Media Management */}
-            <div className="bg-card border border-border rounded-xl p-8">
+            <div className="bg-card border border-border rounded-xl p-8 hover:border-primary transition-all hover:shadow-xl animate-slide-in-left">
               <h3 className="text-2xl font-bold mb-4">Social Media Management</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Ideal if you&apos;re a business looking to outsource your social media - saving you time to focus on your expertise.
@@ -40,7 +50,7 @@ export default function ConsultingPage() {
             </div>
 
             {/* 1:1 Coaching */}
-            <div className="bg-card border border-border rounded-xl p-8">
+            <div className="bg-card border border-border rounded-xl p-8 hover:border-primary transition-all hover:shadow-xl animate-slide-in-right">
               <h3 className="text-2xl font-bold mb-4">1:1 Coaching</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Are you looking to become a key person of influence in your industry?
@@ -56,7 +66,7 @@ export default function ConsultingPage() {
             </div>
 
             {/* Consultancy */}
-            <div className="bg-card border border-border rounded-xl p-8 md:col-span-2">
+            <div className="bg-card border border-border rounded-xl p-8 md:col-span-2 hover:border-primary transition-all hover:shadow-xl animate-scale-in" style={{animationDelay: "0.2s"}}>
               <h3 className="text-2xl font-bold mb-4">Team Consultancy</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Perfect for your team - intensive, fast and actionable to deliver impact on your business quickly.
@@ -90,13 +100,14 @@ export default function ConsultingPage() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12">Why Opority?</h2>
+      <section className="py-20 bg-secondary/30 relative overflow-hidden">
+        <div className="absolute bottom-0 left-0 w-96 h-96 dark:bg-pink-500/10 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: "2s"}} />
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <h2 className="text-4xl font-bold text-center mb-12 animate-slide-up">Why <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Opority</span>?</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-card border border-border rounded-xl p-6">
-              <div className="text-3xl font-bold text-primary mb-3">01</div>
+            <div className="bg-card border border-border rounded-xl p-6 hover:border-primary transition-all hover:shadow-xl animate-scale-in" style={{animationDelay: "0.1s"}}>
+              <div className="text-3xl font-bold dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent mb-3">01</div>
               <p className="text-muted-foreground">
                 One of the only agencies to have built a huge online community ourselves.
               </p>
@@ -141,17 +152,18 @@ export default function ConsultingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Business?
+      <section className="py-20 bg-background relative overflow-hidden">
+        <div className="absolute inset-0 dark:gradient-purple gradient-blue opacity-10 animate-gradient-xy" />
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-scale-in">
+            Ready to <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">Transform</span> Your Business?
           </h2>
-          <p className="text-xl mb-8 opacity-90">
+          <p className="text-xl mb-8 text-muted-foreground animate-slide-up">
             Book a free strategy call to discuss how we can help you achieve your goals.
           </p>
           <Link
             href="/strategy-call"
-            className="inline-block bg-background text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
+            className="inline-block dark:gradient-purple-pink gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
           >
             Book Your Free Consultation
           </Link>

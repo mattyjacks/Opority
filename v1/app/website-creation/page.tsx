@@ -2,6 +2,7 @@
 
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { Marquee } from "@/components/marquee";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -52,13 +53,19 @@ export default function WebsiteCreationPage() {
     <main className="min-h-screen flex flex-col">
       <Navigation />
       
+      {/* Marquee Section */}
+      <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
+      
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-background to-primary/5 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">
-            Web design quote
+      <section className="relative bg-background py-12 overflow-hidden">
+        <div className="absolute inset-0 opacity-20 dark:opacity-30">
+          <div className="absolute inset-0 dark:gradient-purple gradient-blue animate-gradient-xy" />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-slide-up">
+            Web <span className="dark:gradient-purple-pink gradient-blue bg-clip-text text-transparent animate-gradient">design</span> quote
           </h1>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-lg text-muted-foreground animate-slide-up" style={{animationDelay: "0.1s"}}>
             Fast, Free & Simple – Done in 3 Easy Steps
           </p>
         </div>
@@ -110,9 +117,10 @@ export default function WebsiteCreationPage() {
 
       {/* Step 1: Package Selection */}
       {step === 1 && (
-        <section className="py-20 bg-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
+        <section className="py-20 bg-background relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 dark:bg-purple-500/10 bg-blue-500/10 rounded-full blur-3xl animate-float" />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 animate-slide-up">
               With an Opority website you&apos;ll receive:
             </h2>
             
@@ -140,7 +148,7 @@ export default function WebsiteCreationPage() {
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <button
                 onClick={() => selectPackage("plus")}
-                className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 text-left transition-all"
+                className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 text-left transition-all hover:shadow-xl transform hover:scale-105 animate-slide-in-left"
               >
                 <h3 className="text-xl font-bold mb-3">Plus Package</h3>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -164,7 +172,7 @@ export default function WebsiteCreationPage() {
 
               <button
                 onClick={() => selectPackage("max")}
-                className="bg-card border-2 border-primary rounded-xl p-6 text-left transition-all relative"
+                className="bg-card border-2 border-primary rounded-xl p-6 text-left transition-all relative hover:shadow-xl transform hover:scale-105 animate-scale-in"
               >
                 <div className="bg-primary text-primary-foreground text-xs font-bold py-1 px-3 rounded-full inline-block mb-2">
                   POPULAR
@@ -191,7 +199,7 @@ export default function WebsiteCreationPage() {
 
               <button
                 onClick={() => selectPackage("shop")}
-                className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 text-left transition-all"
+                className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 text-left transition-all hover:shadow-xl transform hover:scale-105 animate-slide-in-right"
               >
                 <h3 className="text-xl font-bold mb-3">Shop Package</h3>
                 <p className="text-sm text-muted-foreground mb-4">
