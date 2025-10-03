@@ -74,8 +74,8 @@ export default function ConsultingPage() {
           {/* VSL Placeholder Section */}
           <div className="bg-secondary/30 border border-border rounded-xl p-12 text-center mb-16">
             <h3 className="text-2xl font-bold mb-4">See Our Success Stories</h3>
-            <p className="text-muted-foreground mb-8">
-              Watch how we've helped businesses transform their digital presence
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              Watch how we&apos;ve helped businesses transform their digital presence
             </p>
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <div className="bg-background border border-border rounded-lg aspect-video flex items-center justify-center">

@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 
 type FormData = {
   package: string;
@@ -112,7 +113,7 @@ export default function WebsiteCreationPage() {
         <section className="py-20 bg-background">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-2xl md:text-3xl font-bold text-center mb-4">
-              With an Opority website you'll receive:
+              With an Opority website you&apos;ll receive:
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
@@ -409,7 +410,7 @@ export default function WebsiteCreationPage() {
               </div>
               <h2 className="text-3xl font-bold mb-4">Thank you!</h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Your quote request has been received. We'll be in touch shortly to discuss your {formData.package} package and next steps.
+                Your quote request has been received. We&apos;ll be in touch shortly to discuss your {formData.package} package and next steps.
               </p>
               <div className="bg-secondary/30 rounded-lg p-6 mb-8">
                 <h3 className="font-semibold mb-4">Your Selected Package:</h3>
@@ -425,12 +426,12 @@ export default function WebsiteCreationPage() {
                   </div>
                 )}
               </div>
-              <a
+              <Link
                 href="/"
                 className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold"
               >
                 Return to Home
-              </a>
+              </Link>
             </div>
           </div>
         </section>

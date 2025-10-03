@@ -112,7 +112,7 @@ export default function Home() {
                 <span className="transition group-open:rotate-180">⌄</span>
               </summary>
               <p className="mt-4 text-muted-foreground">
-                Depending on the complexity, most websites can be completed within 2-4 weeks. We'll provide a detailed timeline during your strategy call.
+                Depending on the complexity, most websites can be completed within 2-4 weeks. We&apos;ll provide a detailed timeline during your strategy call.
               </p>
             </details>
             

@@ -14,13 +14,13 @@ export default function PaidAdsPage() {
             Redefine Your ROI
           </h1>
           <p className="text-xl text-center text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            With return on investment for paid advertising continuing to grow, it's no wonder more businesses than ever are exploring the potential of paid ads.
+            With return on investment for paid advertising continuing to grow, it&apos;s no wonder more businesses than ever are exploring the potential of paid ads.
           </p>
           <p className="text-lg text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
             Our campaigns deliver visibility, website traffic, and ultimately conversions for our clients. Smart targeting, budgeting and strategy has lead to notable business growth that out-performs both local and national competitors.
           </p>
           <p className="text-lg text-center text-muted-foreground mb-10 max-w-3xl mx-auto">
-            We believe the digital world should give confidence, not fear. With the largest global audience there's ever been, we'll help you cut through the noise and engage with your customers directly.
+            We believe the digital world should give confidence, not fear. With the largest global audience there&apos;s ever been, we&apos;ll help you cut through the noise and engage with your customers directly.
           </p>
           <div className="flex justify-center">
             <Link
@@ -53,7 +53,7 @@ export default function PaidAdsPage() {
               <h3 className="text-2xl font-bold mb-4">Audience Targeting</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Precise targeting is central to your Meta ads, helping define who sees them. Blending industry trends, competitor insights, and customer data, 
-                we'll select relevant and optimised audience segments that speak for your brand. Our understanding of user intent will be imperative in the kind of targeting that leads your customers to click through and convert.
+                we&apos;ll select relevant and optimised audience segments that speak for your brand. Our understanding of user intent will be imperative in the kind of targeting that leads your customers to click through and convert.
               </p>
             </div>
 
@@ -80,7 +80,7 @@ export default function PaidAdsPage() {
               <h3 className="text-2xl font-bold mb-4">Re-targeting</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Reaching out to inactive customers often has better results than you might think. By using previously viewed content and special offers, 
-                we'll draw users back to re-engage. Tailored ads and a reason to return will ensure your brand remains at the forefront of visitors' minds.
+                we&apos;ll draw users back to re-engage. Tailored ads and a reason to return will ensure your brand remains at the forefront of visitors&apos; minds.
               </p>
             </div>
 
@@ -88,7 +88,7 @@ export default function PaidAdsPage() {
             <div className="bg-card border border-border rounded-xl p-8">
               <h3 className="text-2xl font-bold mb-4">Smart Optimization</h3>
               <p className="text-muted-foreground leading-relaxed">
-                Utilising Meta's AI and machine learning, we help drive a revolution in ad performance. We'll harness your data with smart optimization to automate your ads and achieve optimal reach. 
+                Utilising Meta&apos;s AI and machine learning, we help drive a revolution in ad performance. We&apos;ll harness your data with smart optimization to automate your ads and achieve optimal reach. 
                 Each ad impression is smartly optimized in real-time, considering user behaviour, context, and demographics to reach the right people at the right time.
               </p>
             </div>
@@ -97,11 +97,11 @@ export default function PaidAdsPage() {
             <div className="bg-card border border-border rounded-xl p-8 md:col-span-2">
               <h3 className="text-2xl font-bold mb-4">Reporting and ROI Analysis</h3>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                We provide detailed monthly reports showing exactly where your ad spend is going and what results you're getting. 
+                We provide detailed monthly reports showing exactly where your ad spend is going and what results you&apos;re getting. 
                 Transparent metrics, actionable insights, and continuous optimization ensure your campaigns deliver maximum ROI.
               </p>
               <div className="text-center">
-                <p className="text-lg font-semibold mb-4">Want results for your business? Get in touch with us and let's make it happen!</p>
+                <p className="text-lg font-semibold mb-4">Want results for your business? Get in touch with us and let&apos;s make it happen!</p>
                 <Link
                   href="/strategy-call"
                   className="inline-block bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold hover:bg-primary/90 transition-colors"
@@ -134,7 +134,7 @@ export default function PaidAdsPage() {
             Ready to Scale Your Business with Meta Ads?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Let's create a custom advertising strategy that delivers real results.
+            Let&apos;s create a custom advertising strategy that delivers real results.
           </p>
           <Link
             href="/strategy-call"

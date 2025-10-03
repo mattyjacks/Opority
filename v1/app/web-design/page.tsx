@@ -81,7 +81,7 @@ export default function WebDesignPage() {
                 Clean code, fast loading times, mobile responsiveness, and proper meta tags ensure your site ranks well in search results.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We follow Google's best practices and latest SEO guidelines to give your business the visibility it deserves.
+                We follow Google&apos;s best practices and latest SEO guidelines to give your business the visibility it deserves.
               </p>
             </div>
 
@@ -92,8 +92,8 @@ export default function WebDesignPage() {
                 Take control of your content with an intuitive content management system. Update text, images, and pages without needing technical knowledge.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We provide full training and ongoing support to ensure you're comfortable managing your website, 
-                while we're always here to help when you need us.
+                We provide full training and ongoing support to ensure you&apos;re comfortable managing your website, 
+                while we&apos;re always here to help when you need us.
               </p>
             </div>
 
@@ -102,7 +102,7 @@ export default function WebDesignPage() {
               <h3 className="text-2xl font-bold mb-4">Mobile-First Design</h3>
               <p className="text-muted-foreground leading-relaxed">
                 With over 60% of web traffic coming from mobile devices, we ensure your website looks stunning and functions 
-                perfectly on every screen size. Responsive design isn't optional—it's essential.
+                perfectly on every screen size. Responsive design isn&apos;t optional—it&apos;s essential.
               </p>
             </div>
 
@@ -215,7 +215,7 @@ export default function WebDesignPage() {
             Ready to Transform Your Online Presence?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Let's create a website that not only looks amazing but drives real business results.
+            Let&apos;s create a website that not only looks amazing but drives real business results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

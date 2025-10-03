@@ -14,7 +14,7 @@ export default function TeamPage() {
             Meet the Team
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            We're a passionate team of digital marketing experts dedicated to helping businesses grow through strategic marketing and innovative solutions.
+            We&apos;re a passionate team of digital marketing experts dedicated to helping businesses grow through strategic marketing and innovative solutions.
           </p>
         </div>
       </section>
@@ -34,7 +34,7 @@ export default function TeamPage() {
                 <h3 className="text-xl font-bold mb-1">Team Member</h3>
                 <p className="text-primary font-semibold mb-3">Director</p>
                 <p className="text-muted-foreground text-sm">
-                  Leading the vision and strategy for Opority's growth and client success.
+                  Leading the vision and strategy for Opority&apos;s growth and client success.
                 </p>
               </div>
             </div>
@@ -79,11 +79,11 @@ export default function TeamPage() {
             Our Mission
           </h2>
           <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            At Opority, we're committed to helping businesses achieve sustainable growth through innovative digital marketing strategies. 
+            At Opority, we&apos;re committed to helping businesses achieve sustainable growth through innovative digital marketing strategies. 
             We believe in building long-term partnerships based on trust, transparency, and measurable results.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            Rated as a Top 3 Advertising & Marketing StartUp in the East Of England 2025, we're proud to deliver exceptional 
+            Rated as a Top 3 Advertising & Marketing StartUp in the East Of England 2025, we&apos;re proud to deliver exceptional 
             service and results that exceed expectations.
           </p>
         </div>

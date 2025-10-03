@@ -19,7 +19,7 @@ export default function StrategyCallPage() {
           </div>
 
           <div className="bg-card border border-border rounded-2xl p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6">On the call, we'll ask questions like:</h2>
+            <h2 className="text-2xl font-bold mb-6">On the call, we&apos;ll ask questions like:</h2>
             <ul className="space-y-4 mb-8">
               <li className="flex items-start">
                 <span className="text-primary mr-3 text-xl">•</span>
@@ -31,7 +31,7 @@ export default function StrategyCallPage() {
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-3 text-xl">•</span>
-                <span className="text-lg">What's stopping you from getting more quotes?</span>
+                <span className="text-lg">What&apos;s stopping you from getting more quotes?</span>
               </li>
             </ul>
             
