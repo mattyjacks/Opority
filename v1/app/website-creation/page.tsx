@@ -12,6 +12,10 @@ import Link from "next/link";
 
 type FormData = {
   package: string;
+  hasExistingWebsite: string; // "yes" or "no"
+  existingWebsiteUrl: string;
+  websitePurpose: string;
+  otherPurpose: string;
   name: string;
   email: string;
   phone: string;
@@ -27,6 +31,10 @@ export default function WebsiteCreationPage() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
     package: "",
+    hasExistingWebsite: "",
+    existingWebsiteUrl: "",
+    websitePurpose: "",
+    otherPurpose: "",
     name: "",
     email: "",
     phone: "",
@@ -38,8 +46,72 @@ export default function WebsiteCreationPage() {
     thirdPartyIntegration: false,
   });
 
+  const [urlError, setUrlError] = useState("");
+  const [purposeError, setPurposeError] = useState("");
+
+  // SQL injection prevention - sanitize input
+  const sanitizeInput = (input: string): string => {
+    // Remove common SQL injection patterns
+    const sanitized = input
+      .replace(/['";\\]/g, '') // Remove quotes and backslashes
+      .replace(/(\b(SELECT|INSERT|UPDATE|DELETE|DROP|CREATE|ALTER|EXEC|EXECUTE)\b)/gi, '') // Remove SQL keywords
+      .trim();
+    return sanitized;
+  };
+
+  // Validate URL with https:// requirement
+  const validateUrl = (url: string): boolean => {
+    if (!url) return true; // Empty is ok if not required
+
+    const sanitized = sanitizeInput(url);
+
+    // Check if it starts with https://
+    if (!sanitized.startsWith('https://')) {
+      setUrlError('URL must start with https://');
+      return false;
+    }
+
+    // Basic URL pattern validation
+    const urlPattern = /^https:\/\/[a-zA-Z0-9-._~:/?#[\]@!$&'()*+,;=]+$/;
+    if (!urlPattern.test(sanitized)) {
+      setUrlError('Please enter a valid URL');
+      return false;
+    }
+
+    setUrlError('');
+    return true;
+  };
+
   const selectPackage = (pkg: string) => {
     setFormData({ ...formData, package: pkg });
+    setStep(1.5); // Go to intermediate questions
+  };
+
+  const handleStep1bNext = () => {
+    // Validate existing website URL if "yes" is selected
+    if (formData.hasExistingWebsite === "yes") {
+      if (!formData.existingWebsiteUrl) {
+        setUrlError("Please enter your website URL");
+        return;
+      }
+      if (!validateUrl(formData.existingWebsiteUrl)) {
+        return;
+      }
+    }
+
+    // Validate website purpose
+    if (!formData.websitePurpose) {
+      setPurposeError("Please select a website purpose");
+      return;
+    }
+
+    // Validate "other" purpose if selected
+    if (formData.websitePurpose === "other" && !formData.otherPurpose.trim()) {
+      setPurposeError("Please describe your website purpose");
+      return;
+    }
+
+    setPurposeError("");
     setStep(2);
   };
 
@@ -47,7 +119,7 @@ export default function WebsiteCreationPage() {
     e.preventDefault();
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
-    setStep(4); // Go to confirmation
+    setStep(5); // Go to confirmation (now step 5 because we added step 1.5)
   };
 
   return (
@@ -226,6 +298,187 @@ export default function WebsiteCreationPage() {
         </section>
       )}
 
+      {/* Step 1.5: Additional Questions */}
+      {step === 1.5 && (
+        <section className="py-20 bg-background">
+          <div className="max-w-3xl mx-auto px-4">
+            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+              Tell us more about your project
+            </h2>
+
+            <div className="bg-card border border-border rounded-xl p-8 space-y-8">
+              {/* Existing Website Question */}
+              <div>
+                <Label className="text-base font-semibold mb-4 block">
+                  Do you have an existing website that needs to be enhanced?
+                </Label>
+                <div className="space-y-3">
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="hasExistingWebsite"
+                      value="yes"
+                      checked={formData.hasExistingWebsite === "yes"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, hasExistingWebsite: e.target.value, existingWebsiteUrl: "" });
+                        setUrlError("");
+                      }}
+                      className="w-4 h-4 text-primary"
+                    />
+                    <span>Yes</span>
+                  </label>
+                  <label className="flex items-center gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="hasExistingWebsite"
+                      value="no"
+                      checked={formData.hasExistingWebsite === "no"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, hasExistingWebsite: e.target.value, existingWebsiteUrl: "" });
+                        setUrlError("");
+                      }}
+                      className="w-4 h-4 text-primary"
+                    />
+                    <span>No</span>
+                  </label>
+                </div>
+
+                {/* Conditional URL Input */}
+                {formData.hasExistingWebsite === "yes" && (
+                  <div className="mt-4">
+                    <Label htmlFor="existingWebsiteUrl" className="mb-2">Website URL *</Label>
+                    <Input
+                      id="existingWebsiteUrl"
+                      type="url"
+                      placeholder="https://example.com"
+                      value={formData.existingWebsiteUrl}
+                      onChange={(e) => {
+                        const sanitized = sanitizeInput(e.target.value);
+                        setFormData({ ...formData, existingWebsiteUrl: sanitized });
+                        setUrlError("");
+                      }}
+                      onBlur={() => {
+                        if (formData.existingWebsiteUrl) {
+                          validateUrl(formData.existingWebsiteUrl);
+                        }
+                      }}
+                      className={`mt-2 ${urlError ? 'border-red-500' : ''}`}
+                    />
+                    {urlError && (
+                      <p className="text-red-500 text-sm mt-2">{urlError}</p>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {/* Website Purpose Question */}
+              <div>
+                <Label className="text-base font-semibold mb-4 block">
+                  What would you like your website to do for you? *
+                </Label>
+                <div className="space-y-3">
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="websitePurpose"
+                      value="simple"
+                      checked={formData.websitePurpose === "simple"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
+                        setPurposeError("");
+                      }}
+                      className="w-4 h-4 text-primary mt-0.5"
+                    />
+                    <span>Just a simple site with my info and contacts</span>
+                  </label>
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="websitePurpose"
+                      value="grow"
+                      checked={formData.websitePurpose === "grow"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
+                        setPurposeError("");
+                      }}
+                      className="w-4 h-4 text-primary mt-0.5"
+                    />
+                    <span>Help my business grow and appear on Google</span>
+                  </label>
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="websitePurpose"
+                      value="sell"
+                      checked={formData.websitePurpose === "sell"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
+                        setPurposeError("");
+                      }}
+                      className="w-4 h-4 text-primary mt-0.5"
+                    />
+                    <span>Sell my products or services online</span>
+                  </label>
+                  <label className="flex items-start gap-3 cursor-pointer">
+                    <input
+                      type="radio"
+                      name="websitePurpose"
+                      value="other"
+                      checked={formData.websitePurpose === "other"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, websitePurpose: e.target.value });
+                        setPurposeError("");
+                      }}
+                      className="w-4 h-4 text-primary mt-0.5"
+                    />
+                    <span>Other</span>
+                  </label>
+                </div>
+
+                {/* Conditional Other Purpose Input */}
+                {formData.websitePurpose === "other" && (
+                  <div className="mt-4">
+                    <Label htmlFor="otherPurpose" className="mb-2">Please describe your website purpose *</Label>
+                    <Input
+                      id="otherPurpose"
+                      type="text"
+                      placeholder="Tell us what you want your website to do..."
+                      value={formData.otherPurpose}
+                      onChange={(e) => {
+                        const sanitized = sanitizeInput(e.target.value);
+                        setFormData({ ...formData, otherPurpose: sanitized });
+                        setPurposeError("");
+                      }}
+                      className={`mt-2 ${purposeError ? 'border-red-500' : ''}`}
+                    />
+                  </div>
+                )}
+
+                {purposeError && (
+                  <p className="text-red-500 text-sm mt-2">{purposeError}</p>
+                )}
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="flex gap-4 mt-8">
+              <button
+                onClick={() => setStep(1)}
+                className="px-6 py-3 border border-border rounded-full hover:bg-accent transition-colors"
+              >
+                Back
+              </button>
+              <button
+                onClick={handleStep1bNext}
+                className="flex-1 bg-primary text-primary-foreground px-6 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Step 2: Add-ons */}
       {step === 2 && (
         <section className="py-20 bg-background">
@@ -292,7 +545,7 @@ export default function WebsiteCreationPage() {
 
             <div className="flex gap-4 mt-8">
               <button
-                onClick={() => setStep(1)}
+                onClick={() => setStep(1.5)}
                 className="px-6 py-3 border border-border rounded-full hover:bg-accent transition-colors"
               >
                 Back
@@ -410,7 +663,7 @@ export default function WebsiteCreationPage() {
       )}
 
       {/* Step 4: Confirmation */}
-      {step === 4 && (
+      {step === 5 && (
         <section className="py-20 bg-background">
           <div className="max-w-2xl mx-auto px-4 text-center">
             <div className="bg-card border border-border rounded-xl p-12">
