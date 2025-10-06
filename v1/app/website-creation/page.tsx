@@ -84,10 +84,10 @@ export default function WebsiteCreationPage() {
 
   const selectPackage = (pkg: string) => {
     setFormData({ ...formData, package: pkg });
-    setStep(1.5); // Go to intermediate questions
+    setStep(2); // Go to add-ons
   };
 
-  const handleStep1bNext = () => {
+  const handleStep1Next = () => {
     // Validate existing website URL if "yes" is selected
     if (formData.hasExistingWebsite === "yes") {
       if (!formData.existingWebsiteUrl) {
@@ -119,7 +119,7 @@ export default function WebsiteCreationPage() {
     e.preventDefault();
     // Here you would typically send the form data to your backend
     console.log("Form submitted:", formData);
-    setStep(5); // Go to confirmation (now step 5 because we added step 1.5)
+    setStep(4); // Go to confirmation
   };
 
   return (
@@ -157,7 +157,7 @@ export default function WebsiteCreationPage() {
                 }`}>
                   1
                 </div>
-                <p className="text-sm">Choose Package</p>
+                <p className="text-sm">Design</p>
               </div>
             </div>
             <div className="flex-1">
@@ -188,125 +188,57 @@ export default function WebsiteCreationPage() {
         </div>
       </section>
 
-      {/* Step 1: Package Selection */}
+      {/* Step 1: Design Questions */}
       {step === 1 && (
-        <section className="py-20 bg-background relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 dark:bg-purple-500/10 bg-blue-500/10 rounded-full blur-3xl animate-float" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <h2 className="text-2xl md:text-3xl font-bold text-center mb-4 animate-slide-up">
-              With an Opority website you&apos;ll receive:
-            </h2>
-            
-            <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-5xl mx-auto">
-              <div className="text-center p-4">
-                <h3 className="font-bold mb-2">Unlimited support</h3>
-                <p className="text-sm text-muted-foreground">
-                  Full training and lifetime support
-                </p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="font-bold mb-2">Free domain</h3>
-                <p className="text-sm text-muted-foreground">
-                  .co.uk or .com domain for life
-                </p>
-              </div>
-              <div className="text-center p-4">
-                <h3 className="font-bold mb-2">Complete security</h3>
-                <p className="text-sm text-muted-foreground">
-                  24/7 monitoring and spam filtering
-                </p>
-              </div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <button
-                onClick={() => selectPackage("plus")}
-                className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 text-left transition-all hover:shadow-xl transform hover:scale-105 animate-slide-in-left"
-              >
-                <h3 className="text-xl font-bold mb-3">Plus Package</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  An easy starter website with added functionality.
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>5 unique pages</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>Fully responsive design</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>Unlimited support</span>
-                  </li>
-                </ul>
-              </button>
-
-              <button
-                onClick={() => selectPackage("max")}
-                className="bg-card border-2 border-primary rounded-xl p-6 text-left transition-all relative hover:shadow-xl transform hover:scale-105 animate-scale-in"
-              >
-                <div className="bg-primary text-primary-foreground text-xs font-bold py-1 px-3 rounded-full inline-block mb-2">
-                  POPULAR
-                </div>
-                <h3 className="text-xl font-bold mb-3">Max Package</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  A powerful, feature-packed website solution
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>10 professional pages</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>Built-in blog for SEO</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>Unlimited support</span>
-                  </li>
-                </ul>
-              </button>
-
-              <button
-                onClick={() => selectPackage("shop")}
-                className="bg-card border-2 border-border hover:border-primary rounded-xl p-6 text-left transition-all hover:shadow-xl transform hover:scale-105 animate-slide-in-right"
-              >
-                <h3 className="text-xl font-bold mb-3">Shop Package</h3>
-                <p className="text-sm text-muted-foreground mb-4">
-                  A fast, secure e-commerce store.
-                </p>
-                <ul className="space-y-2 text-sm">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>Unlimited products</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>Secure payment options</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-2">✓</span>
-                    <span>24/7 support</span>
-                  </li>
-                </ul>
-              </button>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Step 1.5: Additional Questions */}
-      {step === 1.5 && (
         <section className="py-20 bg-background">
-          <div className="max-w-3xl mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
-              Tell us more about your project
-            </h2>
+          <div className="max-w-6xl mx-auto px-4">
+            {/* Benefits with Icons */}
+            <div className="mb-12">
+              <h3 className="text-xl font-bold text-center mb-8">With an Opority website you&apos;ll receive:</h3>
+              
+              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div className="text-center p-4 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-bold mb-2">Unlimited support</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Full training and lifetime support
+                  </p>
+                </div>
+                <div className="text-center p-4 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                    </svg>
+                  </div>
+                  <h4 className="font-bold mb-2">Free domain</h4>
+                  <p className="text-sm text-muted-foreground">
+                    .co.uk or .com domain for life
+                  </p>
+                </div>
+                <div className="text-center p-4 bg-card rounded-lg border border-border">
+                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <h4 className="font-bold mb-2">Complete security</h4>
+                  <p className="text-sm text-muted-foreground">
+                    24/7 monitoring and spam filtering
+                  </p>
+                </div>
+              </div>
+            </div>
 
-            <div className="bg-card border border-border rounded-xl p-8 space-y-8">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+                Tell us more about your project
+              </h2>
+
+              <div className="bg-card border border-border rounded-xl p-8 space-y-8">
               {/* Existing Website Question */}
               <div>
                 <Label className="text-base font-semibold mb-4 block">
@@ -343,7 +275,6 @@ export default function WebsiteCreationPage() {
                   </label>
                 </div>
 
-                {/* Conditional URL Input */}
                 {formData.hasExistingWebsite === "yes" && (
                   <div className="mt-4">
                     <Label htmlFor="existingWebsiteUrl" className="mb-2">Website URL *</Label>
@@ -435,7 +366,6 @@ export default function WebsiteCreationPage() {
                   </label>
                 </div>
 
-                {/* Conditional Other Purpose Input */}
                 {formData.websitePurpose === "other" && (
                   <div className="mt-4">
                     <Label htmlFor="otherPurpose" className="mb-2">Please describe your website purpose *</Label>
@@ -460,20 +390,15 @@ export default function WebsiteCreationPage() {
               </div>
             </div>
 
-            {/* Navigation Buttons */}
-            <div className="flex gap-4 mt-8">
+            {/* Navigation Button */}
+            <div className="mt-8">
               <button
-                onClick={() => setStep(1)}
-                className="px-6 py-3 border border-border rounded-full hover:bg-accent transition-colors"
-              >
-                Back
-              </button>
-              <button
-                onClick={handleStep1bNext}
-                className="flex-1 bg-primary text-primary-foreground px-6 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold"
+                onClick={handleStep1Next}
+                className="w-full bg-primary text-primary-foreground px-6 py-3 rounded-full hover:bg-primary/90 transition-colors font-semibold"
               >
                 Continue
               </button>
+            </div>
             </div>
           </div>
         </section>
@@ -545,7 +470,7 @@ export default function WebsiteCreationPage() {
 
             <div className="flex gap-4 mt-8">
               <button
-                onClick={() => setStep(1.5)}
+                onClick={() => setStep(1)}
                 className="px-6 py-3 border border-border rounded-full hover:bg-accent transition-colors"
               >
                 Back
@@ -564,12 +489,87 @@ export default function WebsiteCreationPage() {
       {/* Step 3: Contact Details */}
       {step === 3 && (
         <section className="py-20 bg-background">
-          <div className="max-w-2xl mx-auto px-4">
+          <div className="max-w-4xl mx-auto px-4">
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
               Your details
             </h2>
             
-            <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 space-y-6">
+            {/* Package Information - Static Display */}
+            <div className="mb-12">
+              
+              <div className="grid md:grid-cols-3 gap-6 mb-8 max-w-6xl mx-auto">
+                {/* Plus Package - Static */}
+                <div className="bg-card border-2 border-border rounded-xl p-6 opacity-90">
+                  <h3 className="text-xl font-bold mb-3">Plus Package</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    An easy starter website with added functionality.
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>5 unique pages</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>Fully responsive design</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>Unlimited support</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Max Package - Static */}
+                <div className="bg-card border-2 border-primary rounded-xl p-6 relative">
+                  <div className="bg-primary text-primary-foreground text-xs font-bold py-1 px-3 rounded-full inline-block mb-2">
+                    POPULAR
+                  </div>
+                  <h3 className="text-xl font-bold mb-3">Max Package</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    A powerful, feature-packed website solution
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>10 professional pages</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>Built-in blog for SEO</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>Unlimited support</span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Shop Package - Static */}
+                <div className="bg-card border-2 border-border rounded-xl p-6 opacity-90">
+                  <h3 className="text-xl font-bold mb-3">Shop Package</h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    A fast, secure e-commerce store.
+                  </p>
+                  <ul className="space-y-2 text-sm">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>Unlimited products</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>Secure payment options</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-2">✓</span>
+                      <span>24/7 support</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 space-y-6 max-w-2xl mx-auto">
               <div>
                 <Label htmlFor="name">Name *</Label>
                 <Input
@@ -663,7 +663,7 @@ export default function WebsiteCreationPage() {
       )}
 
       {/* Step 4: Confirmation */}
-      {step === 5 && (
+      {step === 4 && (
         <section className="py-20 bg-background">
           <div className="max-w-2xl mx-auto px-4 text-center">
             <div className="bg-card border border-border rounded-xl p-12">
