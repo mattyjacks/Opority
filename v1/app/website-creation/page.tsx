@@ -16,6 +16,7 @@ type FormData = {
   existingWebsiteUrl: string;
   websitePurpose: string;
   otherPurpose: string;
+  contentProvision: string;
   name: string;
   email: string;
   phone: string;
@@ -35,6 +36,7 @@ export default function WebsiteCreationPage() {
     existingWebsiteUrl: "",
     websitePurpose: "",
     otherPurpose: "",
+    contentProvision: "",
     name: "",
     email: "",
     phone: "",
@@ -48,6 +50,7 @@ export default function WebsiteCreationPage() {
 
   const [urlError, setUrlError] = useState("");
   const [purposeError, setPurposeError] = useState("");
+  const [contentError, setContentError] = useState("");
 
   // SQL injection prevention - sanitize input
   const sanitizeInput = (input: string): string => {
@@ -111,7 +114,14 @@ export default function WebsiteCreationPage() {
       return;
     }
 
+    // Validate content provision
+    if (!formData.contentProvision) {
+      setContentError("Please select a content provision option");
+      return;
+    }
+
     setPurposeError("");
+    setContentError("");
     setStep(2);
   };
 
@@ -244,8 +254,15 @@ export default function WebsiteCreationPage() {
                 <Label className="text-base font-semibold mb-4 block">
                   Do you have an existing website that needs to be enhanced?
                 </Label>
-                <div className="space-y-3">
-                  <label className="flex items-center gap-3 cursor-pointer">
+                <div className="grid grid-cols-2 gap-3">
+                  <label className={`
+                    relative flex items-center justify-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.hasExistingWebsite === "yes"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
                     <input
                       type="radio"
                       name="hasExistingWebsite"
@@ -255,11 +272,20 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, hasExistingWebsite: e.target.value, existingWebsiteUrl: "" });
                         setUrlError("");
                       }}
-                      className="w-4 h-4 text-primary"
+                      className="sr-only"
                     />
-                    <span>Yes</span>
+                    <span className={`font-medium transition-colors ${
+                      formData.hasExistingWebsite === "yes" ? "text-primary" : ""
+                    }`}>Yes</span>
                   </label>
-                  <label className="flex items-center gap-3 cursor-pointer">
+                  <label className={`
+                    relative flex items-center justify-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.hasExistingWebsite === "no"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
                     <input
                       type="radio"
                       name="hasExistingWebsite"
@@ -269,9 +295,11 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, hasExistingWebsite: e.target.value, existingWebsiteUrl: "" });
                         setUrlError("");
                       }}
-                      className="w-4 h-4 text-primary"
+                      className="sr-only"
                     />
-                    <span>No</span>
+                    <span className={`font-medium transition-colors ${
+                      formData.hasExistingWebsite === "no" ? "text-primary" : ""
+                    }`}>No</span>
                   </label>
                 </div>
 
@@ -308,7 +336,14 @@ export default function WebsiteCreationPage() {
                   What would you like your website to do for you? *
                 </Label>
                 <div className="space-y-3">
-                  <label className="flex items-start gap-3 cursor-pointer">
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.websitePurpose === "simple"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -318,11 +353,20 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
                         setPurposeError("");
                       }}
-                      className="w-4 h-4 text-primary mt-0.5"
+                      className="sr-only"
                     />
-                    <span>Just a simple site with my info and contacts</span>
+                    <span className={`font-medium transition-colors ${
+                      formData.websitePurpose === "simple" ? "text-primary" : ""
+                    }`}>Just a simple site with my info and contacts</span>
                   </label>
-                  <label className="flex items-start gap-3 cursor-pointer">
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.websitePurpose === "grow"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -332,11 +376,20 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
                         setPurposeError("");
                       }}
-                      className="w-4 h-4 text-primary mt-0.5"
+                      className="sr-only"
                     />
-                    <span>Help my business grow and appear on Google</span>
+                    <span className={`font-medium transition-colors ${
+                      formData.websitePurpose === "grow" ? "text-primary" : ""
+                    }`}>Help my business grow and appear on Google</span>
                   </label>
-                  <label className="flex items-start gap-3 cursor-pointer">
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.websitePurpose === "sell"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -346,11 +399,20 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
                         setPurposeError("");
                       }}
-                      className="w-4 h-4 text-primary mt-0.5"
+                      className="sr-only"
                     />
-                    <span>Sell my products or services online</span>
+                    <span className={`font-medium transition-colors ${
+                      formData.websitePurpose === "sell" ? "text-primary" : ""
+                    }`}>Sell my products or services online</span>
                   </label>
-                  <label className="flex items-start gap-3 cursor-pointer">
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.websitePurpose === "other"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -360,9 +422,11 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value });
                         setPurposeError("");
                       }}
-                      className="w-4 h-4 text-primary mt-0.5"
+                      className="sr-only"
                     />
-                    <span>Other</span>
+                    <span className={`font-medium transition-colors ${
+                      formData.websitePurpose === "other" ? "text-primary" : ""
+                    }`}>Other</span>
                   </label>
                 </div>
 
@@ -386,6 +450,88 @@ export default function WebsiteCreationPage() {
 
                 {purposeError && (
                   <p className="text-red-500 text-sm mt-2">{purposeError}</p>
+                )}
+              </div>
+
+              {/* Content Provision Question */}
+              <div>
+                <Label className="text-base font-semibold mb-4 block">
+                  What content are you able to provide for us? *
+                </Label>
+                <div className="space-y-3">
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.contentProvision === "all"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
+                    <input
+                      type="radio"
+                      name="contentProvision"
+                      value="all"
+                      checked={formData.contentProvision === "all"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, contentProvision: e.target.value });
+                        setContentError("");
+                      }}
+                      className="sr-only"
+                    />
+                    <span className={`font-medium transition-colors ${
+                      formData.contentProvision === "all" ? "text-primary" : ""
+                    }`}>I can provide all my content</span>
+                  </label>
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.contentProvision === "some"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
+                    <input
+                      type="radio"
+                      name="contentProvision"
+                      value="some"
+                      checked={formData.contentProvision === "some"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, contentProvision: e.target.value });
+                        setContentError("");
+                      }}
+                      className="sr-only"
+                    />
+                    <span className={`font-medium transition-colors ${
+                      formData.contentProvision === "some" ? "text-primary" : ""
+                    }`}>I can provide some of the content</span>
+                  </label>
+                  <label className={`
+                    relative flex items-center cursor-pointer
+                    p-4 rounded-lg border-2 transition-all duration-200
+                    ${formData.contentProvision === "none"
+                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
+                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
+                    }
+                  `}>
+                    <input
+                      type="radio"
+                      name="contentProvision"
+                      value="none"
+                      checked={formData.contentProvision === "none"}
+                      onChange={(e) => {
+                        setFormData({ ...formData, contentProvision: e.target.value });
+                        setContentError("");
+                      }}
+                      className="sr-only"
+                    />
+                    <span className={`font-medium transition-colors ${
+                      formData.contentProvision === "none" ? "text-primary" : ""
+                    }`}>I&apos;d like you to provide the content for me</span>
+                  </label>
+                </div>
+
+                {contentError && (
+                  <p className="text-red-500 text-sm mt-2">{contentError}</p>
                 )}
               </div>
             </div>
