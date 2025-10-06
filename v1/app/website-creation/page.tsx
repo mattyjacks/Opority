@@ -85,11 +85,6 @@ export default function WebsiteCreationPage() {
     return true;
   };
 
-  const selectPackage = (pkg: string) => {
-    setFormData({ ...formData, package: pkg });
-    setStep(2); // Go to add-ons
-  };
-
   const handleStep1Next = () => {
     // Validate existing website URL if "yes" is selected
     if (formData.hasExistingWebsite === "yes") {
