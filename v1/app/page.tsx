@@ -13,13 +13,13 @@ export default function Home() {
       <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
       
       {/* Hero Section */}
-      <section className="relative bg-background py-12 sm:py-20 md:py-32 overflow-hidden">
+      <section className="relative bg-background min-h-[calc(100vh-64px)] flex items-center overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <AnimatedGradientBackground />
         </div>
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-8">
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-4 sm:mb-6 leading-tight animate-slide-up">
             Struggling to Get <span className="dark:text-gradient-purple text-gradient-blue">High Paying Clients</span> Consistently?

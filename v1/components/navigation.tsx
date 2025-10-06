@@ -98,38 +98,38 @@ export function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden py-4 border-t border-border">
             <div className="flex flex-col gap-4">
-              <Link 
-                href="/website-creation" 
+              <Link
+                href="/website-creation"
                 className="text-foreground hover:text-primary transition-colors"
               >
                 Website Creation
               </Link>
-              <Link 
-                href="/web-design" 
+              <Link
+                href="/web-design"
                 className="text-foreground hover:text-primary transition-colors"
               >
                 Web Design
               </Link>
-              <Link 
-                href="/consulting" 
+              <Link
+                href="/consulting"
                 className="text-foreground hover:text-primary transition-colors"
               >
                 Consulting
               </Link>
-              <Link 
-                href="/paid-ads" 
+              <Link
+                href="/paid-ads"
                 className="text-foreground hover:text-primary transition-colors"
               >
                 Paid Ads
               </Link>
-              <Link 
-                href="/team" 
+              <Link
+                href="/team"
                 className="text-foreground hover:text-primary transition-colors"
               >
                 Team
               </Link>
-              <Link 
-                href="/strategy-call" 
+              <Link
+                href="/strategy-call"
                 className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-semibold text-center"
               >
                 Contact Us
