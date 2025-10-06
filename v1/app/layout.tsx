@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
   title: "Opority | Get More Leads & High Paying Clients",
   description: "Stop chasing leads. We build custom lead generation systems that attract, qualify, and deliver serious prospects straight to your calendar. Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+  },
 };
 
 const geistSans = Geist({
