@@ -23,19 +23,19 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-8">
           {/* Main Heading */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-4 sm:mb-6 leading-tight animate-slide-up">
-            Struggling to Get <span className="dark:text-gradient-purple text-gradient-blue">High Paying Clients</span> Consistently?
+            Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
-          
+
           <p className="text-base sm:text-xl md:text-2xl text-center text-muted-foreground mb-6 sm:mb-10 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            Get more consistent clients or higher paying ones.
+            We show you how to replace them with high value clients who book, pay and stay.
           </p>
-          
+
           <div className="flex justify-center animate-slide-up" style={{animationDelay: "0.2s"}}>
             <Link
               href="/strategy-call"
               className="dark:gradient-purple gradient-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
             >
-              Book Your Free Strategy Call
+              See how it works
             </Link>
           </div>
         </div>
