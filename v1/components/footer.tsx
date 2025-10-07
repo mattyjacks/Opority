@@ -30,7 +30,7 @@ export function Footer() {
               <Link href="/" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
                 Home
               </Link>
-              <Link href="/website-creation" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
+              <Link href="/quick-quote" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
                 Website Creation
               </Link>
               <Link href="/web-design" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">

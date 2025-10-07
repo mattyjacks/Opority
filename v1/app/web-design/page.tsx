@@ -18,7 +18,7 @@ export default function WebDesignPage() {
             Embrace the power of design and watch your business soar.
           </p>
           <Link
-            href="/website-creation"
+            href="/quick-quote"
             className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
           >
             Take the first step
@@ -219,7 +219,7 @@ export default function WebDesignPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/website-creation"
+              href="/quick-quote"
               className="inline-block bg-background text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
             >
               Get a Quick Quote

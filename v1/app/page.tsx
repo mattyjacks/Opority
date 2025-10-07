@@ -170,62 +170,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQs Section */}
-      <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
-        <div className="absolute top-1/2 right-0 w-96 h-96 dark:bg-purple-500/10 bg-blue-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: "1.5s"}} />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <h2 className="text-2xl sm:text-4xl font-bold text-center mb-6 sm:mb-12 animate-slide-up">FAQs</h2>
-          <div className="space-y-4 sm:space-y-6">
-            <details className="group border border-border rounded-lg p-4 sm:p-6">
-              <summary className="text-base sm:text-xl font-semibold cursor-pointer list-none flex justify-between items-center">
-                How quick can websites take?
-                <span className="transition group-open:rotate-180">⌄</span>
-              </summary>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">
-                Depending on the complexity, most websites can be completed within 2-4 weeks. We&apos;ll provide a detailed timeline during your strategy call.
-              </p>
-            </details>
-            
-            <details className="group border border-border rounded-lg p-4 sm:p-6">
-              <summary className="text-base sm:text-xl font-semibold cursor-pointer list-none flex justify-between items-center">
-                What is the process?
-                <span className="transition group-open:rotate-180">⌄</span>
-              </summary>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">
-                We start with a discovery call to understand your business goals, then create a custom strategy, implement the solution, and provide ongoing support to ensure results.
-              </p>
-            </details>
-            
-            <details className="group border border-border rounded-lg p-4 sm:p-6">
-              <summary className="text-base sm:text-xl font-semibold cursor-pointer list-none flex justify-between items-center">
-                Is advertising worth it?
-                <span className="transition group-open:rotate-180">⌄</span>
-              </summary>
-              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">
-                When done right, absolutely. We focus on qualified leads with smart targeting and optimization to ensure your ad spend delivers real ROI.
-              </p>
-            </details>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
-        <div className="absolute inset-0 dark:gradient-purple gradient-blue opacity-10 animate-gradient-xy" />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-2xl sm:text-4xl font-bold mb-3 sm:mb-4 animate-scale-in">Ready for <span className="dark:text-gradient-purple text-gradient-blue">more clients</span>?</h2>
-          <p className="text-base sm:text-xl text-muted-foreground mb-6 sm:mb-8 animate-slide-up">
-            Tap the button below to get started—risk-free.
-          </p>
-          <Link
-            href="/strategy-call"
-            className="inline-block dark:gradient-purple gradient-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg animate-float"
-          >
-            Get More Leads
-          </Link>
-        </div>
-      </section>
-
       <Footer />
     </main>
   );

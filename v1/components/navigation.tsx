@@ -10,7 +10,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const services = [
   {
     name: "Website Creation",
-    href: "/website-creation",
+    href: "/quick-quote",
     icon: Globe2,
   },
   {
