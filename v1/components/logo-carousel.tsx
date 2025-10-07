@@ -19,48 +19,37 @@ const logos: Logo[] = [
 ];
 
 export function LogoCarousel() {
-  // Duplicate logos array for seamless loop
-  const duplicatedLogos = [...logos, ...logos];
+  // Triple the logos for truly seamless scrolling
+  const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <div className="w-full overflow-hidden py-16 md:py-20 relative" style={{
-      background: "linear-gradient(135deg, #140028 0%, #1a0035 100%)"
-    }}>
+    <div className="w-full overflow-hidden py-16 md:py-20 relative bg-background">
       {/* Trusted By Many Title */}
-      <h3 className="text-white text-center text-lg md:text-xl font-semibold mb-12">
+      <h3 className="text-foreground text-center text-lg md:text-xl font-semibold mb-12">
         Trusted By Many
       </h3>
 
       <div className="relative">
-        {/* Left fade gradient - blends with background */}
+        {/* Left fade gradient - completely hides logos */}
         <div 
-          className="absolute left-0 top-0 bottom-0 w-40 md:w-56 lg:w-72 z-10 pointer-events-none"
-          style={{
-            background: "linear-gradient(to right, #140028 0%, #1a0035 30%, transparent 100%)"
-          }}
+          className="absolute left-0 top-0 bottom-0 w-48 md:w-64 lg:w-80 z-10 pointer-events-none bg-gradient-to-r from-background via-background/95 to-transparent"
         />
         
-        {/* Right fade gradient - blends with background */}
+        {/* Right fade gradient - completely hides logos */}
         <div 
-          className="absolute right-0 top-0 bottom-0 w-40 md:w-56 lg:w-72 z-10 pointer-events-none"
-          style={{
-            background: "linear-gradient(to left, #1a0035 0%, #140028 30%, transparent 100%)"
-          }}
+          className="absolute right-0 top-0 bottom-0 w-48 md:w-64 lg:w-80 z-10 pointer-events-none bg-gradient-to-l from-background via-background/95 to-transparent"
         />
         
         {/* Scrolling logos container */}
         <motion.div
           className="flex gap-8 md:gap-10 lg:gap-12"
-          animate={{
-            x: ["-50%", "0%"],
-          }}
+          initial={{ x: 0 }}
+          animate={{ x: "-33.333%" }}
           transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 25,
-              ease: "linear",
-            },
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+            repeatType: "loop",
           }}
         >
           {duplicatedLogos.map((logo, index) => (
@@ -68,13 +57,13 @@ export function LogoCarousel() {
               key={`logo-${index}`}
               className="flex-shrink-0 group"
             >
-              <div className="relative h-20 w-40 md:h-24 md:w-48 lg:h-28 lg:w-56 transition-all duration-300 group-hover:brightness-125">
+              <div className="relative h-24 w-48 md:h-28 md:w-56 lg:h-32 lg:w-64 transition-all duration-300 group-hover:brightness-125">
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   fill
                   className="object-contain brightness-100"
-                  sizes="(max-width: 768px) 160px, (max-width: 1024px) 192px, 224px"
+                  sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
                   priority={index < 6}
                 />
               </div>
