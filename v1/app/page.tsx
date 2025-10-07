@@ -99,12 +99,42 @@ export default function Home() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-scale-in">
             Stop Chasing Leads. Start Getting <span className="dark:text-gradient-purple text-gradient-blue">Clients Who Buy</span>.
           </h2>
-          <Link
-            href="/strategy-call"
-            className="inline-block dark:gradient-purple gradient-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-110 mt-4 sm:mt-6 animate-pulse-glow shadow-lg"
-          >
-            Book Your Free Strategy Call
-          </Link>
+
+          {/* Multiple Choice Question */}
+          <div className="mt-8 sm:mt-10">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6">
+              Are you already active on Facebook for your business or yourself?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
+              <Link
+                href="/strategy-call?facebook=yes"
+                className="group w-full sm:w-64 bg-white dark:bg-gray-800 border-2 border-primary hover:bg-primary/10 dark:hover:bg-primary/20 rounded-xl p-6 transition-all transform hover:scale-105 shadow-lg"
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-semibold">Yeah I am</span>
+                </div>
+              </Link>
+
+              <Link
+                href="/strategy-call?facebook=no"
+                className="group w-full sm:w-64 bg-white dark:bg-gray-800 border-2 border-primary hover:bg-primary/10 dark:hover:bg-primary/20 rounded-xl p-6 transition-all transform hover:scale-105 shadow-lg"
+              >
+                <div className="flex flex-col items-center gap-3">
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <span className="text-lg font-semibold">Not yet</span>
+                </div>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

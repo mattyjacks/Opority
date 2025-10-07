@@ -19,9 +19,8 @@ const logos: Logo[] = [
 ];
 
 export function LogoCarousel() {
-  // Duplicate logos exactly 2x for seamless infinite scroll
-  // Key insight: animate by exactly -50% to create perfect loop
-  const duplicatedLogos = [...logos, ...logos];
+  // Duplicate logos 5x to ensure smooth infinite scroll without visible reset
+  const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
     <div className="w-full overflow-hidden py-16 md:py-20 relative bg-background">
@@ -42,7 +41,7 @@ export function LogoCarousel() {
         />
 
         {/* Scrolling logos container */}
-        <div className="flex gap-8 md:gap-12 lg:gap-16 animate-scroll will-change-transform">
+        <div className="flex gap-8 md:gap-12 lg:gap-16 animate-scroll">
           {duplicatedLogos.map((logo, index) => (
             <div
               key={`logo-${index}`}
@@ -65,16 +64,23 @@ export function LogoCarousel() {
 
       <style jsx>{`
         @keyframes scroll {
-          0% {
+          from {
             transform: translateX(0);
           }
-          100% {
-            transform: translateX(-50%);
+          to {
+            transform: translateX(-100%);
           }
         }
 
         .animate-scroll {
-          animation: scroll 20s linear infinite;
+          animation: scroll 40s linear infinite;
+          will-change: transform;
+        }
+
+        @media (max-width: 768px) {
+          .animate-scroll {
+            animation: scroll 25s linear infinite;
+          }
         }
       `}</style>
     </div>
