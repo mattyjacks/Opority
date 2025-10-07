@@ -2,6 +2,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
 import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
+import { LogoCarousel } from "@/components/logo-carousel";
 import Link from "next/link";
 
 export default function Home() {
@@ -37,13 +38,11 @@ export default function Home() {
               Book Your Free Strategy Call
             </Link>
           </div>
-          
-          {/* Trusted By Section */}
-          <div className="mt-8 sm:mt-16 text-center animate-slide-up" style={{animationDelay: "0.3s"}}>
-            <p className="text-base sm:text-lg font-semibold mb-4 animate-float">Trusted By Many</p>
-          </div>
         </div>
       </section>
+
+      {/* Trusted By Logo Carousel Section */}
+      <LogoCarousel />
 
       {/* You Don't Need More Clicks Section */}
       <section className="py-12 sm:py-20 bg-background relative overflow-hidden">
