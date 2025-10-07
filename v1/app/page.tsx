@@ -62,12 +62,14 @@ export default function Home() {
                 You need consistent leads who are genuinely interested in your service and have the budget to pay for it.
                 That&apos;s why we build custom lead generation systems that attract, qualify, and deliver serious prospects straight to your calendar.
               </p>
-              <Link
-                href="/paid-ads"
-                className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
-              >
-                Show Me How It Works
-              </Link>
+              <div className="flex justify-center lg:justify-start">
+                <Link
+                  href="/paid-ads"
+                  className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
+                >
+                  Show Me How It Works
+                </Link>
+              </div>
             </div>
 
             {/* Image - Right Side */}
@@ -109,12 +111,14 @@ export default function Home() {
               <p className="text-base sm:text-xl text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
                 Most sites confuse visitors, fail to build trust, or make it unclear what to do next. We fix that by turning your site into a conversion machine.
               </p>
-              <Link
-                href="/web-design"
-                className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
-              >
-                See What&apos;s Broken on Your Site
-              </Link>
+              <div className="flex justify-center lg:justify-start">
+                <Link
+                  href="/web-design"
+                  className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
+                >
+                  See What&apos;s Broken on Your Site
+                </Link>
+              </div>
             </div>
           </div>
         </div>
