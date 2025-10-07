@@ -30,23 +30,23 @@ export function LogoCarousel() {
       </h3>
 
       <div className="relative">
-        {/* Left fade gradient - completely hides logos */}
+        {/* Left fade gradient - reduced width on mobile */}
         <div 
-          className="absolute left-0 top-0 bottom-0 w-48 md:w-64 lg:w-80 z-10 pointer-events-none bg-gradient-to-r from-background via-background/95 to-transparent"
+          className="absolute left-0 top-0 bottom-0 w-20 md:w-48 lg:w-64 z-10 pointer-events-none bg-gradient-to-r from-background via-background/90 to-transparent"
         />
         
-        {/* Right fade gradient - completely hides logos */}
+        {/* Right fade gradient - reduced width on mobile */}
         <div 
-          className="absolute right-0 top-0 bottom-0 w-48 md:w-64 lg:w-80 z-10 pointer-events-none bg-gradient-to-l from-background via-background/95 to-transparent"
+          className="absolute right-0 top-0 bottom-0 w-20 md:w-48 lg:w-64 z-10 pointer-events-none bg-gradient-to-l from-background via-background/90 to-transparent"
         />
         
         {/* Scrolling logos container */}
         <motion.div
-          className="flex gap-8 md:gap-10 lg:gap-12"
+          className="flex gap-12 md:gap-16 lg:gap-20"
           initial={{ x: 0 }}
           animate={{ x: "-33.333%" }}
           transition={{
-            duration: 15,
+            duration: 35,
             repeat: Infinity,
             ease: "linear",
             repeatType: "loop",
@@ -57,13 +57,13 @@ export function LogoCarousel() {
               key={`logo-${index}`}
               className="flex-shrink-0 group"
             >
-              <div className="relative h-24 w-48 md:h-28 md:w-56 lg:h-32 lg:w-64 transition-all duration-300 group-hover:brightness-125">
+              <div className="relative h-32 w-56 md:h-36 md:w-64 lg:h-40 lg:w-72 transition-all duration-300 group-hover:brightness-125">
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   fill
                   className="object-contain brightness-100"
-                  sizes="(max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
+                  sizes="(max-width: 768px) 224px, (max-width: 1024px) 256px, 288px"
                   priority={index < 6}
                 />
               </div>
