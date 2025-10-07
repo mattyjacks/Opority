@@ -3,7 +3,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { ThemeToggle } from "./theme-toggle";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -60,13 +59,6 @@ export function Navigation() {
                   </Link>
                 </div>
               </div>
-              <Link
-                href="/team"
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                Team
-              </Link>
-              <ThemeToggle />
               <Link
                 href="/strategy-call"
                 className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-primary/90 transition-all transform hover:scale-105 font-semibold"
@@ -141,22 +133,12 @@ export function Navigation() {
                 Paid Ads
               </Link>
               <Link
-                href="/team"
-                className="text-foreground hover:text-primary transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Team
-              </Link>
-              <Link
                 href="/strategy-call"
                 className="bg-primary text-primary-foreground px-6 py-2 rounded-full hover:bg-primary/90 transition-colors font-semibold text-center"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact Us
               </Link>
-              <div className="flex justify-center pt-2">
-                <ThemeToggle />
-              </div>
             </div>
           </div>
         </div>
