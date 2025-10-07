@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 
@@ -13,8 +14,17 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Link href="/" className="text-2xl font-bold dark:text-gradient-purple text-gradient-blue hover:scale-105 transition-transform">
-              OPORITY
+            <Link href="/" className="flex items-center gap-1 hover:scale-105 transition-transform">
+              <Image 
+                src="/opority-logo/r-logo.png" 
+                alt="Opority Logo" 
+                width={40} 
+                height={40}
+                className="object-contain"
+              />
+              <span className="text-2xl font-bold dark:text-gradient-purple text-gradient-blue">
+                OPORITY
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
