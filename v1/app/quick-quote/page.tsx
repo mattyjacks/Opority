@@ -352,7 +352,7 @@ export default function WebsiteCreationPage() {
                     />
                     <span className={`font-medium transition-colors ${
                       formData.websitePurpose === "simple" ? "text-primary" : ""
-                    }`}>Just a simple site with my info and contacts</span>
+                    }`}>An easy starter site for my contact details</span>
                   </label>
                   <label className={`
                     relative flex items-center cursor-pointer
@@ -375,7 +375,7 @@ export default function WebsiteCreationPage() {
                     />
                     <span className={`font-medium transition-colors ${
                       formData.websitePurpose === "grow" ? "text-primary" : ""
-                    }`}>Help my business grow and appear on Google</span>
+                    }`}>To promote my business and appear in search results</span>
                   </label>
                   <label className={`
                     relative flex items-center cursor-pointer
@@ -398,7 +398,7 @@ export default function WebsiteCreationPage() {
                     />
                     <span className={`font-medium transition-colors ${
                       formData.websitePurpose === "sell" ? "text-primary" : ""
-                    }`}>Sell my products or services online</span>
+                    }`}>I want to sell my products / services online</span>
                   </label>
                   <label className={`
                     relative flex items-center cursor-pointer

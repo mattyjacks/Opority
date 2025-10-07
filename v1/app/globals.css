@@ -163,8 +163,21 @@
     }
   }
   
+  @keyframes infinite-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
   .animate-marquee {
     animation: marquee 40s linear infinite;
+  }
+  
+  .animate-infinite-scroll {
+    animation: infinite-scroll 30s linear infinite;
   }
   
   .animate-gradient {
