@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { CheckCircle2, User, Mail, Package, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
 
 function StrategyCallContent() {
   const searchParams = useSearchParams();
@@ -65,63 +66,145 @@ function StrategyCallContent() {
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* LEFT COLUMN - Content */}
-            <div className="space-y-6">
+            <div className="space-y-6 animate-slide-in-left">
               {/* Show user info if available */}
               {name && (
-                <div className="bg-card border border-primary/50 rounded-xl p-6">
-                  <p className="text-sm text-muted-foreground mb-2">Booking for:</p>
-                  <p className="text-lg font-semibold">{name}</p>
-                  {email && <p className="text-sm text-muted-foreground">{email}</p>}
-                  {packageType && (
-                    <p className="text-sm text-primary mt-2">Package: {packageType}</p>
-                  )}
+                <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-card border-2 border-primary/30 rounded-2xl p-6 md:p-8 shadow-lg shadow-primary/10 backdrop-blur-sm overflow-hidden group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
+                  {/* Decorative gradient orb */}
+                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-all duration-500"></div>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Sparkles className="w-5 h-5 text-primary animate-pulse" />
+                      <p className="text-sm font-medium text-primary uppercase tracking-wider">Booking Details</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <div className="flex items-center gap-3">
+                        <div className="flex-shrink-0 w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                          <User className="w-5 h-5 text-primary" />
+                        </div>
+                        <div>
+                          <p className="text-xs text-muted-foreground">Full Name</p>
+                          <p className="text-lg font-bold text-foreground">{name}</p>
+                        </div>
+                      </div>
+
+                      {email && (
+                        <div className="flex items-center gap-3">
+                          <div className="flex-shrink-0 w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                            <Mail className="w-5 h-5 text-accent" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-muted-foreground">Email Address</p>
+                            <p className="text-sm font-medium text-foreground">{email}</p>
+                          </div>
+                        </div>
+                      )}
+
+                      {packageType && (
+                        <div className="flex items-center gap-3 mt-4 pt-4 border-t border-primary/20">
+                          <div className="flex-shrink-0 w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                            <Package className="w-5 h-5 text-accent" />
+                          </div>
+                          <div>
+                            <p className="text-xs text-muted-foreground">Selected Package</p>
+                            <p className="text-base font-bold text-primary">{packageType}</p>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               )}
 
               {/* Questions Section */}
-              <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
-                <h2 className="text-xl md:text-2xl font-bold mb-6">On the call, we&apos;ll ask questions like:</h2>
-                <ul className="space-y-4">
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3 text-xl flex-shrink-0">•</span>
-                    <span className="text-base md:text-lg">How are you currently getting quotes</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3 text-xl flex-shrink-0">•</span>
-                    <span className="text-base md:text-lg">How long has the business been running?</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-primary mr-3 text-xl flex-shrink-0">•</span>
-                    <span className="text-base md:text-lg">What&apos;s stopping you from getting more quotes?</span>
-                  </li>
-                </ul>
+              <div className="relative bg-card border border-border rounded-2xl p-6 md:p-8 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
+                {/* Subtle gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="relative z-10">
+                  <div className="flex items-start gap-3 mb-6">
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
+                      <MessageCircle className="w-5 h-5 text-primary" />
+                    </div>
+                    <h2 className="text-xl md:text-2xl font-bold leading-tight">
+                      On the call, we&apos;ll ask questions like:
+                    </h2>
+                  </div>
+
+                  <ul className="space-y-4">
+                    <li className="flex items-start gap-3 group/item">
+                      <div className="flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:scale-110 transition-transform duration-200" />
+                      </div>
+                      <span className="text-base md:text-lg text-foreground/90 leading-relaxed">
+                        How are you currently getting quotes?
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 group/item">
+                      <div className="flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:scale-110 transition-transform duration-200" />
+                      </div>
+                      <span className="text-base md:text-lg text-foreground/90 leading-relaxed">
+                        How long has the business been running?
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-3 group/item">
+                      <div className="flex-shrink-0 mt-0.5">
+                        <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:scale-110 transition-transform duration-200" />
+                      </div>
+                      <span className="text-base md:text-lg text-foreground/90 leading-relaxed">
+                        What&apos;s stopping you from getting more quotes?
+                      </span>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* Call to Action Text */}
-              <div className="bg-card border border-border rounded-xl p-6">
-                <p className="text-base md:text-lg text-muted-foreground">
-                  To start the process, just use our calendar to book a call. We&apos;ll discuss your needs and create a customized plan to help you grow your business.
-                </p>
+              <div className="relative bg-gradient-to-br from-accent/10 via-primary/5 to-card border border-accent/30 rounded-2xl p-6 md:p-8 shadow-md hover:shadow-lg hover:border-accent/50 transition-all duration-300 overflow-hidden group">
+                {/* Animated gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                <div className="relative z-10">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <ArrowRight className="w-6 h-6 text-accent" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold mb-2 text-foreground">Ready to Get Started?</h3>
+                      <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                        To start the process, just use our calendar to book a call. We&apos;ll discuss your needs and create a customized plan to help you grow your business.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Footer Note - Only visible on desktop */}
               <div className="hidden lg:block">
-                <p className="text-sm text-muted-foreground">
-                  Have questions before booking? Feel free to reach out to us directly.
-                </p>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 rounded-lg p-4 border border-border/50">
+                  <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                  <p>
+                    Have questions before booking? Feel free to reach out to us directly.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* RIGHT COLUMN - Calendly Embed */}
-            <div className="lg:sticky lg:top-24">
-              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+            <div className="lg:sticky lg:top-24 animate-slide-in-right">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <iframe
                   src={calendlyUrl}
                   width="100%"
                   height="700"
-                  frameBorder="0"
+                  style={{ border: 0 }}
                   className="rounded-2xl"
                   title="Schedule a Strategy Call"
                 />
@@ -130,10 +213,13 @@ function StrategyCallContent() {
           </div>
 
           {/* Footer Note - Mobile only */}
-          <div className="lg:hidden text-center mt-8">
-            <p className="text-sm text-muted-foreground">
-              Have questions before booking? Feel free to reach out to us directly.
-            </p>
+          <div className="lg:hidden mt-8">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 rounded-lg p-4 border border-border/50">
+              <MessageCircle className="w-4 h-4 flex-shrink-0" />
+              <p>
+                Have questions before booking? Feel free to reach out to us directly.
+              </p>
+            </div>
           </div>
         </div>
       </section>
