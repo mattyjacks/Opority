@@ -17,7 +17,12 @@ import {
   CreditCard,
   Star,
   Sun,
-  TrendingUp
+  TrendingUp,
+  Banknote,
+  Crown,
+  Briefcase,
+  User,
+  HelpCircle
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -47,18 +52,42 @@ function AdFunnelContent() {
 
   // Question 2: Price Range
   const question2Options = [
-    { id: "under-300", label: "< $300", icon: Coins, emoji: "💰", bgColor: "from-yellow-100 to-yellow-50" },
-    { id: "300-1k", label: "$300 - $1k", icon: DollarSign, emoji: "💵", bgColor: "from-green-100 to-green-50" },
-    { id: "1k-5k", label: "$1k - $5k", icon: CreditCard, emoji: "💸", bgColor: "from-emerald-100 to-emerald-50" },
-    { id: "over-5k", label: "> $5k", icon: Wallet, emoji: "👛", bgColor: "from-orange-100 to-orange-50" },
+    { 
+      id: "under-300", 
+      label: "< $300", 
+      icon: Coins, 
+      iconColor: "text-yellow-500",
+      bgColor: "bg-gray-100"
+    },
+    { 
+      id: "300-1k", 
+      label: "$300 - $1k", 
+      icon: DollarSign, 
+      iconColor: "text-emerald-600",
+      bgColor: "bg-gray-100"
+    },
+    { 
+      id: "1k-5k", 
+      label: "$1k - $5k", 
+      icon: Banknote, 
+      iconColor: "text-green-600",
+      bgColor: "bg-gray-100"
+    },
+    { 
+      id: "over-5k", 
+      label: "> $5k", 
+      icon: Wallet, 
+      iconColor: "text-orange-500",
+      bgColor: "bg-gray-100"
+    },
   ];
 
   // Question 3: Role
   const question3Options = [
-    { id: "ceo", label: "CEO", image: "/portfolio/ceo-placeholder.jpg" },
-    { id: "management", label: "Management", image: "/portfolio/management-placeholder.jpg" },
-    { id: "employee", label: "Employee", image: "/portfolio/employee-placeholder.jpg" },
-    { id: "other", label: "Other role", image: "/portfolio/other-placeholder.jpg" },
+    { id: "ceo", label: "CEO", icon: Crown, iconColor: "text-yellow-500", bgColor: "bg-gradient-to-br from-yellow-100 to-yellow-50" },
+    { id: "management", label: "Management", icon: Briefcase, iconColor: "text-blue-500", bgColor: "bg-gradient-to-br from-blue-100 to-blue-50" },
+    { id: "employee", label: "Employee", icon: User, iconColor: "text-green-500", bgColor: "bg-gradient-to-br from-green-100 to-green-50" },
+    { id: "other", label: "Other role", icon: HelpCircle, iconColor: "text-purple-500", bgColor: "bg-gradient-to-br from-purple-100 to-purple-50" },
   ];
 
   // Question 4: Budget
@@ -109,8 +138,13 @@ function AdFunnelContent() {
         setCurrentQuestion(currentQuestion + 1);
         setIsTransitioning(false);
       } else {
-        // All questions answered, redirect to strategy call
-        router.push("/strategy-call");
+        // All questions answered, redirect to booking page with answers
+        const allAnswers = [...answers, { question: currentQuestion, answer }];
+        const params = new URLSearchParams();
+        allAnswers.forEach((ans) => {
+          params.append(`q${ans.question}`, ans.answer);
+        });
+        router.push(`/booking?${params.toString()}`);
       }
     }, 500);
   };
@@ -216,20 +250,23 @@ function AdFunnelContent() {
                 </h1>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                  {question2Options.map((option) => (
-                    <button
-                      key={option.id}
-                      onClick={() => handleAnswer(option.id)}
-                      className="group flex flex-col items-center"
-                    >
-                      <div className={`w-full aspect-square bg-gradient-to-br ${option.bgColor} rounded-2xl mb-4 flex items-center justify-center transition-transform duration-300 group-hover:scale-105`}>
-                        <span className="text-6xl">{option.emoji}</span>
-                      </div>
-                      <div className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 rounded-xl transition-colors">
-                        {option.label}
-                      </div>
-                    </button>
-                  ))}
+                  {question2Options.map((option) => {
+                    const Icon = option.icon;
+                    return (
+                      <button
+                        key={option.id}
+                        onClick={() => handleAnswer(option.id)}
+                        className="group flex flex-col overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <div className={`w-full aspect-square ${option.bgColor} flex items-center justify-center`}>
+                          <Icon className={`w-16 h-16 ${option.iconColor}`} strokeWidth={1.5} />
+                        </div>
+                        <div className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 transition-colors">
+                          {option.label}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
@@ -248,23 +285,23 @@ function AdFunnelContent() {
                 </h1>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                  {question3Options.map((option) => (
-                    <button
-                      key={option.id}
-                      onClick={() => handleAnswer(option.id)}
-                      className="group flex flex-col overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                    >
-                      <div className="w-full aspect-[4/3] bg-gradient-to-br from-secondary to-secondary/50 relative overflow-hidden">
-                        {/* Placeholder for image */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-6xl opacity-20">👤</div>
+                  {question3Options.map((option) => {
+                    const Icon = option.icon;
+                    return (
+                      <button
+                        key={option.id}
+                        onClick={() => handleAnswer(option.id)}
+                        className="group flex flex-col overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                      >
+                        <div className={`w-full aspect-[4/3] ${option.bgColor} relative overflow-hidden flex items-center justify-center`}>
+                          <Icon className={`w-20 h-20 ${option.iconColor}`} strokeWidth={1.5} />
                         </div>
-                      </div>
-                      <div className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 transition-colors">
-                        {option.label}
-                      </div>
-                    </button>
-                  ))}
+                        <div className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 transition-colors">
+                          {option.label}
+                        </div>
+                      </button>
+                    );
+                  })}
                 </div>
               </motion.div>
             )}
