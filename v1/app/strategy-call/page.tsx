@@ -51,74 +51,87 @@ function StrategyCallContent() {
     <main className="min-h-screen flex flex-col">
       <Navigation />
 
-      <section className="flex-1 py-20 bg-gradient-to-br from-primary/5 to-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+      <section className="flex-1 py-12 md:py-20 bg-gradient-to-br from-primary/5 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Page Header */}
+          <div className="text-center mb-12 md:mb-16">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
               Book a Discovery Call with our Director.
             </h1>
-            <p className="text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
               We offer an initial 30 free minute consultation with our Director, allowing us to learn more about your business,
               your goals and even if we can help you get more quotes.
             </p>
           </div>
 
-          {/* Show user info if available */}
-          {name && (
-            <div className="bg-card border border-primary/50 rounded-xl p-6 mb-8 max-w-2xl mx-auto">
-              <p className="text-sm text-muted-foreground mb-2">Booking for:</p>
-              <p className="text-lg font-semibold">{name}</p>
-              {email && <p className="text-sm text-muted-foreground">{email}</p>}
-              {packageType && (
-                <p className="text-sm text-primary mt-2">Package: {packageType}</p>
-              )}
-            </div>
-          )}
-
-          <div className="bg-card border border-border rounded-2xl p-8 mb-12">
-            <h2 className="text-2xl font-bold mb-6">On the call, we&apos;ll ask questions like:</h2>
-            <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl">•</span>
-                <span className="text-lg">How are you currently getting quotes</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl">•</span>
-                <span className="text-lg">How long has the business been running?</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-3 text-xl">•</span>
-                <span className="text-lg">What&apos;s stopping you from getting more quotes?</span>
-              </li>
-            </ul>
-
-            <p className="text-lg text-muted-foreground mb-8">
-              To start the process, just use our calendar to book a call.
-            </p>
-
-            {/* Calendly Embed */}
-            <div className="bg-background border border-border rounded-xl p-6">
-              <div className="aspect-video flex items-center justify-center">
-                <div className="text-center">
-                  <p className="text-lg font-semibold mb-4">Schedule Your Strategy Call</p>
-                  <a
-                    href={calendlyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
-                  >
-                    Book on Calendly
-                  </a>
-                  <p className="text-sm text-muted-foreground mt-4">
-                    {name ? 'Your details will be pre-filled' : 'Click to open our booking calendar'}
-                  </p>
+          {/* Two Column Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
+            {/* LEFT COLUMN - Content */}
+            <div className="space-y-6">
+              {/* Show user info if available */}
+              {name && (
+                <div className="bg-card border border-primary/50 rounded-xl p-6">
+                  <p className="text-sm text-muted-foreground mb-2">Booking for:</p>
+                  <p className="text-lg font-semibold">{name}</p>
+                  {email && <p className="text-sm text-muted-foreground">{email}</p>}
+                  {packageType && (
+                    <p className="text-sm text-primary mt-2">Package: {packageType}</p>
+                  )}
                 </div>
+              )}
+
+              {/* Questions Section */}
+              <div className="bg-card border border-border rounded-2xl p-6 md:p-8">
+                <h2 className="text-xl md:text-2xl font-bold mb-6">On the call, we&apos;ll ask questions like:</h2>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-3 text-xl flex-shrink-0">•</span>
+                    <span className="text-base md:text-lg">How are you currently getting quotes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-3 text-xl flex-shrink-0">•</span>
+                    <span className="text-base md:text-lg">How long has the business been running?</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-3 text-xl flex-shrink-0">•</span>
+                    <span className="text-base md:text-lg">What&apos;s stopping you from getting more quotes?</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Call to Action Text */}
+              <div className="bg-card border border-border rounded-xl p-6">
+                <p className="text-base md:text-lg text-muted-foreground">
+                  To start the process, just use our calendar to book a call. We&apos;ll discuss your needs and create a customized plan to help you grow your business.
+                </p>
+              </div>
+
+              {/* Footer Note - Only visible on desktop */}
+              <div className="hidden lg:block">
+                <p className="text-sm text-muted-foreground">
+                  Have questions before booking? Feel free to reach out to us directly.
+                </p>
+              </div>
+            </div>
+
+            {/* RIGHT COLUMN - Calendly Embed */}
+            <div className="lg:sticky lg:top-24">
+              <div className="bg-card border border-border rounded-2xl overflow-hidden">
+                <iframe
+                  src={calendlyUrl}
+                  width="100%"
+                  height="700"
+                  frameBorder="0"
+                  className="rounded-2xl"
+                  title="Schedule a Strategy Call"
+                />
               </div>
             </div>
           </div>
 
-          <div className="text-center">
-            <p className="text-muted-foreground">
+          {/* Footer Note - Mobile only */}
+          <div className="lg:hidden text-center mt-8">
+            <p className="text-sm text-muted-foreground">
               Have questions before booking? Feel free to reach out to us directly.
             </p>
           </div>
