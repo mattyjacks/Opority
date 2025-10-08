@@ -16,26 +16,24 @@ export default function WebDesignPage() {
           <AnimatedGradientBackground />
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 leading-tight animate-slide-up">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8 sm:py-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-slide-up">
             Bespoke <span className="dark:text-gradient-purple text-gradient-blue">Web Design</span>
           </h1>
-          <p className="text-base sm:text-xl md:text-2xl text-center text-muted-foreground mb-6 sm:mb-10 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+          <p className="text-base sm:text-lg md:text-xl text-center text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
             We're here to help your business grow with bespoke web design that really works.
           </p>
 
-          {/* Funnel Question - Cleaner, more direct */}
           <div className="animate-slide-up" style={{animationDelay: "0.2s"}}>
-            <h2 className="text-xl md:text-2xl font-semibold mb-6 text-foreground/90">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-foreground/90 px-4">
               Do you have an active website for yourself or your business?
             </h2>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
               {/* Yes - Primary action */}
               <Link
                 href="/ad-funnel?response=yes"
-                className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-full sm:w-52"
-              >
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-auto sm:w-52">
                 <span className="relative z-10">Yes, I do</span>
                 <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -46,7 +44,7 @@ export default function WebDesignPage() {
               {/* No - Secondary action */}
               <Link
                 href="/ad-funnel?response=no"
-                className="group inline-flex items-center justify-center gap-3 bg-card text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-full sm:w-52"
+                className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-card text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-auto sm:w-52"
               >
                 <span>Not yet</span>
                 <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,10 +57,10 @@ export default function WebDesignPage() {
       </section>
 
       {/* Portfolio Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
               Website design to <span className="dark:text-gradient-purple text-gradient-blue">future-proof your success</span>
             </h2>
           </div>
@@ -76,7 +74,7 @@ export default function WebDesignPage() {
           <div className="flex justify-center">
             <Link
               href="/quick-quote"
-              className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
             >
               <span className="relative z-10">Explore our portfolio</span>
               <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,24 +87,24 @@ export default function WebDesignPage() {
       </section>
 
       {/* How It Works Section - Redesigned */}
-      <section className="py-20 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-background to-secondary/30 relative overflow-hidden">
         {/* Floating background elements */}
         <div className="absolute top-20 right-10 w-72 h-72 dark:bg-purple-500/10 bg-blue-500/10 rounded-full blur-3xl animate-float" />
         <div className="absolute bottom-20 left-10 w-72 h-72 dark:bg-pink-500/10 bg-cyan-500/10 rounded-full blur-3xl animate-float" style={{animationDelay: "3s"}} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Section Header */}
-          <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+          <div className="text-center mb-12 sm:mb-16 animate-slide-up">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
               Helping Your Business <span className="dark:text-gradient-purple text-gradient-blue">Grow</span>
             </h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground">
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground">
               In 3 easy steps
             </p>
           </div>
 
           {/* Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-16">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16">
             {/* Step 1 - Discover */}
             <div className="group relative animate-slide-up" style={{animationDelay: "0.1s"}}>
               {/* Card Container */}
@@ -189,10 +187,10 @@ export default function WebDesignPage() {
           </div>
 
           {/* CTA Buttons - Redesigned */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style={{animationDelay: "0.4s"}}>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-slide-up" style={{animationDelay: "0.4s"}}>
             <Link
               href="/quick-quote"
-              className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-full sm:w-64"
+              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-auto sm:w-64"
             >
               <span className="relative z-10">Take the first step</span>
               <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,7 +201,7 @@ export default function WebDesignPage() {
 
             <Link
               href="#video"
-              className="group inline-flex items-center justify-center gap-3 bg-card text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-full sm:w-64"
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-card text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-auto sm:w-64"
             >
               <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8 5v14l11-7z"/>
@@ -215,19 +213,19 @@ export default function WebDesignPage() {
       </section>
 
       {/* Get on with growing your business CTA */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               Get on with <span className="dark:text-gradient-purple text-gradient-blue">growing your business</span>
             </h2>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
               We&apos;d love to hear from you – get in touch with us to get started.
             </p>
             <div className="flex justify-center">
               <Link
                 href="/quick-quote"
-                className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
               >
                 <span className="relative z-10">Take the first step</span>
                 <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -241,15 +239,15 @@ export default function WebDesignPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-secondary/30">
+      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
             A website design solution that makes things easy
           </h2>
           
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-5xl mx-auto">
             {/* Built for SEO */}
-            <div className="bg-card border border-border rounded-xl p-8">
+            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-4">Built for SEO</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Every website we create is built with search engine optimization in mind from day one. 
@@ -261,7 +259,7 @@ export default function WebDesignPage() {
             </div>
 
             {/* Easy to Edit */}
-            <div className="bg-card border border-border rounded-xl p-8">
+            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-4">Easy to edit</h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
                 Take control of your content with an intuitive content management system. Update text, images, and pages without needing technical knowledge.
@@ -273,7 +271,7 @@ export default function WebDesignPage() {
             </div>
 
             {/* Responsive Design */}
-            <div className="bg-card border border-border rounded-xl p-8">
+            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-4">Mobile-First Design</h3>
               <p className="text-muted-foreground leading-relaxed">
                 With over 60% of web traffic coming from mobile devices, we ensure your website looks stunning and functions 
@@ -282,7 +280,7 @@ export default function WebDesignPage() {
             </div>
 
             {/* Conversion Focused */}
-            <div className="bg-card border border-border rounded-xl p-8">
+            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
               <h3 className="text-2xl font-bold mb-4">Conversion Focused</h3>
               <p className="text-muted-foreground leading-relaxed">
                 Beautiful design means nothing without results. We strategically place calls-to-action, optimize user journeys, 
@@ -294,13 +292,13 @@ export default function WebDesignPage() {
       </section>
 
       {/* Peace of Mind Section */}
-      <section className="py-20 bg-background">
+      <section className="py-12 sm:py-16 md:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
             Complete Online Peace of Mind
           </h2>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             <div className="text-center">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl">🔒</span>
@@ -335,11 +333,11 @@ export default function WebDesignPage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-20 bg-primary/5">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12">Ready, steady, GROW!</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">Ready, steady, GROW!</h2>
           
-          <div className="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 max-w-6xl mx-auto">
             <div className="text-center">
               <div className="bg-primary text-primary-foreground w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 1
@@ -384,7 +382,7 @@ export default function WebDesignPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Ready to Transform Your Online Presence?
@@ -395,13 +393,13 @@ export default function WebDesignPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/quick-quote"
-              className="inline-block bg-background text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
+              className="inline-block bg-background text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
             >
               Get a Quick Quote
             </Link>
             <Link
               href="/strategy-call"
-              className="inline-block border-2 border-background text-background px-8 py-4 rounded-full text-lg font-semibold hover:bg-background hover:text-foreground transition-all transform hover:scale-105"
+              className="inline-block border-2 border-background text-background px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-background hover:text-foreground transition-all transform hover:scale-105"
             >
               Book a Strategy Call
             </Link>

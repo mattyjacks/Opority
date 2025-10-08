@@ -41,13 +41,13 @@ function AdFunnelContent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up" style={{animationDelay: "0.2s"}}>
             <Link
               href="/quick-quote"
-              className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
+              className="inline-block bg-primary text-primary-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
             >
               Get a Quick Quote
             </Link>
             <Link
               href="/strategy-call"
-              className="inline-block border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-105"
+              className="inline-block border-2 border-primary text-primary px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-105"
             >
               Book a Strategy Call
             </Link>
@@ -123,13 +123,13 @@ function AdFunnelContent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/quick-quote"
-              className="inline-block bg-background text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
+              className="inline-block bg-background text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
             >
               Get Your Quote Now
             </Link>
             <Link
               href="/strategy-call"
-              className="inline-block border-2 border-background text-background px-8 py-4 rounded-full text-lg font-semibold hover:bg-background hover:text-foreground transition-all transform hover:scale-105"
+              className="inline-block border-2 border-background text-background px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-background hover:text-foreground transition-all transform hover:scale-105"
             >
               Schedule a Call
             </Link>

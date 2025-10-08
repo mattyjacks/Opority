@@ -164,7 +164,7 @@ export default function ConsultingPage() {
           </p>
           <Link
             href="/strategy-call"
-            className="inline-block dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
+            className="inline-block dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
           >
             Book Your Free Consultation
           </Link>
