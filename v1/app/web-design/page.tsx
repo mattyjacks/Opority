@@ -1,28 +1,36 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import Link from "next/link";
 
 export default function WebDesignPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navigation />
-      
+
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/5 via-background to-primary/5 py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Bespoke Web Design
+      <section className="relative bg-background py-20 md:py-32 overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0">
+          <AnimatedGradientBackground />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
+            Bespoke <span className="dark:text-gradient-purple text-gradient-blue">Web Design</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto">
-            Unlock your business potential with a bespoke web design that captivates, informs, and converts. 
+          <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+            Unlock your business potential with a bespoke web design that captivates, informs, and converts.
             Embrace the power of design and watch your business soar.
           </p>
-          <Link
-            href="/quick-quote"
-            className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
-          >
-            Take the first step
-          </Link>
+          <div className="animate-slide-up" style={{animationDelay: "0.2s"}}>
+            <Link
+              href="/quick-quote"
+              className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
+            >
+              Take the first step
+            </Link>
+          </div>
         </div>
       </section>
 
