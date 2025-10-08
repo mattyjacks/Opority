@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
+import { PortfolioCarousel } from "@/components/portfolio-carousel";
 import Link from "next/link";
 
 export default function WebDesignPage() {
@@ -29,26 +30,27 @@ export default function WebDesignPage() {
               Do you have an active website for yourself or your business?
             </h2>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               {/* Yes - Primary action */}
               <Link
                 href="/ad-funnel?response=yes"
-                className="group relative flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all transform hover:scale-[1.02] active:scale-[0.98] font-semibold text-lg shadow-lg shadow-primary/25"
+                className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-full sm:w-52"
               >
-                <span>Yes, I do</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <span className="relative z-10">Yes, I do</span>
+                <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
               </Link>
 
               {/* No - Secondary action */}
               <Link
                 href="/ad-funnel?response=no"
-                className="group relative flex items-center justify-center gap-3 px-8 py-4 bg-card border-2 border-border hover:border-primary hover:bg-primary/5 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] font-semibold text-lg"
+                className="group inline-flex items-center justify-center gap-3 bg-card text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-full sm:w-52"
               >
                 <span>Not yet</span>
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
             </div>
@@ -56,41 +58,32 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Recent Projects Section */}
-      <section className="py-20 bg-background">
+      {/* Portfolio Section */}
+      <section className="py-20 bg-secondary/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center mb-12">Recent projects</h2>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              Website design to <span className="dark:text-gradient-purple text-gradient-blue">future-proof your success</span>
+            </h2>
+          </div>
           
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-card border border-border rounded-xl overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <p className="text-muted-foreground">Project Showcase 1</p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">E-commerce Success</h3>
-                <p className="text-muted-foreground">Modern online store with seamless checkout experience</p>
-              </div>
-            </div>
-            
-            <div className="bg-card border border-border rounded-xl overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <p className="text-muted-foreground">Project Showcase 2</p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Professional Services</h3>
-                <p className="text-muted-foreground">Clean, conversion-focused design for service business</p>
-              </div>
-            </div>
-            
-            <div className="bg-card border border-border rounded-xl overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-                <p className="text-muted-foreground">Project Showcase 3</p>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Lead Generation</h3>
-                <p className="text-muted-foreground">High-converting landing pages that drive results</p>
-              </div>
-            </div>
+          {/* Portfolio Carousel */}
+          <div className="mb-12">
+            <PortfolioCarousel />
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex justify-center">
+            <Link
+              href="/quick-quote"
+              className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
+            >
+              <span className="relative z-10">Explore our portfolio</span>
+              <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+            </Link>
           </div>
         </div>
       </section>
@@ -199,7 +192,7 @@ export default function WebDesignPage() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-slide-up" style={{animationDelay: "0.4s"}}>
             <Link
               href="/quick-quote"
-              className="group relative inline-flex items-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-105 active:scale-95 shadow-lg overflow-hidden"
+              className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-full sm:w-64"
             >
               <span className="relative z-10">Take the first step</span>
               <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -210,15 +203,39 @@ export default function WebDesignPage() {
 
             <Link
               href="#video"
-              className="group inline-flex items-center gap-3 bg-card border-2 border-primary text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-105 active:scale-95 shadow-lg"
+              className="group inline-flex items-center justify-center gap-3 bg-card text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-full sm:w-64"
             >
-              <div className="w-10 h-10 rounded-full bg-primary/10 group-hover:bg-primary-foreground/20 flex items-center justify-center transition-colors">
-                <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
+              <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
               <span>Watch our video</span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Get on with growing your business CTA */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
+              Get on with <span className="dark:text-gradient-purple text-gradient-blue">growing your business</span>
+            </h2>
+            <p className="text-xl sm:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto">
+              We&apos;d love to hear from you – get in touch with us to get started.
+            </p>
+            <div className="flex justify-center">
+              <Link
+                href="/quick-quote"
+                className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
+              >
+                <span className="relative z-10">Take the first step</span>
+                <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

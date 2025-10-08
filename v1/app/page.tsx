@@ -65,7 +65,7 @@ export default function Home() {
               <div className="flex justify-center lg:justify-start">
                 <Link
                   href="/paid-ads"
-                  className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
+                  className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg"
                 >
                   Show Me How It Works
                 </Link>
@@ -114,7 +114,7 @@ export default function Home() {
               <div className="flex justify-center lg:justify-start">
                 <Link
                   href="/web-design"
-                  className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-105 shadow-lg"
+                  className="inline-block bg-primary text-primary-foreground px-5 sm:px-6 py-2.5 sm:py-3 rounded-full text-sm sm:text-base font-semibold hover:bg-primary/90 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg"
                 >
                   See What&apos;s Broken on Your Site
                 </Link>
@@ -137,33 +137,26 @@ export default function Home() {
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6">
               Are you already active on Facebook for your business or yourself?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link
                 href="/strategy-call?facebook=yes"
-                className="group w-full sm:w-64 bg-white dark:bg-gray-800 border-2 border-primary hover:bg-primary/10 dark:hover:bg-primary/20 rounded-xl p-6 transition-all transform hover:scale-105 shadow-lg"
+                className="group relative inline-flex items-center justify-center gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-full sm:w-52"
               >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-lg font-semibold">Yeah I am</span>
-                </div>
+                <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="relative z-10">Yeah I am</span>
+                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
               </Link>
 
               <Link
                 href="/strategy-call?facebook=no"
-                className="group w-full sm:w-64 bg-white dark:bg-gray-800 border-2 border-primary hover:bg-primary/10 dark:hover:bg-primary/20 rounded-xl p-6 transition-all transform hover:scale-105 shadow-lg"
+                className="group inline-flex items-center justify-center gap-3 bg-card text-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-full sm:w-52"
               >
-                <div className="flex flex-col items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </div>
-                  <span className="text-lg font-semibold">Not yet</span>
-                </div>
+                <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                <span>Not yet</span>
               </Link>
             </div>
           </div>
