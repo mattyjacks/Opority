@@ -14,6 +14,31 @@ function BookingContent() {
   const [email, setEmail] = useState("");
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [showCalendly, setShowCalendly] = useState(false);
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  // FAQ data
+  const faqs = [
+    {
+      question: "What services does OPORITY offer?",
+      answer: "We specialize in web design, website creation, digital marketing consulting, and social media management. Our bespoke solutions help businesses grow their online presence and convert visitors into customers."
+    },
+    {
+      question: "How can digital marketing benefit my business?",
+      answer: "Digital marketing helps you reach your target audience more effectively, increase brand awareness, generate quality leads, and drive conversions. We create customized strategies that align with your business goals and deliver measurable results."
+    },
+    {
+      question: "What is your pricing structure?",
+      answer: "Our pricing is customized based on your specific needs and project scope. We offer flexible packages for web design, ongoing marketing support, and consulting services. Book a free strategy call to discuss your requirements and receive a tailored quote."
+    },
+    {
+      question: "How do you measure the success of your campaigns?",
+      answer: "We track key performance indicators (KPIs) such as website traffic, conversion rates, lead generation, engagement metrics, and ROI. You'll receive regular reports with actionable insights to demonstrate the impact of our work on your business growth."
+    },
+    {
+      question: "How long does it take to see results?",
+      answer: "Results vary depending on the service. Website projects typically take 4-8 weeks. For marketing campaigns, you may see initial results within the first month, with significant growth occurring over 3-6 months as strategies are optimized and refined."
+    }
+  ];
 
   // Get answers from URL params
   const q1 = searchParams.get('q1') || '';
@@ -131,6 +156,111 @@ function BookingContent() {
 
         {/* Logo Carousel - Full width outside container */}
         <LogoCarousel />
+      </section>
+
+      {/* Next Steps Section */}
+      <section className="py-16 md:py-20 bg-secondary/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary font-semibold mb-3 text-sm uppercase tracking-wider">
+              These are your next Steps
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+              Ready to Move Forward?
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Step 1 */}
+            <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl font-bold text-blue-500">1</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-center mb-4">
+                Schedule Your Appointment
+              </h3>
+              <p className="text-muted-foreground text-center leading-relaxed">
+                Begin your journey by booking a convenient appointment with our team. We&apos;ll discuss your business goals and understand your unique needs.
+              </p>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl font-bold text-blue-500">2</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-center mb-4">
+                Custom Potential Analysis
+              </h3>
+              <p className="text-muted-foreground text-center leading-relaxed">
+                Our experts perform a thorough analysis of your current digital presence and market opportunities. This detailed evaluation identifies key areas for growth.
+              </p>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="flex justify-center mb-6">
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center">
+                  <CheckCircle2 className="w-10 h-10 text-green-500" />
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-center mb-4">
+                Free & Personal Strategy Creation
+              </h3>
+              <p className="text-muted-foreground text-center leading-relaxed">
+                Based on our analysis, we develop a customized marketing strategy tailored to your objectives. Our strategic plan ensures optimal results and sustained success.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary font-semibold mb-3 text-sm uppercase tracking-wider">
+              Need help?
+            </p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-card border border-border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md"
+              >
+                <button
+                  onClick={() => setOpenFaq(openFaq === index ? null : index)}
+                  className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-secondary/50 transition-colors"
+                >
+                  <span className="font-semibold text-foreground text-lg">
+                    {faq.question}
+                  </span>
+                  <ChevronDown
+                    className={`w-5 h-5 text-muted-foreground flex-shrink-0 transition-transform duration-300 ${
+                      openFaq === index ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 pb-5 pt-2">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Calendly Modal */}

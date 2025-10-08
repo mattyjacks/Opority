@@ -22,7 +22,8 @@ import {
   Crown,
   Briefcase,
   User,
-  HelpCircle
+  HelpCircle,
+  Zap
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -92,10 +93,10 @@ function AdFunnelContent() {
 
   // Question 4: Budget
   const question4Options = [
-    { id: "under-3k", label: "Less than $3,000", icon: Star, color: "text-orange-500" },
-    { id: "3k-6k", label: "$3,000 - $6,000", icon: Sun, color: "text-yellow-500" },
-    { id: "6k-10k", label: "$6,000 - $10,000", icon: TrendingUp, color: "text-blue-500" },
-    { id: "over-10k", label: "More than $10,000", icon: Star, color: "text-yellow-400" },
+    { id: "under-3k", label: "Less than $3,000", icon: Star, iconColor: "text-orange-500" },
+    { id: "3k-6k", label: "$3,000 - $6,000", icon: Sun, iconColor: "text-yellow-400" },
+    { id: "6k-10k", label: "$6,000 - $10,000", icon: TrendingUp, iconColor: "text-blue-500" },
+    { id: "over-10k", label: "More than $10,000", icon: Star, iconColor: "text-purple-500" },
   ];
 
   const toggleGoalSelection = (goalId: string) => {
@@ -326,14 +327,12 @@ function AdFunnelContent() {
                       <button
                         key={option.id}
                         onClick={() => handleAnswer(option.id)}
-                        className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:scale-105"
+                        className="group bg-primary hover:bg-primary/90 text-primary-foreground rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center gap-4 justify-center"
                       >
-                        <div className="flex items-center gap-4 justify-center">
-                          <Icon className={`w-6 h-6 ${option.color.replace('text-', 'text-white')}`} />
-                          <span className="text-lg font-semibold">
-                            {option.label}
-                          </span>
-                        </div>
+                        <Icon className={`w-7 h-7 ${option.iconColor}`} strokeWidth={2} />
+                        <span className="text-lg font-semibold">
+                          {option.label}
+                        </span>
                       </button>
                     );
                   })}
