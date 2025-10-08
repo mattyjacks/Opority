@@ -104,26 +104,26 @@ export default function WebDesignPage() {
           </div>
 
           {/* Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16">
+          <div className="grid md:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 mb-12 sm:mb-16">
             {/* Step 1 - Discover */}
-            <div className="group relative animate-slide-up" style={{animationDelay: "0.1s"}}>
+            <div className="group relative animate-slide-up pt-6" style={{animationDelay: "0.1s"}}>
               {/* Card Container */}
-              <div className="relative bg-card border-2 border-border rounded-2xl p-8 h-full transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+              <div className="relative bg-card border-2 border-border rounded-2xl p-6 sm:p-8 h-full transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
                 {/* Step Number Badge */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl dark:gradient-purple gradient-blue text-white flex items-center justify-center text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute -top-3 left-6 sm:-top-4 sm:-left-4 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl dark:gradient-purple gradient-blue text-white flex items-center justify-center text-xl sm:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
                   01
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4 mt-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <div className="space-y-3 sm:space-y-4 mt-8 sm:mt-6">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     Discover
                   </h3>
 
                   {/* Animated gradient underline */}
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
-                  <p className="text-muted-foreground leading-relaxed text-base">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     Let&apos;s meet in person or over the phone to discuss your goals and guide you through the web design process.
                   </p>
                 </div>
@@ -133,24 +133,24 @@ export default function WebDesignPage() {
             </div>
 
             {/* Step 2 - Design */}
-            <div className="group relative animate-slide-up" style={{animationDelay: "0.2s"}}>
+            <div className="group relative animate-slide-up pt-6" style={{animationDelay: "0.2s"}}>
               {/* Card Container */}
-              <div className="relative bg-card border-2 border-border rounded-2xl p-8 h-full transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+              <div className="relative bg-card border-2 border-border rounded-2xl p-6 sm:p-8 h-full transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
                 {/* Step Number Badge */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl dark:gradient-purple gradient-blue text-white flex items-center justify-center text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute -top-3 left-6 sm:-top-4 sm:-left-4 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl dark:gradient-purple gradient-blue text-white flex items-center justify-center text-xl sm:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
                   02
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4 mt-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <div className="space-y-3 sm:space-y-4 mt-8 sm:mt-6">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     Design
                   </h3>
 
                   {/* Animated gradient underline */}
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
-                  <p className="text-muted-foreground leading-relaxed text-base">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     Once we capture your brief, our expert designers will create your unique new website. Our tech team will handle the rest.
                   </p>
                 </div>
@@ -160,24 +160,24 @@ export default function WebDesignPage() {
             </div>
 
             {/* Step 3 - Deliver */}
-            <div className="group relative animate-slide-up" style={{animationDelay: "0.3s"}}>
+            <div className="group relative animate-slide-up pt-6" style={{animationDelay: "0.3s"}}>
               {/* Card Container */}
-              <div className="relative bg-card border-2 border-border rounded-2xl p-8 h-full transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
+              <div className="relative bg-card border-2 border-border rounded-2xl p-6 sm:p-8 h-full transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-2">
                 {/* Step Number Badge */}
-                <div className="absolute -top-4 -left-4 w-16 h-16 rounded-2xl dark:gradient-purple gradient-blue text-white flex items-center justify-center text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="absolute -top-3 left-6 sm:-top-4 sm:-left-4 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl dark:gradient-purple gradient-blue text-white flex items-center justify-center text-xl sm:text-2xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
                   03
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4 mt-6">
-                  <h3 className="text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                <div className="space-y-3 sm:space-y-4 mt-8 sm:mt-6">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
                     Deliver
                   </h3>
 
                   {/* Animated gradient underline */}
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
-                  <p className="text-muted-foreground leading-relaxed text-base">
+                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                     We optimise and launch your website, providing you with training and lifetime web support to unlock your business growth.
                   </p>
                 </div>
@@ -233,100 +233,6 @@ export default function WebDesignPage() {
                 </svg>
                 <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
               </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-secondary/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
-            A website design solution that makes things easy
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 max-w-5xl mx-auto">
-            {/* Built for SEO */}
-            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
-              <h3 className="text-2xl font-bold mb-4">Built for SEO</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Every website we create is built with search engine optimization in mind from day one. 
-                Clean code, fast loading times, mobile responsiveness, and proper meta tags ensure your site ranks well in search results.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                We follow Google&apos;s best practices and latest SEO guidelines to give your business the visibility it deserves.
-              </p>
-            </div>
-
-            {/* Easy to Edit */}
-            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
-              <h3 className="text-2xl font-bold mb-4">Easy to edit</h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Take control of your content with an intuitive content management system. Update text, images, and pages without needing technical knowledge.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                We provide full training and ongoing support to ensure you&apos;re comfortable managing your website, 
-                while we&apos;re always here to help when you need us.
-              </p>
-            </div>
-
-            {/* Responsive Design */}
-            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
-              <h3 className="text-2xl font-bold mb-4">Mobile-First Design</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                With over 60% of web traffic coming from mobile devices, we ensure your website looks stunning and functions 
-                perfectly on every screen size. Responsive design isn&apos;t optional—it&apos;s essential.
-              </p>
-            </div>
-
-            {/* Conversion Focused */}
-            <div className="bg-card border border-border rounded-xl p-6 sm:p-8">
-              <h3 className="text-2xl font-bold mb-4">Conversion Focused</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Beautiful design means nothing without results. We strategically place calls-to-action, optimize user journeys, 
-                and remove friction points to turn visitors into customers. Your website becomes a 24/7 sales machine.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Peace of Mind Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 sm:mb-12">
-            Complete Online Peace of Mind
-          </h2>
-          
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            <div className="text-center">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🔒</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Secure Hosting</h3>
-              <p className="text-muted-foreground">
-                Enterprise-grade security with SSL certificates, regular backups, and 24/7 monitoring
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">⚡</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Optimized Performance</h3>
-              <p className="text-muted-foreground">
-                Lightning-fast load times with optimized images, caching, and CDN delivery
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🛠️</span>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Ongoing Support</h3>
-              <p className="text-muted-foreground">
-                Lifetime support and regular updates to keep your website running smoothly
-              </p>
             </div>
           </div>
         </div>
