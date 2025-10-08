@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { LogoCarousel } from "@/components/logo-carousel";
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { User, Mail, Calendar, BarChart3, CheckCircle2, ChevronDown } from "lucide-react";
+import { User, Mail, CheckCircle2, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 function BookingContent() {

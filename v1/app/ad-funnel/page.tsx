@@ -14,7 +14,6 @@ import {
   Coins, 
   DollarSign,
   Wallet,
-  CreditCard,
   Star,
   Sun,
   TrendingUp,
