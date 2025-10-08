@@ -1,101 +1,106 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-
 export default function PrivacyPage() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navigation />
       
-      <section className="flex-1 py-20 bg-background">
+      <section className="flex-1 py-12 md:py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8">
+            Privacy Policy
+          </h1>
           
-          <div className="prose prose-lg max-w-none">
-            <p className="text-muted-foreground mb-6">
-              <strong>Last updated:</strong> January 2025
+          <div className="prose prose-slate dark:prose-invert max-w-none space-y-6">
+            <p className="text-lg text-muted-foreground">
+              Last updated: {new Date().toLocaleDateString()}
             </p>
-
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
+            
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">1. Introduction</h2>
               <p className="text-muted-foreground leading-relaxed">
-                OPORITY Ltd (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) is committed to protecting your privacy. This Privacy Policy explains how 
-                we collect, use, disclose, and safeguard your information when you visit our website or use our services.
+                Welcome to OPORITY. We respect your privacy and are committed to protecting your personal data. 
+                This privacy policy will inform you about how we look after your personal data and tell you about 
+                your privacy rights.
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">2. Information We Collect</h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                We may collect information about you in a variety of ways, including:
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">2. Data We Collect</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                We may collect, use, store and transfer different kinds of personal data about you:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Personal Data: Name, email address, phone number, and business information you provide when contacting us</li>
-                <li>Usage Data: Information about how you use our website, including pages visited and time spent</li>
-                <li>Cookies and Tracking: We use cookies and similar tracking technologies to track activity on our website</li>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Identity Data (name, username)</li>
+                <li>Contact Data (email address, telephone numbers)</li>
+                <li>Technical Data (IP address, browser type)</li>
+                <li>Usage Data (how you use our website)</li>
+                <li>Marketing and Communications Data</li>
               </ul>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">3. How We Use Your Information</h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                We use the information we collect to:
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">3. How We Use Your Data</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                We will only use your personal data when the law allows us to. Most commonly, we will use your 
+                personal data to:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Provide, operate, and maintain our services</li>
-                <li>Improve, personalize, and expand our services</li>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Provide our services to you</li>
                 <li>Communicate with you about our services</li>
-                <li>Send you marketing and promotional communications (with your consent)</li>
-                <li>Process your transactions and manage your requests</li>
+                <li>Improve our website and services</li>
+                <li>Comply with legal obligations</li>
+                <li>Process payments and prevent fraud</li>
               </ul>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">4. Disclosure of Your Information</h2>
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">4. Data Security</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, 
-                except as described in this policy or as required by law.
+                We have put in place appropriate security measures to prevent your personal data from being 
+                accidentally lost, used or accessed in an unauthorized way, altered or disclosed. We limit access 
+                to your personal data to those employees, agents, contractors and other third parties who have a 
+                business need to know.
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">5. Data Security</h2>
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">5. Data Retention</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We implement appropriate technical and organizational security measures to protect your personal information. 
-                However, no method of transmission over the Internet is 100% secure.
+                We will only retain your personal data for as long as necessary to fulfill the purposes we collected 
+                it for, including for the purposes of satisfying any legal, accounting, or reporting requirements.
               </p>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">6. Your Rights</h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                Under GDPR, you have the right to:
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">6. Your Rights</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Under data protection laws, you have rights including:
               </p>
-              <ul className="list-disc pl-6 text-muted-foreground space-y-2">
-                <li>Access your personal data</li>
-                <li>Correct inaccurate data</li>
-                <li>Request deletion of your data</li>
-                <li>Object to processing of your data</li>
-                <li>Request data portability</li>
-                <li>Withdraw consent at any time</li>
+              <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+                <li>Right to access your personal data</li>
+                <li>Right to correct your personal data</li>
+                <li>Right to erase your personal data</li>
+                <li>Right to object to processing</li>
+                <li>Right to data portability</li>
+                <li>Right to withdraw consent</li>
               </ul>
             </section>
 
-            <section className="mb-8">
-              <h2 className="text-2xl font-bold mb-4">7. Contact Us</h2>
-              <p className="text-muted-foreground leading-relaxed mb-3">
-                If you have questions about this Privacy Policy, please contact us:
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">7. Third-Party Links</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                Our website may include links to third-party websites, plug-ins and applications. Clicking on those 
+                links or enabling those connections may allow third parties to collect or share data about you.
               </p>
-              <div className="bg-card border border-border rounded-lg p-6">
-                <p className="text-muted-foreground mb-2">
-                  <strong>OPORITY Ltd</strong>
-                </p>
-                <p className="text-muted-foreground mb-2">
-                  Company Number: 15783178
-                </p>
-                <p className="text-muted-foreground">
-                  For privacy inquiries, please use our contact form or book a call with our team.
-                </p>
-              </div>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-2xl font-bold text-foreground">8. Contact Us</h2>
+              <p className="text-muted-foreground leading-relaxed">
+                If you have any questions about this privacy policy or our privacy practices, please contact us 
+                through our website contact form or book a strategy call.
+              </p>
             </section>
           </div>
         </div>

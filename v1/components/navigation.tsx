@@ -145,7 +145,7 @@ export function Navigation() {
                       transition={{ duration: 0.2, ease: "easeOut" }}
                       className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[220px] bg-card border border-border/50 rounded-xl shadow-xl p-2 overflow-hidden"
                     >
-                      {services.map((service, index) => {
+                      {services.filter(service => service.name !== "Paid Ads").map((service, index) => {
                         const Icon = service.icon;
                         return (
                           <motion.div
@@ -243,7 +243,7 @@ export function Navigation() {
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
                     Solutions
                   </div>
-                  {services.map((service) => {
+                  {services.filter(service => service.name !== "Paid Ads").map((service) => {
                     const Icon = service.icon;
                     return (
                       <Link
