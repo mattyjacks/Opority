@@ -14,7 +14,6 @@ function StrategyCallContent() {
   const phone = searchParams.get('phone') || '';
   const company = searchParams.get('company') || '';
   const packageType = searchParams.get('package') || '';
-  const addons = searchParams.get('addons') || '';
 
   // Build Calendly URL with prefilled data
   const calendlyParams = new URLSearchParams();

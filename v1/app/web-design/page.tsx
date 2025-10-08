@@ -21,7 +21,7 @@ export default function WebDesignPage() {
             Bespoke <span className="dark:text-gradient-purple text-gradient-blue">Web Design</span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-center text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            We're here to help your business grow with bespoke web design that really works.
+            We&apos;re here to help your business grow with bespoke web design that really works.
           </p>
 
           <div className="animate-slide-up" style={{animationDelay: "0.2s"}}>
