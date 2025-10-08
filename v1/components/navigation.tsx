@@ -76,6 +76,22 @@ export function Navigation() {
     };
   }, [isSolutionsOpen]);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className="w-full border-b border-border sticky top-0 z-50 animate-slide-up">
       <div className="w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -202,11 +218,25 @@ export function Navigation() {
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
               transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="md:hidden fixed bottom-0 left-0 right-0 max-h-[60vh] bg-background border-t border-border rounded-t-3xl shadow-2xl z-50 overflow-hidden"
+              drag="y"
+              dragConstraints={{ top: 0, bottom: 0 }}
+              dragElastic={{ top: 0, bottom: 0.5 }}
+              onDragEnd={(_, info) => {
+                if (info.offset.y > 100 || info.velocity.y > 500) {
+                  setIsMenuOpen(false);
+                }
+              }}
+              className="md:hidden fixed bottom-0 left-0 right-0 max-h-[60vh] bg-background border-t border-border rounded-t-3xl shadow-2xl z-50 flex flex-col cursor-grab active:cursor-grabbing"
             >
-              <div className="px-6 py-6 overflow-y-auto max-h-[60vh]">
-                {/* Drag Handle */}
-                <div className="w-12 h-1.5 bg-border rounded-full mx-auto mb-6" />
+              {/* Drag Handle - Fixed at top */}
+              <div className="flex-shrink-0 px-6 pt-6 pb-3">
+                <div className="w-12 h-1.5 bg-border rounded-full mx-auto" />
+              </div>
+
+              {/* Scrollable content */}
+              <div className="flex-1 px-6 pb-6 overflow-y-auto overscroll-contain"
+                style={{ WebkitOverflowScrolling: 'touch' }}
+              >
 
                 {/* Services */}
                 <div className="space-y-2 mb-6">
