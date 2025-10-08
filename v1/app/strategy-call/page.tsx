@@ -66,9 +66,9 @@ function StrategyCallContent() {
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* LEFT COLUMN - Content */}
-            <div className="space-y-6 animate-slide-in-left">
+            <div className="space-y-6 animate-slide-in-left flex flex-col justify-center min-h-[700px]">
               {/* Show user info if available */}
               {name && (
                 <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-card border-2 border-primary/30 rounded-2xl p-6 md:p-8 shadow-lg shadow-primary/10 backdrop-blur-sm overflow-hidden group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
