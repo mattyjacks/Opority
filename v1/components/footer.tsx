@@ -43,9 +43,6 @@ export function Footer() {
               <Link href="/consulting" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
                 Consulting
               </Link>
-              <Link href="/paid-ads" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
-                Paid Ads
-              </Link>
             </div>
           </div>
 
