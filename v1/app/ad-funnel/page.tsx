@@ -93,10 +93,10 @@ function AdFunnelContent() {
 
   // Question 4: Budget
   const question4Options = [
-    { id: "under-3k", label: "Less than $3,000", icon: Star, iconColor: "text-orange-500" },
-    { id: "3k-6k", label: "$3,000 - $6,000", icon: Sun, iconColor: "text-yellow-400" },
-    { id: "6k-10k", label: "$6,000 - $10,000", icon: TrendingUp, iconColor: "text-blue-500" },
-    { id: "over-10k", label: "More than $10,000", icon: Star, iconColor: "text-purple-500" },
+    { id: "under-3k", label: "Less than $3,000", icon: Star, iconColor: "text-orange-400" },
+    { id: "3k-6k", label: "$3,000 - $6,000", icon: Sun, iconColor: "text-yellow-300" },
+    { id: "6k-10k", label: "$6,000 - $10,000", icon: TrendingUp, iconColor: "text-cyan-300" },
+    { id: "over-10k", label: "More than $10,000", icon: Zap, iconColor: "text-amber-300" },
   ];
 
   const toggleGoalSelection = (goalId: string) => {
