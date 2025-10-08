@@ -9,27 +9,49 @@ export default function WebDesignPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-background py-20 md:py-32 overflow-hidden">
-        {/* Animated gradient background */}
+      <section className="relative bg-background min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Animated gradient background - same as landing page */}
         <div className="absolute inset-0">
           <AnimatedGradientBackground />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 animate-slide-up">
             Bespoke <span className="dark:text-gradient-purple text-gradient-blue">Web Design</span>
           </h1>
-          <p className="text-xl text-muted-foreground mb-10 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            Unlock your business potential with a bespoke web design that captivates, informs, and converts.
-            Embrace the power of design and watch your business soar.
+          <p className="text-lg md:text-xl text-foreground/80 mb-12 max-w-2xl mx-auto animate-slide-up leading-relaxed" style={{animationDelay: "0.1s"}}>
+            We're here to help your business grow with bespoke web design that really works.
           </p>
+
+          {/* Funnel Question - Cleaner, more direct */}
           <div className="animate-slide-up" style={{animationDelay: "0.2s"}}>
-            <Link
-              href="/quick-quote"
-              className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-105"
-            >
-              Take the first step
-            </Link>
+            <h2 className="text-xl md:text-2xl font-semibold mb-6 text-foreground/90">
+              Do you have an active website for yourself or your business?
+            </h2>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+              {/* Yes - Primary action */}
+              <Link
+                href="/ad-funnel?response=yes"
+                className="group relative flex items-center justify-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all transform hover:scale-[1.02] active:scale-[0.98] font-semibold text-lg shadow-lg shadow-primary/25"
+              >
+                <span>Yes, I do</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+
+              {/* No - Secondary action */}
+              <Link
+                href="/ad-funnel?response=no"
+                className="group relative flex items-center justify-center gap-3 px-8 py-4 bg-card border-2 border-border hover:border-primary hover:bg-primary/5 rounded-lg transition-all transform hover:scale-[1.02] active:scale-[0.98] font-semibold text-lg"
+              >
+                <span>Not yet</span>
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
