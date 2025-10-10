@@ -23,9 +23,9 @@ export function LogoCarousel() {
   const duplicatedLogos = [...logos, ...logos, ...logos, ...logos, ...logos];
 
   return (
-    <div className="w-full overflow-hidden py-16 md:py-20 relative bg-background">
+    <div className="w-full overflow-hidden py-16 lg:py-10 relative bg-background">
       {/* Trusted By Many Title */}
-      <h3 className="text-foreground text-center text-lg md:text-xl font-semibold mb-12">
+      <h3 className="text-foreground text-center text-lg md:text-xl font-semibold mb-12 lg:mb-10">
         Trusted By Many
       </h3>
 
