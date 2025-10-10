@@ -4,7 +4,7 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-import { CheckCircle2, User, Mail, Package, MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import { User, Mail, Package, MessageCircle, ArrowRight, Sparkles, Instagram, Linkedin, ExternalLink } from "lucide-react";
 
 function StrategyCallContent() {
   const searchParams = useSearchParams();
@@ -60,7 +60,7 @@ function StrategyCallContent() {
               Book a Strategy Call with Our Director
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              By scheduling a free consulting call with our team, we'll review your current setup, uncover the biggest opportunities for growth, and give you a clear plan on how Facebook can start driving inquiries.
+              By scheduling a free consulting call with our team, we&apos;ll review your current setup, uncover the biggest opportunities for growth, and give you a clear plan on how Facebook can start driving inquiries.
             </p>
           </div>
 
@@ -119,45 +119,87 @@ function StrategyCallContent() {
                 </div>
               )}
 
-              {/* Questions Section */}
+              {/* Contact Information Section */}
               <div className="relative bg-card border border-border rounded-2xl p-6 md:p-8 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
                 {/* Subtle gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                 <div className="relative z-10">
-                  <div className="flex items-start gap-3 mb-6">
-                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center">
-                      <MessageCircle className="w-5 h-5 text-primary" />
-                    </div>
+                  <div className="mb-6">
                     <h2 className="text-xl md:text-2xl font-bold leading-tight">
-                      On the call, we&apos;ll ask questions like:
+                      Contact Information:
                     </h2>
                   </div>
 
                   <ul className="space-y-4">
-                    <li className="flex items-start gap-3 group/item">
-                      <div className="flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:scale-110 transition-transform duration-200" />
-                      </div>
-                      <span className="text-base md:text-lg text-foreground/90 leading-relaxed">
-                        How are you currently getting quotes?
-                      </span>
+                    {/* Email */}
+                    <li className="group/item">
+                      <a
+                        href="mailto:arnold@opority.com"
+                        className="flex items-start gap-3 hover:bg-primary/5 rounded-lg p-2 -m-2 transition-colors duration-200"
+                      >
+                        <div className="flex-shrink-0 mt-0.5">
+                          <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover/item:bg-primary/20 transition-colors duration-200">
+                            <Mail className="w-5 h-5 text-primary group-hover/item:scale-110 transition-transform duration-200" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-xs text-muted-foreground mb-1">Email</p>
+                          <span className="text-base md:text-lg text-foreground/90 font-medium group-hover/item:text-primary transition-colors duration-200">
+                            arnold@opority.com
+                          </span>
+                        </div>
+                      </a>
                     </li>
-                    <li className="flex items-start gap-3 group/item">
-                      <div className="flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:scale-110 transition-transform duration-200" />
-                      </div>
-                      <span className="text-base md:text-lg text-foreground/90 leading-relaxed">
-                        How long has the business been running?
-                      </span>
+
+                    {/* Instagram */}
+                    <li className="group/item">
+                      <a
+                        href="https://www.instagram.com/oporityltd/?hl=en"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start gap-3 hover:bg-primary/5 rounded-lg p-2 -m-2 transition-colors duration-200"
+                      >
+                        <div className="flex-shrink-0 mt-0.5">
+                          <div className="w-10 h-10 bg-accent/10 rounded-xl flex items-center justify-center group-hover/item:bg-accent/20 transition-colors duration-200">
+                            <Instagram className="w-5 h-5 text-accent group-hover/item:scale-110 transition-transform duration-200" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-xs text-muted-foreground mb-1">Instagram</p>
+                          <div className="flex items-center gap-2">
+                            <span className="text-base md:text-lg text-foreground/90 font-medium group-hover/item:text-accent transition-colors duration-200">
+                              Message us on Instagram
+                            </span>
+                            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover/item:text-accent transition-colors duration-200" />
+                          </div>
+                        </div>
+                      </a>
                     </li>
-                    <li className="flex items-start gap-3 group/item">
-                      <div className="flex-shrink-0 mt-0.5">
-                        <CheckCircle2 className="w-6 h-6 text-primary group-hover/item:scale-110 transition-transform duration-200" />
-                      </div>
-                      <span className="text-base md:text-lg text-foreground/90 leading-relaxed">
-                        What&apos;s stopping you from getting more quotes?
-                      </span>
+
+                    {/* LinkedIn */}
+                    <li className="group/item">
+                      <a
+                        href="https://uk.linkedin.com/company/opority"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start gap-3 hover:bg-primary/5 rounded-lg p-2 -m-2 transition-colors duration-200"
+                      >
+                        <div className="flex-shrink-0 mt-0.5">
+                          <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover/item:bg-primary/20 transition-colors duration-200">
+                            <Linkedin className="w-5 h-5 text-primary group-hover/item:scale-110 transition-transform duration-200" />
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-xs text-muted-foreground mb-1">LinkedIn</p>
+                          <div className="flex items-center gap-2">
+                            <span className="text-base md:text-lg text-foreground/90 font-medium group-hover/item:text-primary transition-colors duration-200">
+                              Connect and message us on LinkedIn
+                            </span>
+                            <ExternalLink className="w-4 h-4 text-muted-foreground group-hover/item:text-primary transition-colors duration-200" />
+                          </div>
+                        </div>
+                      </a>
                     </li>
                   </ul>
                 </div>
