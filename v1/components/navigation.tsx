@@ -48,15 +48,15 @@ export function Navigation() {
     <nav className="w-full border-b border-border sticky top-0 z-50 animate-slide-up">
       <div className="w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 hover:scale-105 transition-transform">
+            <Link href="/" className="flex items-center hover:scale-105 transition-transform">
               <Image
                 src="/opority-logo/r-logo.png"
                 alt="Opority Logo"
                 width={72}
                 height={72}
-                className="object-contain"
+                className="object-contain -mr-2"
               />
               <span className="text-2xl font-bold dark:text-gradient-purple text-gradient-blue">
                 OPORITY
