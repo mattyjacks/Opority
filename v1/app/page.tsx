@@ -50,17 +50,17 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 sm:py-16 lg:py-20 xl:py-24">
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-center mb-5 sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-center text-white mb-5 sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
             Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
 
-          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-muted-foreground mb-8 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-white mb-8 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
             We show you how to replace them with high value clients who book, pay and stay.
           </p>
 
           <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.2s"}}>
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8">
-              See how it works?
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-6 sm:mb-8">
+              Are you active on Facebook for business or yourself?
             </p>
             <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
               <Link
@@ -68,7 +68,7 @@ export default function Home() {
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
-                <span className="text-base sm:text-xl font-bold text-foreground">Yes</span>
+                <span className="text-base sm:text-xl font-bold text-white">Yes</span>
               </Link>
 
               <Link
@@ -76,7 +76,7 @@ export default function Home() {
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
-                <span className="text-base sm:text-xl font-bold text-foreground">No</span>
+                <span className="text-base sm:text-xl font-bold text-white">No</span>
               </Link>
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function Home() {
       <section className="py-12 sm:py-20 bg-secondary/30 relative overflow-hidden">
         <div className="absolute inset-0 dark:gradient-purple gradient-blue opacity-10 animate-gradient-xy" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 animate-scale-in">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-10 animate-scale-in">
             Are you active on Facebook for your business or yourself?
           </h2>
 
@@ -113,7 +113,7 @@ export default function Home() {
               className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
             >
               <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
-              <span className="text-base sm:text-xl font-bold text-foreground">Yeah I am</span>
+              <span className="text-base sm:text-xl font-bold text-white">Yeah I am</span>
             </Link>
 
             <Link
@@ -121,7 +121,7 @@ export default function Home() {
               className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
             >
               <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
-              <span className="text-base sm:text-xl font-bold text-foreground">Not yet</span>
+              <span className="text-base sm:text-xl font-bold text-white">Not yet</span>
             </Link>
           </div>
         </div>

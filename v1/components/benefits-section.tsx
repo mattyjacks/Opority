@@ -105,13 +105,13 @@ export function BenefitsSection() {
 
                 {/* Week Label */}
                 <div className="text-center mb-4">
-                  <span className="text-muted-foreground text-sm font-bold uppercase tracking-wider">
+                  <span className="text-white text-sm font-bold uppercase tracking-wider">
                     {benefit.weekLabel}
                   </span>
                 </div>
 
                 {/* Title */}
-                <div className="mb-4">
+                <div className="mb-4 min-h-[64px] flex items-center justify-center">
                   <h3
                     className={`
                       ${isLongTitle ? "text-lg sm:text-xl" : "text-2xl"}
@@ -123,7 +123,7 @@ export function BenefitsSection() {
                 </div>
 
                 {/* Description */}
-                <p className="text-muted-foreground leading-relaxed text-center">
+                <p className="text-white leading-relaxed text-center">
                   {benefit.description}
                 </p>
 
