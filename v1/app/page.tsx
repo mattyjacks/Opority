@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
 import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import { LogoCarousel } from "@/components/logo-carousel";
+import { BenefitsSection } from "@/components/benefits-section";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -40,11 +41,7 @@ export default function Home() {
                 href="/ad-funnel"
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 w-full sm:w-32 lg:w-36"
               >
-                <div className="w-full aspect-video mb-2.5 rounded-md border-2 border-primary/20 bg-primary/5 flex items-center justify-center">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                  </svg>
-                </div>
+                <span className="text-5xl sm:text-6xl mb-2.5">👍</span>
                 <span className="text-lg sm:text-xl font-bold text-foreground">Yes</span>
               </Link>
 
@@ -52,11 +49,7 @@ export default function Home() {
                 href="/ad-funnel"
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 w-full sm:w-32 lg:w-36"
               >
-                <div className="w-full aspect-video mb-2.5 rounded-md border-2 border-muted/20 bg-muted/5 flex items-center justify-center">
-                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                  </svg>
-                </div>
+                <span className="text-5xl sm:text-6xl mb-2.5">👎</span>
                 <span className="text-lg sm:text-xl font-bold text-foreground">No</span>
               </Link>
             </div>
@@ -145,6 +138,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Benefits Section */}
+      <BenefitsSection />
 
       {/* CTA Section */}
       <section className="py-12 sm:py-20 bg-secondary/30 relative overflow-hidden">
