@@ -56,7 +56,7 @@ export default function WebDesignPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-6 sm:py-10">
           {/* Multi-line heading with purple underline on "easy" */}
           <div className="mb-6 sm:mb-10 animate-slide-up">
-            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-3 sm:mb-4">
+            <p className="text-sm sm:text-base md:text-lg text-white mb-3 sm:mb-4">
               Bespoke, and affordable website design and SEO
             </p>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
@@ -147,7 +147,7 @@ export default function WebDesignPage() {
                   {/* Animated gradient underline */}
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                  <p className="text-white leading-relaxed text-sm sm:text-base">
                     Let&apos;s meet over the phone to discuss your goals and guide you through the web design process.
                   </p>
                 </div>
@@ -174,7 +174,7 @@ export default function WebDesignPage() {
                   {/* Animated gradient underline */}
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                  <p className="text-white leading-relaxed text-sm sm:text-base">
                     Once we capture your brief, our expert designers will create your unique new website.
                   </p>
                 </div>
@@ -201,7 +201,7 @@ export default function WebDesignPage() {
                   {/* Animated gradient underline */}
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
-                  <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
+                  <p className="text-white leading-relaxed text-sm sm:text-base">
                     We optimise and launch your website, providing you with training and lifetime web support to unlock your business growth.
                   </p>
                 </div>
@@ -233,7 +233,7 @@ export default function WebDesignPage() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
               Get on with <span className="dark:text-gradient-purple text-gradient-blue">growing your business</span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
               We&apos;d love to hear from you – get in touch with us to get started.
             </p>
             <div className="flex justify-center">
