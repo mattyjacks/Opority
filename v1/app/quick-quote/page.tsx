@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Link from "next/link";
 
 type FormData = {
@@ -220,49 +221,7 @@ export default function WebsiteCreationPage() {
       {/* Step 1: Design Questions */}
       {step === 1 && (
         <section className="py-20 bg-background">
-          <div className="max-w-6xl mx-auto px-4">
-            {/* Benefits with Icons */}
-            <div className="mb-12">
-              <h3 className="text-xl font-bold text-center mb-8">With an Opority website you&apos;ll receive:</h3>
-              
-              <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-                <div className="text-center p-4 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-bold mb-2">Unlimited support</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Full training and lifetime support
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                  </div>
-                  <h4 className="font-bold mb-2">Free domain</h4>
-                  <p className="text-sm text-muted-foreground">
-                    .co.uk or .com domain for life
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-card rounded-lg border border-border">
-                  <div className="w-12 h-12 mx-auto mb-3 bg-primary/10 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                  </div>
-                  <h4 className="font-bold mb-2">Complete security</h4>
-                  <p className="text-sm text-muted-foreground">
-                    24/7 monitoring and spam filtering
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="max-w-3xl mx-auto">
+          <div className="max-w-3xl mx-auto px-4">
               <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
                 Tell us more about your project
               </h2>
@@ -273,15 +232,8 @@ export default function WebsiteCreationPage() {
                 <Label className="text-base font-semibold mb-4 block">
                   Do you have an existing website that needs to be enhanced?
                 </Label>
-                <div className="grid grid-cols-2 gap-3">
-                  <label className={`
-                    relative flex items-center justify-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.hasExistingWebsite === "yes"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
+                <div className="space-y-3">
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
                       name="hasExistingWebsite"
@@ -291,20 +243,11 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, hasExistingWebsite: e.target.value, existingWebsiteUrl: "" });
                         setUrlError("");
                       }}
-                      className="sr-only"
+                      className="w-4 h-4 rounded-full accent-primary focus:outline-none"
                     />
-                    <span className={`font-medium transition-colors ${
-                      formData.hasExistingWebsite === "yes" ? "text-primary" : ""
-                    }`}>Yes</span>
+                    <span className="text-base">Yes</span>
                   </label>
-                  <label className={`
-                    relative flex items-center justify-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.hasExistingWebsite === "no"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
                       name="hasExistingWebsite"
@@ -314,11 +257,9 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, hasExistingWebsite: e.target.value, existingWebsiteUrl: "" });
                         setUrlError("");
                       }}
-                      className="sr-only"
+                      className="w-4 h-4 rounded-full accent-primary focus:outline-none"
                     />
-                    <span className={`font-medium transition-colors ${
-                      formData.hasExistingWebsite === "no" ? "text-primary" : ""
-                    }`}>No</span>
+                    <span className="text-base">No</span>
                   </label>
                 </div>
 
@@ -355,14 +296,7 @@ export default function WebsiteCreationPage() {
                   What would you like your website to do for you? *
                 </Label>
                 <div className="space-y-3">
-                  <label className={`
-                    relative flex items-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.websitePurpose === "simple"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -372,20 +306,11 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
                         setPurposeError("");
                       }}
-                      className="sr-only"
+                      className="w-4 h-4 rounded-full accent-primary focus:outline-none"
                     />
-                    <span className={`font-medium transition-colors ${
-                      formData.websitePurpose === "simple" ? "text-primary" : ""
-                    }`}>An easy starter site for my contact details</span>
+                    <span className="text-base">An easy starter site for my contact details</span>
                   </label>
-                  <label className={`
-                    relative flex items-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.websitePurpose === "grow"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -395,20 +320,11 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
                         setPurposeError("");
                       }}
-                      className="sr-only"
+                      className="w-4 h-4 rounded-full accent-primary focus:outline-none"
                     />
-                    <span className={`font-medium transition-colors ${
-                      formData.websitePurpose === "grow" ? "text-primary" : ""
-                    }`}>To promote my business and appear in search results</span>
+                    <span className="text-base">To promote my business and appear in search results</span>
                   </label>
-                  <label className={`
-                    relative flex items-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.websitePurpose === "sell"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
+                  <label className="flex items-center gap-3 cursor-pointer">
                     <input
                       type="radio"
                       name="websitePurpose"
@@ -418,11 +334,9 @@ export default function WebsiteCreationPage() {
                         setFormData({ ...formData, websitePurpose: e.target.value, otherPurpose: "" });
                         setPurposeError("");
                       }}
-                      className="sr-only"
+                      className="w-4 h-4 rounded-full accent-primary focus:outline-none"
                     />
-                    <span className={`font-medium transition-colors ${
-                      formData.websitePurpose === "sell" ? "text-primary" : ""
-                    }`}>I want to sell my products / services online</span>
+                    <span className="text-base">I want to sell my products / services online</span>
                   </label>
                 </div>
 
@@ -433,80 +347,25 @@ export default function WebsiteCreationPage() {
 
               {/* Content Provision Question */}
               <div>
-                <Label className="text-base font-semibold mb-4 block">
+                <Label htmlFor="contentProvision" className="text-base font-semibold mb-4 block">
                   What content are you able to provide for us? *
                 </Label>
-                <div className="space-y-3">
-                  <label className={`
-                    relative flex items-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.contentProvision === "all"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
-                    <input
-                      type="radio"
-                      name="contentProvision"
-                      value="all"
-                      checked={formData.contentProvision === "all"}
-                      onChange={(e) => {
-                        setFormData({ ...formData, contentProvision: e.target.value });
-                        setContentError("");
-                      }}
-                      className="sr-only"
-                    />
-                    <span className={`font-medium transition-colors ${
-                      formData.contentProvision === "all" ? "text-primary" : ""
-                    }`}>I can provide all my content</span>
-                  </label>
-                  <label className={`
-                    relative flex items-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.contentProvision === "some"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
-                    <input
-                      type="radio"
-                      name="contentProvision"
-                      value="some"
-                      checked={formData.contentProvision === "some"}
-                      onChange={(e) => {
-                        setFormData({ ...formData, contentProvision: e.target.value });
-                        setContentError("");
-                      }}
-                      className="sr-only"
-                    />
-                    <span className={`font-medium transition-colors ${
-                      formData.contentProvision === "some" ? "text-primary" : ""
-                    }`}>I can provide some of the content</span>
-                  </label>
-                  <label className={`
-                    relative flex items-center cursor-pointer
-                    p-4 rounded-lg border-2 transition-all duration-200
-                    ${formData.contentProvision === "none"
-                      ? "border-primary bg-primary/10 shadow-lg shadow-primary/20"
-                      : "border-border bg-card hover:border-primary/50 hover:bg-primary/5"
-                    }
-                  `}>
-                    <input
-                      type="radio"
-                      name="contentProvision"
-                      value="none"
-                      checked={formData.contentProvision === "none"}
-                      onChange={(e) => {
-                        setFormData({ ...formData, contentProvision: e.target.value });
-                        setContentError("");
-                      }}
-                      className="sr-only"
-                    />
-                    <span className={`font-medium transition-colors ${
-                      formData.contentProvision === "none" ? "text-primary" : ""
-                    }`}>I&apos;d like you to provide the content for me</span>
-                  </label>
-                </div>
+                <Select
+                  value={formData.contentProvision}
+                  onValueChange={(value) => {
+                    setFormData({ ...formData, contentProvision: value });
+                    setContentError("");
+                  }}
+                >
+                  <SelectTrigger id="contentProvision" className={contentError ? 'border-red-500' : ''}>
+                    <SelectValue placeholder="- Please select -" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="all">I can provide all my content</SelectItem>
+                    <SelectItem value="some">I can provide some of the content</SelectItem>
+                    <SelectItem value="none">I'd like you to provide the content for me</SelectItem>
+                  </SelectContent>
+                </Select>
 
                 {contentError && (
                   <p className="text-red-500 text-sm mt-2">{contentError}</p>
@@ -522,7 +381,6 @@ export default function WebsiteCreationPage() {
               >
                 Continue
               </button>
-            </div>
             </div>
           </div>
         </section>
