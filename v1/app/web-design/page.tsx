@@ -253,36 +253,10 @@ export default function WebDesignPage() {
       </section>
 
       {/* Testimonials Section */}
-      <TestimonialsSection 
+      <TestimonialsSection
         testimonials={webDesignTestimonials}
         title="We get to work for the most innovative <span>B2B Companies</span>"
       />
-
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Transform Your Online Presence?
-          </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Let&apos;s create a website that not only looks amazing but drives real business results.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/quick-quote"
-              className="inline-block bg-background text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-background/90 transition-all transform hover:scale-105"
-            >
-              Get a Quick Quote
-            </Link>
-            <Link
-              href="/strategy-call"
-              className="inline-block border-2 border-background text-background px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-background hover:text-foreground transition-all transform hover:scale-105"
-            >
-              Book a Strategy Call
-            </Link>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </main>
