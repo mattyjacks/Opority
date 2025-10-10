@@ -53,40 +53,43 @@ export default function WebDesignPage() {
           <AnimatedGradientBackground />
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-8 sm:py-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-slide-up">
-            Bespoke <span className="dark:text-gradient-purple text-gradient-blue">Web Design</span>
-          </h1>
-          <p className="text-base sm:text-lg md:text-xl text-center text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            We&apos;re here to help your business grow with bespoke web design that really works.
-          </p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-6 sm:py-10">
+          {/* Multi-line heading with purple underline on "easy" */}
+          <div className="mb-6 sm:mb-10 animate-slide-up">
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-3 sm:mb-4">
+              Bespoke, and affordable website design and SEO
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+              <span className="block mb-2"><span className="text-gradient-purple">Websites</span> made</span>
+              <span className="relative inline-block">
+                {/* Purple background highlight behind text */}
+                <span className="absolute bottom-0 left-0 right-0 h-3 sm:h-4 bg-purple-600 dark:bg-purple-500 rounded-sm"></span>
+                <span className="relative text-foreground">easy</span>
+              </span>
+            </h1>
+          </div>
 
-          <div className="animate-slide-up" style={{animationDelay: "0.2s"}}>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 text-foreground/90 px-4">
+          <div className="animate-slide-up" style={{animationDelay: "0.1s"}}>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-foreground/90 px-4">
               Do you have an active website for yourself or your business?
             </h2>
 
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-              {/* Yes - Primary action */}
+            {/* Emoji-based button cards - matching homepage style */}
+            <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
               <Link
                 href="/ad-funnel?response=yes"
-                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-auto sm:w-52">
-                <span className="relative z-10">Yes, I do</span>
-                <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
+                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
+              >
+                <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
+                <span className="text-base sm:text-xl font-bold text-foreground">Sure do</span>
               </Link>
 
-              {/* No - Secondary action */}
               <Link
                 href="/ad-funnel?response=no"
-                className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-card text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-auto sm:w-52"
+                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
               >
-                <span>Not yet</span>
-                <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
+                <span className="text-base sm:text-xl font-bold text-foreground">Not yet</span>
               </Link>
             </div>
           </div>
@@ -103,23 +106,7 @@ export default function WebDesignPage() {
           </div>
           
           {/* Portfolio Carousel */}
-          <div className="mb-12">
-            <PortfolioCarousel />
-          </div>
-
-          {/* CTA Button */}
-          <div className="flex justify-center">
-            <Link
-              href="/quick-quote"
-              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
-            >
-              <span className="relative z-10">Explore our portfolio</span>
-              <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-              <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-            </Link>
-          </div>
+          <PortfolioCarousel />
         </div>
       </section>
 
@@ -161,7 +148,7 @@ export default function WebDesignPage() {
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
                   <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                    Let&apos;s meet in person or over the phone to discuss your goals and guide you through the web design process.
+                    Let&apos;s meet over the phone to discuss your goals and guide you through the web design process.
                   </p>
                 </div>
 
@@ -188,7 +175,7 @@ export default function WebDesignPage() {
                   <div className="h-1.5 w-full dark:gradient-purple gradient-blue rounded-full"></div>
 
                   <p className="text-muted-foreground leading-relaxed text-sm sm:text-base">
-                    Once we capture your brief, our expert designers will create your unique new website. Our tech team will handle the rest.
+                    Once we capture your brief, our expert designers will create your unique new website.
                   </p>
                 </div>
 
@@ -223,27 +210,17 @@ export default function WebDesignPage() {
             </div>
           </div>
 
-          {/* CTA Buttons - Redesigned */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-slide-up" style={{animationDelay: "0.4s"}}>
+          {/* CTA Button */}
+          <div className="flex justify-center animate-slide-up" style={{animationDelay: "0.4s"}}>
             <Link
               href="/quick-quote"
-              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-auto sm:w-64"
+              className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
             >
               <span className="relative z-10">Take the first step</span>
               <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
               <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-            </Link>
-
-            <Link
-              href="#video"
-              className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-card text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-auto sm:w-64"
-            >
-              <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              <span>Watch our video</span>
             </Link>
           </div>
         </div>
