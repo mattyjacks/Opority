@@ -53,29 +53,29 @@ function AdFunnelContent() {
   // Question 2: Price Range
   const question2Options = [
     { 
-      id: "under-300", 
-      label: "< $300", 
+      id: "300", 
+      label: "£300", 
       icon: Coins, 
       iconColor: "text-yellow-500",
       bgColor: "bg-gray-100"
     },
     { 
       id: "300-1k", 
-      label: "$300 - $1k", 
+      label: "£300 - £1k", 
       icon: DollarSign, 
       iconColor: "text-emerald-600",
       bgColor: "bg-gray-100"
     },
     { 
       id: "1k-5k", 
-      label: "$1k - $5k", 
+      label: "£1k - £5k", 
       icon: Banknote, 
       iconColor: "text-green-600",
       bgColor: "bg-gray-100"
     },
     { 
       id: "over-5k", 
-      label: "> $5k", 
+      label: "Over £5k", 
       icon: Wallet, 
       iconColor: "text-orange-500",
       bgColor: "bg-gray-100"
@@ -92,10 +92,10 @@ function AdFunnelContent() {
 
   // Question 4: Budget
   const question4Options = [
-    { id: "under-3k", label: "Less than $3,000", icon: Star, iconColor: "text-orange-400" },
-    { id: "3k-6k", label: "$3,000 - $6,000", icon: Sun, iconColor: "text-yellow-300" },
-    { id: "6k-10k", label: "$6,000 - $10,000", icon: TrendingUp, iconColor: "text-cyan-300" },
-    { id: "over-10k", label: "More than $10,000", icon: Zap, iconColor: "text-amber-300" },
+    { id: "under-1k", label: "Less than £1000", icon: Star, iconColor: "text-orange-400" },
+    { id: "2k-4k", label: "£2000 to £4000", icon: Sun, iconColor: "text-yellow-300" },
+    { id: "5k-9k", label: "£5000 to £9000", icon: TrendingUp, iconColor: "text-cyan-300" },
+    { id: "over-10k", label: "Over £10,000", icon: Zap, iconColor: "text-amber-300" },
   ];
 
   const toggleGoalSelection = (goalId: string) => {
@@ -128,6 +128,19 @@ function AdFunnelContent() {
 
   const handleAnswer = (answer: string) => {
     if (isTransitioning) return;
+
+    // Check for redirect conditions
+    if (currentQuestion === 3 && answer === "other") {
+      // Redirect to /web-design if "Other role" is selected
+      router.push("/web-design");
+      return;
+    }
+
+    if (currentQuestion === 4 && answer === "under-1k") {
+      // Redirect to /web-design if "Less than £1000" is selected
+      router.push("/web-design");
+      return;
+    }
 
     setIsTransitioning(true);
     setAnswers([...answers, { question: currentQuestion, answer }]);

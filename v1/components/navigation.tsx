@@ -2,14 +2,14 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
-import { Globe2, Palette, Lightbulb, TrendingUp, ChevronDown, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Globe2, Palette, Lightbulb, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Service configurations with icons
 const services = [
   {
-    name: "Website Creation",
+    name: "Website Quote",
     href: "/quick-quote",
     icon: Globe2,
   },
@@ -23,58 +23,10 @@ const services = [
     href: "/consulting",
     icon: Lightbulb,
   },
-  {
-    name: "Paid Ads",
-    href: "/paid-ads",
-    icon: TrendingUp,
-  },
 ];
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  // Handle click outside to close dropdown
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        buttonRef.current &&
-        !dropdownRef.current.contains(event.target as Node) &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setIsSolutionsOpen(false);
-      }
-    };
-
-    if (isSolutionsOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isSolutionsOpen]);
-
-  // Handle escape key to close dropdown
-  useEffect(() => {
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && isSolutionsOpen) {
-        setIsSolutionsOpen(false);
-        buttonRef.current?.focus();
-      }
-    };
-
-    if (isSolutionsOpen) {
-      document.addEventListener("keydown", handleEscapeKey);
-    }
-
-    return () => {
-      document.removeEventListener("keydown", handleEscapeKey);
-    };
-  }, [isSolutionsOpen]);
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
@@ -96,82 +48,33 @@ export function Navigation() {
     <nav className="w-full border-b border-border sticky top-0 z-50 animate-slide-up">
       <div className="w-full bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-1 hover:scale-105 transition-transform">
+            <Link href="/" className="flex items-center hover:scale-105 transition-transform">
               <Image
                 src="/opority-logo/r-logo.png"
                 alt="Opority Logo"
-                width={40}
-                height={40}
-                className="object-contain"
+                width={96}
+                height={96}
+                className="object-contain -mr-2"
               />
-              <span className="text-2xl font-bold dark:text-gradient-purple text-gradient-blue">
+              <span className="text-3xl font-bold dark:text-gradient-purple text-gradient-blue">
                 OPORITY
               </span>
             </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center gap-8">
-              {/* Solutions Dropdown */}
-              <div className="relative">
-                <button
-                  ref={buttonRef}
-                  onClick={() => setIsSolutionsOpen(!isSolutionsOpen)}
-                  className="flex items-center gap-1.5 text-[15px] font-medium text-foreground/90 hover:text-foreground transition-colors"
-                  aria-expanded={isSolutionsOpen}
-                  aria-haspopup="true"
-                  aria-controls="solutions-menu"
+              {/* Direct Navigation Links */}
+              {services.map((service) => (
+                <Link
+                  key={service.name}
+                  href={service.href}
+                  className="text-[15px] font-medium text-foreground/90 hover:text-[#8b5cf6] dark:hover:text-[#a78bfa] transition-all duration-200 transform hover:scale-110 active:scale-95"
                 >
-                  Solutions
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform duration-200 ${
-                      isSolutionsOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-
-                {/* Dropdown Menu */}
-                <AnimatePresence>
-                  {isSolutionsOpen && (
-                    <motion.div
-                      ref={dropdownRef}
-                      id="solutions-menu"
-                      role="menu"
-                      aria-label="Solutions menu"
-                      initial={{ opacity: 0, scale: 0.95, y: -8 }}
-                      animate={{ opacity: 1, scale: 1, y: 0 }}
-                      exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.15 } }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[220px] bg-card border border-border/50 rounded-xl shadow-xl p-2 overflow-hidden"
-                    >
-                      {services.filter(service => service.name !== "Paid Ads").map((service, index) => {
-                        const Icon = service.icon;
-                        return (
-                          <motion.div
-                            key={service.name}
-                            initial={{ opacity: 0, y: -4 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.025 }}
-                          >
-                            <Link
-                              href={service.href}
-                              role="menuitem"
-                              onClick={() => setIsSolutionsOpen(false)}
-                              className="group flex items-center gap-3 px-4 py-2.5 rounded-lg hover:bg-primary/10 transition-all duration-200"
-                            >
-                              <Icon className="w-5 h-5 text-primary flex-shrink-0" />
-                              <span className="font-medium text-[15px] text-foreground">
-                                {service.name}
-                              </span>
-                            </Link>
-                          </motion.div>
-                        );
-                      })}
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                  {service.name}
+                </Link>
+              ))}
 
               {/* Contact Us Button */}
               <Link
@@ -243,7 +146,7 @@ export function Navigation() {
                   <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
                     Solutions
                   </div>
-                  {services.filter(service => service.name !== "Paid Ads").map((service) => {
+                  {services.map((service) => {
                     const Icon = service.icon;
                     return (
                       <Link

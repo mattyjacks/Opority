@@ -265,17 +265,18 @@ function BookingContent() {
 
       {/* Calendly Modal */}
       {showCalendly && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="relative w-full max-w-4xl h-[90vh] mx-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm animate-in fade-in duration-200 p-4 md:p-6">
+          <div className="relative w-full max-w-4xl h-[85vh] md:h-[90vh]">
             <button
               onClick={() => setShowCalendly(false)}
-              className="absolute -top-12 right-0 text-white hover:text-primary transition-colors"
+              className="absolute -top-10 md:-top-12 right-0 text-white hover:text-primary transition-colors z-10 bg-black/40 hover:bg-black/60 rounded-full p-2"
+              aria-label="Close modal"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            <div className="bg-card rounded-2xl overflow-hidden shadow-2xl h-full">
+            <div className="bg-card rounded-xl md:rounded-2xl overflow-hidden shadow-2xl h-full">
               <iframe
                 src={calendlyUrl}
                 width="100%"
