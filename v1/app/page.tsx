@@ -62,21 +62,21 @@ export default function Home() {
             <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8">
               See how it works?
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full sm:w-auto px-4">
+            <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
               <Link
                 href="/ad-funnel"
-                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 w-full sm:w-32 lg:w-36"
+                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
-                <span className="text-5xl sm:text-6xl mb-2.5">👍</span>
-                <span className="text-lg sm:text-xl font-bold text-foreground">Yes</span>
+                <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
+                <span className="text-base sm:text-xl font-bold text-foreground">Yes</span>
               </Link>
 
               <Link
                 href="/ad-funnel"
-                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 w-full sm:w-32 lg:w-36"
+                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
-                <span className="text-5xl sm:text-6xl mb-2.5">👎</span>
-                <span className="text-lg sm:text-xl font-bold text-foreground">No</span>
+                <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
+                <span className="text-base sm:text-xl font-bold text-foreground">No</span>
               </Link>
             </div>
           </div>
@@ -107,21 +107,21 @@ export default function Home() {
             Are you active on Facebook for your business or yourself?
           </h2>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+          <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
             <Link
               href="/ad-funnel"
-              className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 w-full sm:w-40 lg:w-44"
+              className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
             >
-              <span className="text-5xl sm:text-6xl mb-2.5">👍</span>
-              <span className="text-lg sm:text-xl font-bold text-foreground">Yeah I am</span>
+              <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
+              <span className="text-base sm:text-xl font-bold text-foreground">Yeah I am</span>
             </Link>
 
             <Link
               href="/ad-funnel"
-              className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 w-full sm:w-40 lg:w-44"
+              className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
             >
-              <span className="text-5xl sm:text-6xl mb-2.5">👎</span>
-              <span className="text-lg sm:text-xl font-bold text-foreground">Not yet</span>
+              <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
+              <span className="text-base sm:text-xl font-bold text-foreground">Not yet</span>
             </Link>
           </div>
         </div>

@@ -28,7 +28,7 @@ export function TestimonialsSection({
   title = "We get to work for the most innovative <span>B2B Companies</span>",
   subtitle,
   ctaText = "Start your success story",
-  ctaLink = "/quick-quote"
+  ctaLink = "/ad-funnel"
 }: TestimonialsSectionProps) {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">

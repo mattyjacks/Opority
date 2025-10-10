@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Service configurations with icons
 const services = [
   {
-    name: "Website Creation",
+    name: "Website Quote",
     href: "/quick-quote",
     icon: Globe2,
   },
