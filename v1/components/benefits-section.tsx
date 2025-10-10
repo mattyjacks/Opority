@@ -1,56 +1,33 @@
 "use client";
 
-import { Settings, Sparkles, MessageSquare } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface Benefit {
-  icon: React.ComponentType<{ className?: string }>;
+  emoji: string;
   title: string;
   description: string;
 }
 
 const benefits: Benefit[] = [
   {
-    icon: Settings,
+    emoji: "🎯",
     title: "Campaign Setup & Audit",
     description:
       "In the first week, we review your current presence, install tracking onto your site, and set up campaigns the right way. If you already have ads running, we'll audit them and make improvements.",
   },
   {
-    icon: Sparkles,
+    emoji: "✨",
     title: "Creative Testing & Optimisation",
     description:
       "We create multiple ad variations (images, videos, and copywriting) and test them with your audience. By the end of the month, you'll know which ads resonate and where your best ROI comes from.",
   },
   {
-    icon: MessageSquare,
+    emoji: "📊",
     title: "Clear Communication, Reporting & Transparent Costs",
     description:
       "You'll have direct contact with us, plus weekly updates that break down performance in plain English. You'll know how much was spent, what results came in, and what's planned next. You only pay for management + your ad spend.",
   },
 ];
-
-// Icon color configurations for each benefit
-const iconColors = {
-  settings: {
-    bg: "bg-cyan-500/10 dark:bg-blue-500/20",
-    hoverBg: "group-hover:bg-cyan-500 dark:group-hover:bg-blue-500",
-    text: "text-cyan-600 dark:text-blue-400",
-    hoverText: "group-hover:text-white",
-  },
-  sparkles: {
-    bg: "bg-purple-500/10 dark:bg-pink-500/20",
-    hoverBg: "group-hover:bg-purple-500 dark:group-hover:bg-pink-500",
-    text: "text-purple-600 dark:text-pink-400",
-    hoverText: "group-hover:text-white",
-  },
-  messageSquare: {
-    bg: "bg-green-500/10 dark:bg-teal-500/20",
-    hoverBg: "group-hover:bg-green-500 dark:group-hover:bg-teal-500",
-    text: "text-green-600 dark:text-teal-400",
-    hoverText: "group-hover:text-white",
-  },
-};
 
 export function BenefitsSection() {
   return (
@@ -82,15 +59,6 @@ export function BenefitsSection() {
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {benefits.map((benefit, index) => {
-            const Icon = benefit.icon;
-            // Determine which color scheme to use based on the icon
-            const colorScheme =
-              Icon === Settings
-                ? iconColors.settings
-                : Icon === Sparkles
-                ? iconColors.sparkles
-                : iconColors.messageSquare;
-
             return (
               <Card
                 key={index}
@@ -98,13 +66,11 @@ export function BenefitsSection() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardContent className="p-6 sm:p-7 lg:p-8 flex flex-col h-full">
-                  {/* Icon Container - Centered */}
+                  {/* Emoji - Centered */}
                   <div className="flex justify-center mb-5 sm:mb-6">
-                    <div
-                      className={`inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-xl ${colorScheme.bg} ${colorScheme.hoverBg} ${colorScheme.text} ${colorScheme.hoverText} transition-all duration-300 group-hover:scale-110`}
-                    >
-                      <Icon className="w-7 h-7 sm:w-8 sm:h-8" />
-                    </div>
+                    <span className="text-5xl sm:text-6xl transition-all duration-300 group-hover:scale-110">
+                      {benefit.emoji}
+                    </span>
                   </div>
 
                   {/* Title Container - Fixed height for alignment */}
