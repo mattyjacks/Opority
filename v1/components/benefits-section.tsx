@@ -1,31 +1,45 @@
 "use client";
 
-import { Card, CardContent } from "@/components/ui/card";
-
 interface Benefit {
   emoji: string;
   title: string;
   description: string;
+  weekLabel: string;
+  color: string;
+  colorFrom: string;
+  colorTo: string;
 }
 
 const benefits: Benefit[] = [
   {
-    emoji: "🎯",
+    emoji: "🎈",
     title: "Campaign Setup & Audit",
     description:
       "In the first week, we review your current presence, install tracking onto your site, and set up campaigns the right way. If you already have ads running, we'll audit them and make improvements.",
+    weekLabel: "WEEK 1",
+    color: "rose",
+    colorFrom: "from-rose-500",
+    colorTo: "to-rose-600",
   },
   {
-    emoji: "✨",
+    emoji: "⭐",
     title: "Creative Testing & Optimisation",
     description:
       "We create multiple ad variations (images, videos, and copywriting) and test them with your audience. By the end of the month, you'll know which ads resonate and where your best ROI comes from.",
+    weekLabel: "WEEK 2-3",
+    color: "amber",
+    colorFrom: "from-amber-500",
+    colorTo: "to-amber-600",
   },
   {
-    emoji: "📊",
+    emoji: "📈",
     title: "Clear Communication, Reporting & Transparent Costs",
     description:
       "You'll have direct contact with us, plus weekly updates that break down performance in plain English. You'll know how much was spent, what results came in, and what's planned next. You only pay for management + your ad spend.",
+    weekLabel: "WEEK 4",
+    color: "emerald",
+    colorFrom: "from-emerald-500",
+    colorTo: "to-emerald-600",
   },
 ];
 
@@ -43,7 +57,7 @@ export function BenefitsSection() {
         {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14 lg:mb-16 animate-slide-up">
           <div className="inline-block mb-4 sm:mb-5">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary border border-primary/20">
+            <span className="inline-flex items-center dark:bg-purple-600 bg-violet-600 text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wider shadow-lg">
               Your benefits
             </span>
           </div>
@@ -56,44 +70,86 @@ export function BenefitsSection() {
           </h2>
         </div>
 
+        {/* Timeline Connecting Line */}
+        <div className="relative mb-8">
+          <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 opacity-20 z-0" />
+        </div>
+
         {/* Benefits Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
           {benefits.map((benefit, index) => {
             // Determine if title is long and needs smaller font
             const isLongTitle = benefit.title.length > 40;
 
             return (
-              <Card
+              <div
                 key={index}
-                className="group relative bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/10 transform hover:scale-[1.02] animate-slide-up"
+                className={`
+                  group relative h-full
+                  bg-card/60 backdrop-blur-md
+                  border-2 border-${benefit.color}-500/30 dark:border-${benefit.color}-500/50
+                  rounded-2xl p-8 md:p-10
+                  hover:shadow-2xl hover:shadow-${benefit.color}-500/20
+                  hover:scale-105 hover:border-${benefit.color}-500/60
+                  transition-all duration-300
+                  animate-slide-up
+                `}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardContent className="p-6 sm:p-7 lg:p-8 flex flex-col h-full">
-                  {/* Emoji - Centered */}
-                  <div className="flex justify-center mb-5 sm:mb-6">
-                    <span className="text-5xl sm:text-6xl transition-all duration-300 group-hover:scale-110">
-                      {benefit.emoji}
-                    </span>
+                {/* Icon with colored background */}
+                <div className="flex justify-center mb-6">
+                  <div
+                    className={`
+                      w-20 h-20 rounded-2xl
+                      bg-gradient-to-br ${benefit.colorFrom} ${benefit.colorTo}
+                      flex items-center justify-center text-4xl
+                      shadow-lg shadow-${benefit.color}-500/30
+                      transform transition-transform group-hover:rotate-6
+                    `}
+                  >
+                    {benefit.emoji}
                   </div>
+                </div>
 
-                  {/* Title Container - Fixed height for alignment */}
-                  <div className="mb-3 sm:mb-4 min-h-[4.5rem] sm:min-h-[5rem] flex items-center justify-center">
-                    <h3 className={`${isLongTitle ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'} font-bold text-foreground group-hover:text-primary transition-colors duration-300 text-center leading-tight`}>
-                      {benefit.title}
-                    </h3>
-                  </div>
+                {/* Week Label */}
+                <div className="text-center mb-4">
+                  <span
+                    className={`
+                      text-${benefit.color}-500 dark:text-${benefit.color}-400
+                      text-sm font-bold uppercase tracking-wider
+                    `}
+                  >
+                    {benefit.weekLabel}
+                  </span>
+                </div>
 
-                  {/* Description Container - Flex grow to fill space */}
-                  <div className="flex-grow">
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed text-center">
-                      {benefit.description}
-                    </p>
-                  </div>
+                {/* Title */}
+                <div className="mb-4">
+                  <h3
+                    className={`
+                      ${isLongTitle ? "text-lg sm:text-xl" : "text-2xl"}
+                      font-bold text-center leading-tight
+                    `}
+                  >
+                    {benefit.title}
+                  </h3>
+                </div>
 
-                  {/* Hover gradient effect */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                </CardContent>
-              </Card>
+                {/* Description */}
+                <p className="text-muted-foreground leading-relaxed text-center">
+                  {benefit.description}
+                </p>
+
+                {/* Hover gradient effect */}
+                <div
+                  className={`
+                    absolute inset-0 rounded-2xl
+                    bg-gradient-to-br from-${benefit.color}-500/5 to-transparent
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-300 pointer-events-none
+                  `}
+                />
+              </div>
             );
           })}
         </div>
