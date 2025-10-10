@@ -55,7 +55,7 @@ export function ExpertCtaSection() {
           style={{ animationDelay: "0.4s" }}
         >
           <Link
-            href="/strategy-call"
+            href="/ad-funnel"
             className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-8 py-4 sm:px-10 sm:py-5 rounded-full text-base sm:text-lg font-bold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
           >
             <span className="relative z-10">

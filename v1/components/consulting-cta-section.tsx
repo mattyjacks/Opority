@@ -43,7 +43,7 @@ export function ConsultingCtaSection() {
         {/* CTA Button */}
         <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
           <Link
-            href="/strategy-call"
+            href="/ad-funnel"
             className="inline-block bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary/90 transition-all transform hover:scale-[1.05] active:scale-[0.98] shadow-xl hover:shadow-2xl hover:shadow-primary/30"
           >
             See How Facebook Could Work for Me
