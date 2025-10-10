@@ -57,11 +57,10 @@ function StrategyCallContent() {
           {/* Page Header */}
           <div className="text-center mb-12 md:mb-16">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-              Book a Discovery Call with our Director.
+              Book a Strategy Call with Our Director
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-              We offer an initial 30 free minute consultation with our Director, allowing us to learn more about your business,
-              your goals and even if we can help you get more quotes.
+              By scheduling a free consulting call with our team, we'll review your current setup, uncover the biggest opportunities for growth, and give you a clear plan on how Facebook can start driving inquiries.
             </p>
           </div>
 

@@ -36,7 +36,7 @@ export function ConsultingCtaSection() {
         </h2>
 
         {/* Description */}
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: "0.3s" }}>
+        <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: "0.3s" }}>
           By scheduling a free consulting call with our team, we&apos;ll review your current setup, uncover the biggest opportunities for growth, and give you a clear plan on how Facebook can start driving inquiries.
         </p>
 
