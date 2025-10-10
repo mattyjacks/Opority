@@ -70,7 +70,7 @@ export function Navigation() {
                 <Link
                   key={service.name}
                   href={service.href}
-                  className="text-[15px] font-medium text-foreground/90 hover:text-[#8b5cf6] dark:hover:text-[#a78bfa] transition-colors duration-200"
+                  className="text-[15px] font-medium text-foreground/90 hover:text-[#8b5cf6] dark:hover:text-[#a78bfa] transition-all duration-200 transform hover:scale-110 active:scale-95"
                 >
                   {service.name}
                 </Link>
