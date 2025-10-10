@@ -6,9 +6,12 @@ export function Footer() {
   return (
     <footer className="w-full border-t border-border bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        {/* Company Info - Full width on mobile */}
-        <div className="mb-8 md:mb-0">
-          <div className="text-center md:text-left">
+        {/* Mobile: Company Info full width on top, Quick Links and Get In Touch in 2 columns below */}
+        {/* Desktop: All 3 sections in a 3-column grid side by side */}
+
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
+          {/* Company Info - Spans 2 columns on mobile (full width), 1 column on desktop */}
+          <div className="col-span-2 md:col-span-1 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start mb-4">
               <Image
                 src="/opority-logo/r-logo.png"
@@ -35,15 +38,9 @@ export function Footer() {
               Company Number: 15783178
             </p>
           </div>
-        </div>
 
-        {/* Two column grid for Quick Links and Get In Touch on mobile, 3 cols on desktop */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-          {/* Spacer for desktop to keep 3-column layout */}
-          <div className="hidden md:block"></div>
-          
-          {/* Quick Links */}
-          <div className="text-center md:text-left">
+          {/* Quick Links - 1st column of 2-col grid on mobile, 2nd column on desktop */}
+          <div className="col-span-1 text-center md:text-left">
             <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wide">Quick Links</h4>
             <div className="flex flex-col gap-3">
               <Link href="/" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
@@ -64,8 +61,8 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Get In Touch */}
-          <div className="text-center md:text-left">
+          {/* Get In Touch - 2nd column of 2-col grid on mobile, 3rd column on desktop */}
+          <div className="col-span-1 text-center md:text-left">
             <h4 className="text-base sm:text-lg font-bold mb-4 uppercase tracking-wide">Get In Touch</h4>
             <div className="flex flex-col gap-3">
               <Link href="/strategy-call" className="text-sm sm:text-base text-muted-foreground hover:text-primary transition-colors">
