@@ -72,7 +72,7 @@ export function BenefitsSection() {
 
         {/* Timeline Connecting Line */}
         <div className="relative mb-8">
-          <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 opacity-20 z-0" />
+          <div className="hidden md:block absolute top-20 left-0 right-0 h-0.5 bg-border opacity-30 z-0" />
         </div>
 
         {/* Benefits Grid */}
@@ -84,41 +84,28 @@ export function BenefitsSection() {
             return (
               <div
                 key={index}
-                className={`
+                className="
                   group relative h-full
                   bg-card/60 backdrop-blur-md
-                  border-2 border-${benefit.color}-500/30 dark:border-${benefit.color}-500/50
+                  border border-border/50
                   rounded-2xl p-8 md:p-10
-                  hover:shadow-2xl hover:shadow-${benefit.color}-500/20
-                  hover:scale-105 hover:border-${benefit.color}-500/60
+                  hover:shadow-xl hover:border-border
+                  hover:scale-[1.02]
                   transition-all duration-300
                   animate-slide-up
-                `}
+                "
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Icon with colored background */}
+                {/* Emoji without background */}
                 <div className="flex justify-center mb-6">
-                  <div
-                    className={`
-                      w-20 h-20 rounded-2xl
-                      bg-gradient-to-br ${benefit.colorFrom} ${benefit.colorTo}
-                      flex items-center justify-center text-4xl
-                      shadow-lg shadow-${benefit.color}-500/30
-                      transform transition-transform group-hover:rotate-6
-                    `}
-                  >
+                  <div className="text-5xl transform transition-transform group-hover:scale-110">
                     {benefit.emoji}
                   </div>
                 </div>
 
                 {/* Week Label */}
                 <div className="text-center mb-4">
-                  <span
-                    className={`
-                      text-${benefit.color}-500 dark:text-${benefit.color}-400
-                      text-sm font-bold uppercase tracking-wider
-                    `}
-                  >
+                  <span className="text-muted-foreground text-sm font-bold uppercase tracking-wider">
                     {benefit.weekLabel}
                   </span>
                 </div>
@@ -140,15 +127,8 @@ export function BenefitsSection() {
                   {benefit.description}
                 </p>
 
-                {/* Hover gradient effect */}
-                <div
-                  className={`
-                    absolute inset-0 rounded-2xl
-                    bg-gradient-to-br from-${benefit.color}-500/5 to-transparent
-                    opacity-0 group-hover:opacity-100
-                    transition-opacity duration-300 pointer-events-none
-                  `}
-                />
+                {/* Subtle hover effect */}
+                <div className="absolute inset-0 rounded-2xl bg-muted/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
             );
           })}
