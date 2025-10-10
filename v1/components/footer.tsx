@@ -26,7 +26,7 @@ export function Footer() {
               Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025
             </p>
             <p className="text-sm text-muted-foreground mb-1">
-              © Copyright 2025, OPORITY Ltd.
+              © Copyright 2024-2026, OPORITY Ltd.
             </p>
             <p className="text-sm text-muted-foreground mb-1">
               All rights reserved.
