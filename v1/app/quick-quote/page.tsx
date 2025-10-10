@@ -363,7 +363,7 @@ export default function WebsiteCreationPage() {
                   <SelectContent>
                     <SelectItem value="all">I can provide all my content</SelectItem>
                     <SelectItem value="some">I can provide some of the content</SelectItem>
-                    <SelectItem value="none">I'd like you to provide the content for me</SelectItem>
+                    <SelectItem value="none">I&apos;d like you to provide the content for me</SelectItem>
                   </SelectContent>
                 </Select>
 

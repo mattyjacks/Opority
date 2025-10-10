@@ -7,7 +7,6 @@ import { BenefitsSection } from "@/components/benefits-section";
 import { ConsultingCtaSection } from "@/components/consulting-cta-section";
 import { TestimonialsSection, Testimonial } from "@/components/testimonials-section";
 import Link from "next/link";
-import Image from "next/image";
 
 // Testimonials data - TODO: Replace with real client data
 const homeTestimonials: Testimonial[] = [

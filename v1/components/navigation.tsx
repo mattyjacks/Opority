@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { Globe2, Palette, Lightbulb, TrendingUp, Menu, X } from "lucide-react";
+import { Globe2, Palette, Lightbulb, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Service configurations with icons
