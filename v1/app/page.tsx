@@ -15,29 +15,51 @@ export default function Home() {
       <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
       
       {/* Hero Section */}
-      <section className="relative bg-background min-h-[calc(100vh-64px)] lg:min-h-0 flex items-center overflow-hidden">
+      <section className="relative bg-background min-h-[70vh] sm:min-h-[60vh] lg:min-h-0 flex items-center overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <AnimatedGradientBackground />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-8 lg:py-20 xl:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 sm:py-16 lg:py-20 xl:py-24">
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-center mb-5 sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
             Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
 
-          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-muted-foreground mb-6 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-muted-foreground mb-8 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
             We show you how to replace them with high value clients who book, pay and stay.
           </p>
 
-          <div className="flex justify-center animate-slide-up" style={{animationDelay: "0.2s"}}>
-            <Link
-              href="/strategy-call"
-              className="dark:gradient-purple gradient-blue text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all transform hover:scale-110 animate-pulse-glow shadow-lg"
-            >
-              See how it works
-            </Link>
+          <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.2s"}}>
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8">
+              See how it works?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full sm:w-auto px-4">
+              <Link
+                href="/ad-funnel"
+                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 w-full sm:w-32 lg:w-36"
+              >
+                <div className="w-full aspect-video mb-2.5 rounded-md border-2 border-primary/20 bg-primary/5 flex items-center justify-center">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                  </svg>
+                </div>
+                <span className="text-lg sm:text-xl font-bold text-foreground">Yes</span>
+              </Link>
+
+              <Link
+                href="/ad-funnel"
+                className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 w-full sm:w-32 lg:w-36"
+              >
+                <div className="w-full aspect-video mb-2.5 rounded-md border-2 border-muted/20 bg-muted/5 flex items-center justify-center">
+                  <svg className="w-8 h-8 sm:w-10 sm:h-10 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                  </svg>
+                </div>
+                <span className="text-lg sm:text-xl font-bold text-foreground">No</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
