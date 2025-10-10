@@ -15,19 +15,19 @@ export default function Home() {
       <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
       
       {/* Hero Section */}
-      <section className="relative bg-background min-h-[calc(100vh-64px)] flex items-center overflow-hidden">
+      <section className="relative bg-background min-h-[calc(100vh-64px)] lg:min-h-0 flex items-center overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <AnimatedGradientBackground />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-8 lg:py-20 xl:py-24">
           {/* Main Heading */}
-          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-4 sm:mb-6 leading-tight animate-slide-up">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl font-bold text-center mb-4 sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
             Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
 
-          <p className="text-base sm:text-xl md:text-2xl text-center text-muted-foreground mb-6 sm:mb-10 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-muted-foreground mb-6 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
             We show you how to replace them with high value clients who book, pay and stay.
           </p>
 
