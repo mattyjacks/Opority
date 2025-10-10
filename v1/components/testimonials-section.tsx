@@ -25,8 +25,8 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({
   testimonials,
-  title = "Client Success Stories",
-  subtitle = "We partner with innovative B2B companies to deliver transformative web experiences",
+  title = "We get to work for the most innovative B2B Companies",
+  subtitle,
   ctaText = "Start your success story",
   ctaLink = "/quick-quote"
 }: TestimonialsSectionProps) {
@@ -39,18 +39,17 @@ export function TestimonialsSection({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16 animate-slide-up">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
-            {title.split(' ').map((word, i) => 
-              word === 'Success' ? (
-                <span key={i} className="dark:text-gradient-purple text-gradient-blue">{word} </span>
-              ) : (
-                <span key={i}>{word} </span>
-              )
-            )}
-          </h2>
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            {subtitle}
+          <p className="text-primary text-sm sm:text-base font-semibold uppercase tracking-wider mb-4">
+            Customer Case Studies
           </p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-4xl mx-auto">
+            {title}
+          </h2>
+          {subtitle && (
+            <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
+              {subtitle}
+            </p>
+          )}
         </div>
 
         {/* Testimonials Grid */}
@@ -61,44 +60,41 @@ export function TestimonialsSection({
               className="group relative bg-card border-2 border-border rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-primary hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 animate-slide-up flex flex-col"
               style={{animationDelay: `${index * 0.1}s`}}
             >
-              {/* Card Header - Avatar and Info */}
-              <div className="flex items-start gap-4 mb-4 sm:mb-6">
-                {/* Avatar Placeholder */}
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full dark:gradient-purple gradient-blue flex items-center justify-center text-white font-bold text-lg sm:text-xl flex-shrink-0 shadow-lg">
+              {/* Avatar - Centered */}
+              <div className="flex justify-center mb-4">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full dark:gradient-purple gradient-blue flex items-center justify-center text-white font-bold text-xl sm:text-2xl shadow-lg">
                   {testimonial.imagePlaceholder}
-                </div>
-
-                <div className="flex-1 min-w-0">
-                  {/* Name */}
-                  <h3 className="text-lg sm:text-xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
-                    {testimonial.name}
-                  </h3>
-
-                  {/* Title and Company */}
-                  <p className="text-sm sm:text-base text-muted-foreground mb-2">
-                    {testimonial.title}
-                  </p>
-
-                  {/* Star Rating */}
-                  <div className="flex gap-1" aria-label={`${testimonial.rating} star rating`}>
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg
-                        key={i}
-                        className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-current"
-                        viewBox="0 0 20 20"
-                        aria-hidden="true"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
                 </div>
               </div>
 
-              {/* Testimonial Text - Scrollable with fixed height */}
-              <div className="mb-6 flex-shrink-0">
-                <blockquote className="text-muted-foreground leading-relaxed text-sm sm:text-base max-h-24 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent hover:scrollbar-thumb-primary/40">
-                  &quot;{testimonial.testimonial}&quot;
+              {/* Star Rating - Centered */}
+              <div className="flex justify-center gap-1 mb-4" aria-label={`${testimonial.rating} star rating`}>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg
+                    key={i}
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-yellow-400 fill-current"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+              </div>
+
+              {/* Name - Centered */}
+              <h3 className="text-xl sm:text-2xl font-bold text-foreground text-center mb-2 group-hover:text-primary transition-colors duration-300">
+                {testimonial.name}
+              </h3>
+
+              {/* Title and Company - Centered */}
+              <p className="text-sm sm:text-base text-muted-foreground text-center mb-6">
+                {testimonial.title}
+              </p>
+
+              {/* Testimonial Text - Centered */}
+              <div className="mb-6 flex-grow">
+                <blockquote className="text-muted-foreground leading-relaxed text-sm sm:text-base text-center">
+                  {testimonial.testimonial}
                 </blockquote>
               </div>
 

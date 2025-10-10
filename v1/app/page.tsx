@@ -5,8 +5,33 @@ import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import { LogoCarousel } from "@/components/logo-carousel";
 import { BenefitsSection } from "@/components/benefits-section";
 import { ConsultingCtaSection } from "@/components/consulting-cta-section";
+import { TestimonialsSection, Testimonial } from "@/components/testimonials-section";
 import Link from "next/link";
 import Image from "next/image";
+
+// Testimonials data - TODO: Replace with real client data
+const homeTestimonials: Testimonial[] = [
+  {
+    id: 1,
+    name: "Philipp Schilling",
+    title: "CEO of Example Company",
+    testimonial: "Implemented a targeted LinkedIn strategy that increased qualified leads by 150% within six months, significantly enhancing the client's sales pipeline.",
+    rating: 5,
+    imagePlaceholder: "PS",
+    // video: "/videos/testimonial.mp4",
+    // videoPoster: "/videos/thumbnails/testimonial-1.jpg"
+  },
+  {
+    id: 2,
+    name: "Amanda Rue",
+    title: "CEO of Example Company",
+    testimonial: "Developed and executed a customized content plan that doubled follower engagement and elevated brand presence on LinkedIn for an emerging startup.",
+    rating: 5,
+    imagePlaceholder: "AR",
+    // video: "/videos/testimonial-2.mp4",
+    // videoPoster: "/videos/thumbnails/testimonial-2.jpg"
+  }
+];
 
 export default function Home() {
   return (
@@ -67,41 +92,37 @@ export default function Home() {
       {/* Consulting CTA Section */}
       <ConsultingCtaSection />
 
+      {/* Testimonials Section */}
+      <TestimonialsSection 
+        testimonials={homeTestimonials}
+        ctaText="See more success stories"
+        ctaLink="/web-design"
+      />
+
       {/* CTA Section */}
       <section className="py-12 sm:py-20 bg-secondary/30 relative overflow-hidden">
         <div className="absolute inset-0 dark:gradient-purple gradient-blue opacity-10 animate-gradient-xy" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 animate-scale-in">
-            Stop Chasing Leads. Start Getting <span className="dark:text-gradient-purple text-gradient-blue">Clients Who Buy</span>.
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 sm:mb-10 animate-scale-in">
+            Are you active on Facebook for your business or yourself?
           </h2>
 
-          {/* Multiple Choice Question */}
-          <div className="mt-8 sm:mt-10">
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6">
-              Are you already active on Facebook for your business or yourself?
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link
-                href="/strategy-call?facebook=yes"
-                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden w-auto sm:w-52"
-              >
-                <svg className="w-5 h-5 relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="relative z-10">Yeah I am</span>
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-              </Link>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+            <Link
+              href="/ad-funnel"
+              className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 w-full sm:w-40 lg:w-44"
+            >
+              <span className="text-5xl sm:text-6xl mb-2.5">👍</span>
+              <span className="text-lg sm:text-xl font-bold text-foreground">Yeah I am</span>
+            </Link>
 
-              <Link
-                href="/strategy-call?facebook=no"
-                className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-card text-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg w-auto sm:w-52"
-              >
-                <svg className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-                <span>Not yet</span>
-              </Link>
-            </div>
+            <Link
+              href="/ad-funnel"
+              className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 w-full sm:w-40 lg:w-44"
+            >
+              <span className="text-5xl sm:text-6xl mb-2.5">👎</span>
+              <span className="text-lg sm:text-xl font-bold text-foreground">Not yet</span>
+            </Link>
           </div>
         </div>
       </section>

@@ -276,7 +276,10 @@ export default function WebDesignPage() {
       </section>
 
       {/* Testimonials Section */}
-      <TestimonialsSection testimonials={webDesignTestimonials} />
+      <TestimonialsSection 
+        testimonials={webDesignTestimonials}
+        title="We get to work for the most innovative B2B Companies"
+      />
 
       {/* CTA Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
