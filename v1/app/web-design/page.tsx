@@ -278,7 +278,7 @@ export default function WebDesignPage() {
       {/* Testimonials Section */}
       <TestimonialsSection 
         testimonials={webDesignTestimonials}
-        title="We get to work for the most innovative B2B Companies"
+        title="We get to work for the most innovative <span>B2B Companies</span>"
       />
 
       {/* CTA Section */}

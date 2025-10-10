@@ -25,7 +25,7 @@ interface TestimonialsSectionProps {
 
 export function TestimonialsSection({
   testimonials,
-  title = "We get to work for the most innovative B2B Companies",
+  title = "We get to work for the most innovative <span>B2B Companies</span>",
   subtitle,
   ctaText = "Start your success story",
   ctaLink = "/quick-quote"
@@ -42,9 +42,15 @@ export function TestimonialsSection({
           <p className="text-primary text-sm sm:text-base font-semibold uppercase tracking-wider mb-4">
             Customer Case Studies
           </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-4xl mx-auto">
-            {title}
-          </h2>
+          <h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight max-w-4xl mx-auto"
+            dangerouslySetInnerHTML={{
+              __html: title.replace(
+                '<span>B2B Companies</span>',
+                '<span class="dark:text-gradient-purple text-gradient-blue">B2B Companies</span>'
+              )
+            }}
+          />
           {subtitle && (
             <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto">
               {subtitle}
