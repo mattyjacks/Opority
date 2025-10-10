@@ -47,15 +47,15 @@ export default function WebDesignPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-background min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative bg-background min-h-[75vh] sm:min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated gradient background - same as landing page */}
         <div className="absolute inset-0">
           <AnimatedGradientBackground />
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-6 sm:py-10">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 py-4 sm:py-8 md:py-10">
           {/* Multi-line heading with purple underline on "easy" */}
-          <div className="mb-6 sm:mb-10 animate-slide-up">
+          <div className="mb-4 sm:mb-8 md:mb-10 animate-slide-up">
             <p className="text-sm sm:text-base md:text-lg text-white mb-3 sm:mb-4">
               Bespoke, and affordable website design and SEO
             </p>
@@ -70,7 +70,7 @@ export default function WebDesignPage() {
           </div>
 
           <div className="animate-slide-up" style={{animationDelay: "0.1s"}}>
-            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 sm:mb-8 text-foreground/90 px-4">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold mb-4 sm:mb-6 md:mb-8 text-foreground/90 px-4">
               Do you have an active website for yourself or your business?
             </h2>
 
