@@ -54,11 +54,11 @@ export function Navigation() {
               <Image
                 src="/opority-logo/r-logo.png"
                 alt="Opority Logo"
-                width={72}
-                height={72}
+                width={96}
+                height={96}
                 className="object-contain -mr-2"
               />
-              <span className="text-2xl font-bold dark:text-gradient-purple text-gradient-blue">
+              <span className="text-3xl font-bold dark:text-gradient-purple text-gradient-blue">
                 OPORITY
               </span>
             </Link>
