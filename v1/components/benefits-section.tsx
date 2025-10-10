@@ -59,6 +59,9 @@ export function BenefitsSection() {
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {benefits.map((benefit, index) => {
+            // Determine if title is long and needs smaller font
+            const isLongTitle = benefit.title.length > 40;
+
             return (
               <Card
                 key={index}
@@ -74,8 +77,8 @@ export function BenefitsSection() {
                   </div>
 
                   {/* Title Container - Fixed height for alignment */}
-                  <div className="mb-3 sm:mb-4">
-                    <h3 className="text-xl sm:text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300 text-center">
+                  <div className="mb-3 sm:mb-4 min-h-[4.5rem] sm:min-h-[5rem] flex items-center justify-center">
+                    <h3 className={`${isLongTitle ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'} font-bold text-foreground group-hover:text-primary transition-colors duration-300 text-center leading-tight`}>
                       {benefit.title}
                     </h3>
                   </div>

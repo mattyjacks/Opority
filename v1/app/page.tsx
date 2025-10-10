@@ -4,6 +4,7 @@ import { Marquee } from "@/components/marquee";
 import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import { LogoCarousel } from "@/components/logo-carousel";
 import { BenefitsSection } from "@/components/benefits-section";
+import { ConsultingCtaSection } from "@/components/consulting-cta-section";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -141,6 +142,9 @@ export default function Home() {
 
       {/* Benefits Section */}
       <BenefitsSection />
+
+      {/* Consulting CTA Section */}
+      <ConsultingCtaSection />
 
       {/* CTA Section */}
       <section className="py-12 sm:py-20 bg-secondary/30 relative overflow-hidden">
