@@ -138,9 +138,9 @@ export default function WebsiteCreationPage() {
       email: formData.email,
       phone: formData.phone,
       company: formData.companyName,
-      package: formData.websitePurpose === "simple" ? "Plus Package" :
-               formData.websitePurpose === "grow" ? "Max Package" :
-               formData.websitePurpose === "sell" ? "Shop Package" : "",
+      package: formData.websitePurpose === "simple" ? "Base Package" :
+               formData.websitePurpose === "grow" ? "Plus Package" :
+               formData.websitePurpose === "sell" ? "Max Package" : "",
       addons: [
         formData.notSure ? "Not sure" : "",
         formData.logoDesign ? "Website maintenance" : "",
@@ -471,9 +471,9 @@ export default function WebsiteCreationPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <h4 className="text-2xl font-bold text-primary mb-4">
-                      {formData.websitePurpose === "simple" && "Plus Package"}
-                      {formData.websitePurpose === "grow" && "Max Package"}
-                      {formData.websitePurpose === "sell" && "Shop Package"}
+                      {formData.websitePurpose === "simple" && "Base Package"}
+                      {formData.websitePurpose === "grow" && "Plus Package"}
+                      {formData.websitePurpose === "sell" && "Max Package"}
                     </h4>
 
                     <div className="space-y-3">
