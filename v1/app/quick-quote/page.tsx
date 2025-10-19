@@ -159,20 +159,6 @@ export default function WebsiteCreationPage() {
       {/* Marquee Section */}
       <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
       
-      {/* Hero Section */}
-      <section className="relative bg-background py-12 overflow-hidden">
-        <div className="absolute inset-0">
-          <AnimatedGradientBackground />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-slide-up">
-            Web <span className="dark:text-gradient-purple text-gradient-blue">design</span> quote
-          </h1>
-          <p className="text-lg text-muted-foreground animate-slide-up" style={{animationDelay: "0.1s"}}>
-            Fast, Free & Simple – Done in 3 Easy Steps
-          </p>
-        </div>
-      </section>
 
       {/* Progress Indicator */}
       <section className="py-6 bg-background border-b border-border">
@@ -230,7 +216,7 @@ export default function WebsiteCreationPage() {
               {/* Existing Website Question */}
               <div>
                 <Label className="text-base font-semibold mb-4 block">
-                  Do you have an existing website that needs to be enhanced?
+                  Do you have a site that could use some refreshing?
                 </Label>
                 <div className="space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer">
