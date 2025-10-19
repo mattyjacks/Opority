@@ -20,7 +20,7 @@ export function Footer() {
                 height={96}
                 className="object-contain -mr-2"
               />
-              <h3 className="text-2xl sm:text-3xl font-bold dark:text-gradient-purple text-gradient-blue">OPORITY</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white">OPORITY</h3>
               <div className="ml-4">
                 <ThemeToggle />
               </div>
