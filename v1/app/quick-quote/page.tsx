@@ -3,7 +3,6 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
-import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,6 +28,7 @@ type FormData = {
   logoDesign: boolean;
   monthlySEO: boolean;
   thirdPartyIntegration: boolean;
+  googleBusiness: boolean;
 };
 
 export default function WebsiteCreationPage() {
@@ -51,6 +51,7 @@ export default function WebsiteCreationPage() {
     logoDesign: false,
     monthlySEO: false,
     thirdPartyIntegration: false,
+    googleBusiness: false,
   });
 
   const [urlError, setUrlError] = useState("");
@@ -138,14 +139,15 @@ export default function WebsiteCreationPage() {
       email: formData.email,
       phone: formData.phone,
       company: formData.companyName,
-      package: formData.websitePurpose === "simple" ? "Plus Package" :
-               formData.websitePurpose === "grow" ? "Max Package" :
-               formData.websitePurpose === "sell" ? "Shop Package" : "",
+      package: formData.websitePurpose === "simple" ? "Base Package" :
+               formData.websitePurpose === "grow" ? "Plus Package" :
+               formData.websitePurpose === "sell" ? "Max Package" : "",
       addons: [
         formData.notSure ? "Not sure" : "",
-        formData.logoDesign ? "Logo Design" : "",
+        formData.logoDesign ? "Website maintenance" : "",
         formData.monthlySEO ? "Monthly SEO" : "",
-        formData.thirdPartyIntegration ? "3rd Party Integration" : ""
+        formData.thirdPartyIntegration ? "3rd Party Integration" : "",
+        formData.googleBusiness ? "Google Business Optimisation" : ""
       ].filter(Boolean).join(", ")
     });
 
@@ -159,20 +161,6 @@ export default function WebsiteCreationPage() {
       {/* Marquee Section */}
       <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
       
-      {/* Hero Section */}
-      <section className="relative bg-background py-12 overflow-hidden">
-        <div className="absolute inset-0">
-          <AnimatedGradientBackground />
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4 animate-slide-up">
-            Web <span className="dark:text-gradient-purple text-gradient-blue">design</span> quote
-          </h1>
-          <p className="text-lg text-muted-foreground animate-slide-up" style={{animationDelay: "0.1s"}}>
-            Fast, Free & Simple – Done in 3 Easy Steps
-          </p>
-        </div>
-      </section>
 
       {/* Progress Indicator */}
       <section className="py-6 bg-background border-b border-border">
@@ -230,7 +218,7 @@ export default function WebsiteCreationPage() {
               {/* Existing Website Question */}
               <div>
                 <Label className="text-base font-semibold mb-4 block">
-                  Do you have an existing website that needs to be enhanced?
+                  Do you have a site that could use some refreshing?
                 </Label>
                 <div className="space-y-3">
                   <label className="flex items-center gap-3 cursor-pointer">
@@ -430,7 +418,20 @@ export default function WebsiteCreationPage() {
                   }
                 />
                 <Label htmlFor="logoDesign" className="text-base text-muted-foreground cursor-pointer">
-                  Logo Design
+                  Website maintenance
+                </Label>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Checkbox
+                  id="googleBusiness"
+                  checked={formData.googleBusiness}
+                  onCheckedChange={(checked) =>
+                    setFormData({ ...formData, googleBusiness: checked as boolean, notSure: false })
+                  }
+                />
+                <Label htmlFor="googleBusiness" className="text-base text-muted-foreground cursor-pointer">
+                  Google Business Optimisation
                 </Label>
               </div>
 
@@ -444,7 +445,8 @@ export default function WebsiteCreationPage() {
                       notSure: checked as boolean,
                       logoDesign: false,
                       monthlySEO: false,
-                      thirdPartyIntegration: false
+                      thirdPartyIntegration: false,
+                      googleBusiness: false
                     })
                   }
                 />
@@ -485,34 +487,19 @@ export default function WebsiteCreationPage() {
                 <div className="flex items-center justify-between">
                   <div className="flex-1">
                     <h4 className="text-2xl font-bold text-primary mb-4">
-                      {formData.websitePurpose === "simple" && "Plus Package"}
-                      {formData.websitePurpose === "grow" && "Max Package"}
-                      {formData.websitePurpose === "sell" && "Shop Package"}
+                      {formData.websitePurpose === "simple" && "Base Package"}
+                      {formData.websitePurpose === "grow" && "Plus Package"}
+                      {formData.websitePurpose === "sell" && "Max Package"}
                     </h4>
 
                     <div className="space-y-3">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground">Setup cost:</span>
+                        <span className="text-sm text-muted-foreground">One-time cost:</span>
                         <span className="text-xl font-bold">
-                          {formData.websitePurpose === "simple" && "£450*"}
-                          {formData.websitePurpose === "grow" && "£550*"}
-                          {formData.websitePurpose === "sell" && "£700*"}
+                          {formData.websitePurpose === "simple" && "£397"}
+                          {formData.websitePurpose === "grow" && "£597"}
+                          {formData.websitePurpose === "sell" && "£797"}
                         </span>
-                      </div>
-
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground">Monthly:</span>
-                        <span className="text-xl font-bold">
-                          {formData.websitePurpose === "simple" && "£38*/month"}
-                          {formData.websitePurpose === "grow" && "£49*/month"}
-                          {formData.websitePurpose === "sell" && "£59*/month"}
-                        </span>
-                      </div>
-
-                      <div className="text-sm text-muted-foreground mt-2">
-                        {formData.websitePurpose === "simple" && "(24 month min. term)"}
-                        {formData.websitePurpose === "grow" && "(12 month min. term)"}
-                        {formData.websitePurpose === "sell" && "(12 month min. term)"}
                       </div>
                     </div>
                   </div>
@@ -521,18 +508,20 @@ export default function WebsiteCreationPage() {
                   <div className="ml-4">
                     <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
                       {formData.websitePurpose === "simple" && (
-                        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                         </svg>
                       )}
                       {formData.websitePurpose === "grow" && (
                         <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                         </svg>
                       )}
                       {formData.websitePurpose === "sell" && (
-                        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L7 7H17L12 2Z" />
+                          <path d="M7 7L2 12L12 22L22 12L17 7H7Z" opacity="0.8" />
+                          <path d="M7 7L12 22L17 7H7Z" opacity="0.4" />
                         </svg>
                       )}
                     </div>
@@ -541,7 +530,7 @@ export default function WebsiteCreationPage() {
               </div>
 
               {/* Additional Services */}
-              {(formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration) && (
+              {(formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration || formData.googleBusiness) && (
                 <div className="border-t border-border pt-4">
                   <h4 className="text-sm font-semibold mb-3 text-muted-foreground">Additional Services:</h4>
                   <div className="space-y-2">
@@ -551,8 +540,10 @@ export default function WebsiteCreationPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <div>
-                          <p className="text-sm font-medium">Logo design</p>
-                          <p className="text-xs text-muted-foreground">We can provide a FREE text-based logo. Advanced logo design also available.</p>
+                          <p className="text-sm font-medium">Website maintenance</p>
+                          <p className="text-xs text-muted-foreground">
+                            From £{formData.websitePurpose === "simple" ? "79" : formData.websitePurpose === "grow" ? "115" : "147"}/month
+                          </p>
                         </div>
                       </div>
                     )}
@@ -563,7 +554,7 @@ export default function WebsiteCreationPage() {
                         </svg>
                         <div>
                           <p className="text-sm font-medium">Monthly SEO</p>
-                          <p className="text-xs text-muted-foreground">From just £50 per month.</p>
+                          <p className="text-xs text-muted-foreground">From £225 per month.</p>
                         </div>
                       </div>
                     )}
@@ -575,6 +566,17 @@ export default function WebsiteCreationPage() {
                         <div>
                           <p className="text-sm font-medium">Integration with 3rd party systems</p>
                           <p className="text-xs text-muted-foreground">From £45 setup cost.</p>
+                        </div>
+                      </div>
+                    )}
+                    {formData.googleBusiness && (
+                      <div className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                          <p className="text-sm font-medium">Google Business Optimisation</p>
+                          <p className="text-xs text-muted-foreground">£97 one-time.</p>
                         </div>
                       </div>
                     )}
@@ -702,14 +704,15 @@ export default function WebsiteCreationPage() {
               <div className="bg-secondary/30 rounded-lg p-6 mb-8">
                 <h3 className="font-semibold mb-4">Your Selected Package:</h3>
                 <p className="text-2xl font-bold capitalize mb-4">{formData.package} Package</p>
-                {(formData.notSure || formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration) && (
+                {(formData.notSure || formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration || formData.googleBusiness) && (
                   <div className="mt-4 pt-4 border-t border-border">
                     <p className="text-sm font-semibold mb-2">Additional Services:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {formData.notSure && <li>• Not sure at this stage</li>}
-                      {formData.logoDesign && <li>• Logo Design</li>}
+                      {formData.logoDesign && <li>• Website maintenance</li>}
                       {formData.monthlySEO && <li>• Monthly Search Engine Optimisation (SEO)</li>}
                       {formData.thirdPartyIntegration && <li>• 3rd Party Integration</li>}
+                      {formData.googleBusiness && <li>• Google Business Optimisation</li>}
                     </ul>
                   </div>
                 )}

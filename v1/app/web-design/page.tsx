@@ -5,39 +5,52 @@ import { PortfolioCarousel } from "@/components/portfolio-carousel";
 import { TestimonialsSection, Testimonial } from "@/components/testimonials-section";
 import Link from "next/link";
 
-// Testimonials data - TODO: Replace with real client data
+// Testimonials data - Real client video testimonials
 const webDesignTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Client Name 1",
-    title: "CEO, Example Company 1",
-    testimonial: "Working with this team transformed our online presence completely. Our conversion rate increased by 150% within the first three months after launch. The attention to detail and strategic approach made all the difference.",
+    name: "Digital Harmony",
+    title: "Client Success Story",
+    testimonial: "Watch how Opority transformed our digital presence and helped us achieve remarkable results.",
     rating: 5,
-    imagePlaceholder: "C1"
+    imagePlaceholder: "DH",
+    embedUrl: "https://www.youtube.com/embed/rLz6OettNMI"
   },
   {
     id: 2,
-    name: "Client Name 2",
-    title: "Marketing Director, Example Company 2",
-    testimonial: "The bespoke design exceeded our expectations. Not only does our website look stunning, but it's also driving measurable business results. Lead generation has increased by 200% since the redesign.",
+    name: "The English Project",
+    title: "Client Success Story",
+    testimonial: "Discover how our partnership with Opority elevated our business to new heights.",
     rating: 5,
-    imagePlaceholder: "C2"
+    imagePlaceholder: "EP",
+    embedUrl: "https://www.youtube.com/embed/85UCdX1pbhs"
   },
   {
     id: 3,
-    name: "Client Name 3",
-    title: "Founder, Example Company 3",
-    testimonial: "From discovery to delivery, the process was seamless. The team truly understood our business goals and created a website that not only looks professional but converts visitors into customers.",
+    name: "Subtyped.me",
+    title: "Client Success Story",
+    testimonial: "See how Opority's web design expertise helped us create a stunning online presence that drives results.",
     rating: 5,
-    imagePlaceholder: "C3"
+    imagePlaceholder: "SM",
+    embedUrl: "https://www.youtube.com/embed/bYeIWM1s3bU"
   },
   {
     id: 4,
-    name: "Client Name 4",
-    title: "Operations Manager, Example Company 4",
-    testimonial: "The ongoing support and training provided has been invaluable. Our team is now confident in managing the website, and the performance metrics speak for themselves - we've seen a 180% increase in qualified leads.",
+    name: "Main St Experts",
+    title: "Client Success Story",
+    testimonial: "Working with Opority transformed our business. Watch our story and see the impact of professional web design.",
     rating: 5,
-    imagePlaceholder: "C4"
+    imagePlaceholder: "MS",
+    embedUrl: "https://www.youtube.com/embed/pZ1y_gdtkWk"
+  },
+  {
+    id: 5,
+    name: "AI Solutions",
+    title: "Client Success Story",
+    testimonial: "Opority delivered a website that perfectly captures our brand and engages our audience. Hear about our experience.",
+    rating: 5,
+    imagePlaceholder: "AI",
+    embedUrl: "https://www.youtube.com/embed/5zSrJz8RPcY"
   }
 ];
 

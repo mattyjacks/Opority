@@ -8,27 +8,25 @@ import { ConsultingCtaSection } from "@/components/consulting-cta-section";
 import { TestimonialsSection, Testimonial } from "@/components/testimonials-section";
 import Link from "next/link";
 
-// Testimonials data - TODO: Replace with real client data
+// Testimonials data - Real client video testimonials (showing 2 on home page)
 const homeTestimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Philipp Schilling",
-    title: "CEO of Example Company",
-    testimonial: "Implemented a targeted LinkedIn strategy that increased qualified leads by 150% within six months, significantly enhancing the client's sales pipeline.",
+    name: "Digital Harmony",
+    title: "Client Success Story",
+    testimonial: "Watch how Opority transformed our digital presence and helped us achieve remarkable results.",
     rating: 5,
-    imagePlaceholder: "PS",
-    // video: "/videos/testimonial.mp4",
-    // videoPoster: "/videos/thumbnails/testimonial-1.jpg"
+    imagePlaceholder: "DH",
+    embedUrl: "https://www.youtube.com/embed/rLz6OettNMI"
   },
   {
     id: 2,
-    name: "Amanda Rue",
-    title: "CEO of Example Company",
-    testimonial: "Developed and executed a customized content plan that doubled follower engagement and elevated brand presence on LinkedIn for an emerging startup.",
+    name: "The English Project",
+    title: "Client Success Story",
+    testimonial: "Discover how our partnership with Opority elevated our business to new heights.",
     rating: 5,
-    imagePlaceholder: "AR",
-    // video: "/videos/testimonial-2.mp4",
-    // videoPoster: "/videos/thumbnails/testimonial-2.jpg"
+    imagePlaceholder: "EP",
+    embedUrl: "https://www.youtube.com/embed/85UCdX1pbhs"
   }
 ];
 
@@ -53,13 +51,9 @@ export default function Home() {
             Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
 
-          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-white mb-8 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            We show you how to replace them with high value clients who book, pay and stay.
-          </p>
-
-          <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.2s"}}>
+          <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.1s"}}>
             <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-6 sm:mb-8">
-              Are you active on Facebook for business or yourself?
+              Are you active on Facebook for your business or yourself?
             </p>
             <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
               <Link

@@ -13,9 +13,9 @@ export function ConsultingCtaSection() {
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Emoji Icon */}
-        <div className="mb-6 sm:mb-8 animate-scale-in">
-          <span className="inline-block text-6xl sm:text-7xl transition-transform duration-300 hover:scale-110">
+        {/* Message Bubble Icon */}
+        <div className="mb-4 sm:mb-6 animate-scale-in">
+          <span className="text-5xl sm:text-6xl lg:text-7xl inline-block transition-transform duration-300 hover:scale-110">
             💬
           </span>
         </div>
@@ -34,11 +34,6 @@ export function ConsultingCtaSection() {
             Revenue Stream
           </span>
         </h2>
-
-        {/* Description */}
-        <p className="text-base sm:text-lg md:text-xl text-white mb-8 sm:mb-10 max-w-3xl mx-auto leading-relaxed animate-slide-up" style={{ animationDelay: "0.3s" }}>
-          By scheduling a free consulting call with our team, we&apos;ll review your current setup, uncover the biggest opportunities for growth, and give you a clear plan on how Facebook can start driving inquiries.
-        </p>
 
         {/* CTA Button */}
         <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>

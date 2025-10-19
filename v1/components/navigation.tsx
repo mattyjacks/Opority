@@ -58,7 +58,7 @@ export function Navigation() {
                 height={96}
                 className="object-contain -mr-2"
               />
-              <span className="text-3xl font-bold dark:text-gradient-purple text-gradient-blue">
+              <span className="text-3xl font-bold text-white">
                 OPORITY
               </span>
             </Link>
