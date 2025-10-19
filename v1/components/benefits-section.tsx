@@ -89,18 +89,11 @@ export function BenefitsSection() {
                 "
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Week Label with Purple Rectangle */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative">
-                    {/* Glowing effect on hover */}
-                    <div className="absolute inset-0 bg-purple-500 rounded-lg blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
-                    {/* Rectangle border */}
-                    <div className="relative border-2 border-purple-500 rounded-lg px-6 py-3 bg-card/50">
-                      <h3 className="text-3xl font-bold text-white">
-                        {benefit.weekLabel}
-                      </h3>
-                    </div>
-                  </div>
+                {/* Week Label */}
+                <div className="text-center mb-6">
+                  <h3 className="text-3xl font-bold text-white">
+                    {benefit.weekLabel}
+                  </h3>
                 </div>
 
                 {/* Subtitle */}

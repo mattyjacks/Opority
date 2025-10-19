@@ -22,7 +22,7 @@ export function Footer() {
               <h3 className="text-2xl sm:text-3xl font-bold text-white">OPORITY</h3>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground mb-3">
-              Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025
+              Recognised Top 3 Best Advertising & Marketing StartUp East of England 2025
             </p>
             <p className="text-sm text-muted-foreground mb-1">
               © Copyright 2024-2026, OPORITY Ltd.
