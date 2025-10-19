@@ -42,7 +42,7 @@ function AdFunnelContent() {
 
   // Question 1: Goals (Multi-select)
   const question1Options = [
-    { id: "appointments", label: "Generate appointments", icon: Calendar, color: "text-blue-500" },
+    { id: "appointments", label: "Generate appointment", icon: Calendar, color: "text-blue-500" },
     { id: "customers", label: "Acquire customers", icon: Sparkles, color: "text-emerald-500" },
     { id: "reach", label: "Gain reach", icon: Megaphone, color: "text-orange-500" },
     { id: "brand", label: "Position brand", icon: LayoutGrid, color: "text-blue-500" },
