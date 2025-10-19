@@ -13,7 +13,7 @@ const benefits: Benefit[] = [
   {
     title: "Campaign Setup & Audit",
     description:
-      "In the first week, we review your current presence, install tracking onto your site, and set up campaigns the right way. If you already have ads running, we'll audit them and make improvements.",
+      "We install tracking on your site, and we create targeted campaigns. If you have ads running, we'll audit them to help you get more value for your money.",
     weekLabel: "WEEK 1",
     color: "rose",
     colorFrom: "from-rose-500",
@@ -22,7 +22,7 @@ const benefits: Benefit[] = [
   {
     title: "Creative Testing & Optimisation",
     description:
-      "We create multiple ad variations (images, videos, and copywriting) and test them with your audience. By the end of the month, you'll know which ads resonate and where your best ROI comes from.",
+      "We create multiple ad variations (images, videos, and copywriting) and test them with your audience.",
     weekLabel: "WEEK 2-3",
     color: "amber",
     colorFrom: "from-amber-500",
@@ -31,7 +31,7 @@ const benefits: Benefit[] = [
   {
     title: "Clear Communication, Reporting & Transparent Costs",
     description:
-      "You'll have direct contact with us, plus weekly updates that break down performance in plain English. You'll know how much was spent, what results came in, and what's planned next. You only pay for management + your ad spend.",
+      "You'll have direct contact with us, plus weekly updates that break down performance in plain English.",
     weekLabel: "WEEK 4",
     color: "emerald",
     colorFrom: "from-emerald-500",
