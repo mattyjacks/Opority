@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ThemeToggle } from "./theme-toggle";
 
 export function Footer() {
   return (
@@ -21,9 +20,6 @@ export function Footer() {
                 className="object-contain -mr-2"
               />
               <h3 className="text-2xl sm:text-3xl font-bold text-white">OPORITY</h3>
-              <div className="ml-4">
-                <ThemeToggle />
-              </div>
             </div>
             <p className="text-sm sm:text-base text-muted-foreground mb-3">
               Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025
