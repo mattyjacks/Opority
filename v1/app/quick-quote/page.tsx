@@ -143,7 +143,7 @@ export default function WebsiteCreationPage() {
                formData.websitePurpose === "sell" ? "Shop Package" : "",
       addons: [
         formData.notSure ? "Not sure" : "",
-        formData.logoDesign ? "Logo Design" : "",
+        formData.logoDesign ? "Website maintenance" : "",
         formData.monthlySEO ? "Monthly SEO" : "",
         formData.thirdPartyIntegration ? "3rd Party Integration" : ""
       ].filter(Boolean).join(", ")
@@ -416,7 +416,7 @@ export default function WebsiteCreationPage() {
                   }
                 />
                 <Label htmlFor="logoDesign" className="text-base text-muted-foreground cursor-pointer">
-                  Logo Design
+                  Website maintenance
                 </Label>
               </div>
 
@@ -537,8 +537,8 @@ export default function WebsiteCreationPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
                         <div>
-                          <p className="text-sm font-medium">Logo design</p>
-                          <p className="text-xs text-muted-foreground">We can provide a FREE text-based logo. Advanced logo design also available.</p>
+                          <p className="text-sm font-medium">Website maintenance</p>
+                          <p className="text-xs text-muted-foreground">Keep your site fresh and up-to-date with ongoing maintenance.</p>
                         </div>
                       </div>
                     )}
@@ -693,7 +693,7 @@ export default function WebsiteCreationPage() {
                     <p className="text-sm font-semibold mb-2">Additional Services:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       {formData.notSure && <li>• Not sure at this stage</li>}
-                      {formData.logoDesign && <li>• Logo Design</li>}
+                      {formData.logoDesign && <li>• Website maintenance</li>}
                       {formData.monthlySEO && <li>• Monthly Search Engine Optimisation (SEO)</li>}
                       {formData.thirdPartyIntegration && <li>• 3rd Party Integration</li>}
                     </ul>
