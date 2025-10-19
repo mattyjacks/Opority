@@ -193,7 +193,7 @@ export default function CookiePolicyPage() {
                 to stay informed about our use of cookies.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                The "Last updated" date at the top of this page indicates when this Cookie Policy was last revised.
+                The &ldquo;Last updated&rdquo; date at the top of this page indicates when this Cookie Policy was last revised.
               </p>
             </section>
 

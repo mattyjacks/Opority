@@ -3,7 +3,6 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
-import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
