@@ -53,13 +53,9 @@ export default function Home() {
             Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
 
-          <p className="text-base sm:text-xl md:text-2xl lg:text-xl xl:text-2xl text-center text-white mb-8 sm:mb-10 lg:mb-10 xl:mb-12 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            We show you how to replace them with high value clients who book, pay and stay.
-          </p>
-
-          <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.2s"}}>
+          <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.1s"}}>
             <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-6 sm:mb-8">
-              Are you active on Facebook for business or yourself?
+              Are you active on Facebook for your business or yourself?
             </p>
             <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
               <Link
