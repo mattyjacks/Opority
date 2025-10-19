@@ -1,7 +1,6 @@
 "use client";
 
 interface Benefit {
-  emoji: string;
   title: string;
   description: string;
   weekLabel: string;
@@ -12,7 +11,6 @@ interface Benefit {
 
 const benefits: Benefit[] = [
   {
-    emoji: "🎈",
     title: "Campaign Setup & Audit",
     description:
       "In the first week, we review your current presence, install tracking onto your site, and set up campaigns the right way. If you already have ads running, we'll audit them and make improvements.",
@@ -22,7 +20,6 @@ const benefits: Benefit[] = [
     colorTo: "to-rose-600",
   },
   {
-    emoji: "⭐",
     title: "Creative Testing & Optimisation",
     description:
       "We create multiple ad variations (images, videos, and copywriting) and test them with your audience. By the end of the month, you'll know which ads resonate and where your best ROI comes from.",
@@ -32,7 +29,6 @@ const benefits: Benefit[] = [
     colorTo: "to-amber-600",
   },
   {
-    emoji: "📈",
     title: "Clear Communication, Reporting & Transparent Costs",
     description:
       "You'll have direct contact with us, plus weekly updates that break down performance in plain English. You'll know how much was spent, what results came in, and what's planned next. You only pay for management + your ad spend.",
@@ -77,11 +73,7 @@ export function BenefitsSection() {
 
         {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
-          {benefits.map((benefit, index) => {
-            // Determine if title is long and needs smaller font
-            const isLongTitle = benefit.title.length > 40;
-
-            return (
+          {benefits.map((benefit, index) => (
               <div
                 key={index}
                 className="
@@ -93,45 +85,40 @@ export function BenefitsSection() {
                   hover:scale-[1.02]
                   transition-all duration-300
                   animate-slide-up
+                  overflow-hidden
                 "
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                {/* Emoji without background */}
+                {/* Week Label with Purple Rectangle */}
                 <div className="flex justify-center mb-6">
-                  <div className="text-5xl transform transition-transform group-hover:scale-110">
-                    {benefit.emoji}
+                  <div className="relative">
+                    {/* Glowing effect on hover */}
+                    <div className="absolute inset-0 bg-purple-500 rounded-lg blur-md opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+                    {/* Rectangle border */}
+                    <div className="relative border-2 border-purple-500 rounded-lg px-6 py-3 bg-card/50">
+                      <h3 className="text-3xl font-bold text-white">
+                        {benefit.weekLabel}
+                      </h3>
+                    </div>
                   </div>
                 </div>
 
-                {/* Week Label */}
-                <div className="text-center mb-4">
-                  <span className="text-white text-sm font-bold uppercase tracking-wider">
-                    {benefit.weekLabel}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <div className="mb-4 min-h-[64px] flex items-center justify-center">
-                  <h3
-                    className={`
-                      ${isLongTitle ? "text-lg sm:text-xl" : "text-2xl"}
-                      font-bold text-center leading-tight
-                    `}
-                  >
+                {/* Subtitle */}
+                <div className="mb-4">
+                  <p className="text-lg font-semibold text-center text-white/90">
                     {benefit.title}
-                  </h3>
+                  </p>
                 </div>
 
                 {/* Description */}
-                <p className="text-white leading-relaxed text-center">
+                <p className="text-white/80 leading-relaxed text-center">
                   {benefit.description}
                 </p>
 
                 {/* Subtle hover effect */}
                 <div className="absolute inset-0 rounded-2xl bg-muted/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               </div>
-            );
-          })}
+          ))}
         </div>
       </div>
     </section>
