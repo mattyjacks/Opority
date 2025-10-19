@@ -509,18 +509,20 @@ export default function WebsiteCreationPage() {
                   <div className="ml-4">
                     <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
                       {formData.websitePurpose === "simple" && (
-                        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                         </svg>
                       )}
                       {formData.websitePurpose === "grow" && (
                         <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                         </svg>
                       )}
                       {formData.websitePurpose === "sell" && (
-                        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2L7 7H17L12 2Z" />
+                          <path d="M7 7L2 12L12 22L22 12L17 7H7Z" opacity="0.8" />
+                          <path d="M7 7L12 22L17 7H7Z" opacity="0.4" />
                         </svg>
                       )}
                     </div>

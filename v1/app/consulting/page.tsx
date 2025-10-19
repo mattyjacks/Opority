@@ -2,8 +2,8 @@ import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
 import { AnimatedGradientBackground } from "@/components/animated-gradient-bg";
-import Link from "next/link";
-import { Grid3x3, Users, ClipboardList, Play, Heart, Info } from "lucide-react";
+import Image from "next/image";
+import { Grid3x3, Users, ClipboardList } from "lucide-react";
 
 export default function ConsultingPage() {
   return (
@@ -60,60 +60,33 @@ export default function ConsultingPage() {
               </div>
             </div>
 
-            {/* Video Right */}
+            {/* Image Right */}
             <div className="order-1 lg:order-2 animate-slide-in-right">
-              <div className="relative h-[220px] sm:h-auto sm:aspect-video bg-zinc-900 dark:bg-zinc-950 rounded-lg sm:rounded-xl overflow-hidden border border-border group hover:border-primary transition-all">
-                {/* Video Placeholder Background */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900 dark:from-zinc-900 dark:to-black">
-                  <p className="text-zinc-500 text-xs sm:text-sm px-4 text-center">Video Embed: Social Media Success Story</p>
-                </div>
-
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-20 h-20 sm:w-20 sm:h-20 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all transform hover:scale-110 shadow-2xl">
-                    <Play className="w-9 h-9 sm:w-10 sm:h-10 text-zinc-900 ml-1" fill="currentColor" />
-                  </button>
-                </div>
-
-                {/* Top Right Icons */}
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 flex gap-1.5 sm:gap-2">
-                  <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center transition-all backdrop-blur-sm">
-                    <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </button>
-                  <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center transition-all backdrop-blur-sm">
-                    <Info className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </button>
-                </div>
+              <div className="relative rounded-lg sm:rounded-xl overflow-hidden border border-border hover:border-primary transition-all">
+                <Image
+                  src="/consulting/social-media.jpeg"
+                  alt="Social Media Management"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                  priority
+                />
               </div>
             </div>
           </div>
 
-          {/* Service 2: 1:1 Coaching - Video Left, Content Right */}
+          {/* Service 2: 1:1 Coaching - Image Left, Content Right */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-            {/* Video Left */}
+            {/* Image Left */}
             <div className="animate-slide-in-left">
-              <div className="relative h-[220px] sm:h-auto sm:aspect-video bg-zinc-900 dark:bg-zinc-950 rounded-lg sm:rounded-xl overflow-hidden border border-border group hover:border-primary transition-all">
-                {/* Video Placeholder Background */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900 dark:from-zinc-900 dark:to-black">
-                  <p className="text-zinc-500 text-xs sm:text-sm px-4 text-center">Video Embed: 1:1 Coaching Testimonial</p>
-                </div>
-
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-20 h-20 sm:w-20 sm:h-20 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all transform hover:scale-110 shadow-2xl">
-                    <Play className="w-9 h-9 sm:w-10 sm:h-10 text-zinc-900 ml-1" fill="currentColor" />
-                  </button>
-                </div>
-
-                {/* Top Right Icons */}
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 flex gap-1.5 sm:gap-2">
-                  <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center transition-all backdrop-blur-sm">
-                    <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </button>
-                  <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center transition-all backdrop-blur-sm">
-                    <Info className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </button>
-                </div>
+              <div className="relative rounded-lg sm:rounded-xl overflow-hidden border border-border hover:border-primary transition-all">
+                <Image
+                  src="/consulting/coaching.jpeg"
+                  alt="1:1 Coaching"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </div>
 
@@ -165,30 +138,16 @@ export default function ConsultingPage() {
               </div>
             </div>
 
-            {/* Video Right */}
+            {/* Image Right */}
             <div className="order-1 lg:order-2 animate-slide-in-right">
-              <div className="relative h-[220px] sm:h-auto sm:aspect-video bg-zinc-900 dark:bg-zinc-950 rounded-lg sm:rounded-xl overflow-hidden border border-border group hover:border-primary transition-all">
-                {/* Video Placeholder Background */}
-                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-zinc-800 to-zinc-900 dark:from-zinc-900 dark:to-black">
-                  <p className="text-zinc-500 text-xs sm:text-sm px-4 text-center">Video Embed: Team Training Success</p>
-                </div>
-
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <button className="w-20 h-20 sm:w-20 sm:h-20 rounded-full bg-white/90 hover:bg-white flex items-center justify-center transition-all transform hover:scale-110 shadow-2xl">
-                    <Play className="w-9 h-9 sm:w-10 sm:h-10 text-zinc-900 ml-1" fill="currentColor" />
-                  </button>
-                </div>
-
-                {/* Top Right Icons */}
-                <div className="absolute top-2 right-2 sm:top-4 sm:right-4 flex gap-1.5 sm:gap-2">
-                  <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center transition-all backdrop-blur-sm">
-                    <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </button>
-                  <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-zinc-800/80 hover:bg-zinc-700 flex items-center justify-center transition-all backdrop-blur-sm">
-                    <Info className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                  </button>
-                </div>
+              <div className="relative rounded-lg sm:rounded-xl overflow-hidden border border-border hover:border-primary transition-all">
+                <Image
+                  src="/consulting/team-consult.jpeg"
+                  alt="Team Consultancy"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto object-contain"
+                />
               </div>
             </div>
           </div>
