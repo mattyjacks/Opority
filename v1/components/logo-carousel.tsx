@@ -16,6 +16,9 @@ const logos: Logo[] = [
   { name: "LinkedIn Remade", src: "/logos/r-linkedin.png" },
   { name: "Rapid AI", src: "/logos/r-rapidai.png" },
   { name: "JGOO", src: "/logos/jgoo.png" },
+  { name: "Hydrogen", src: "/logos/hydrogen.png" },
+  { name: "Ople", src: "/logos/ople.png" },
+  { name: "RevID AI", src: "/logos/revidai.png" },
 ];
 
 export function LogoCarousel() {
