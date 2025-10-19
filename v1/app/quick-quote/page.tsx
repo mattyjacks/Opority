@@ -29,6 +29,7 @@ type FormData = {
   logoDesign: boolean;
   monthlySEO: boolean;
   thirdPartyIntegration: boolean;
+  googleBusiness: boolean;
 };
 
 export default function WebsiteCreationPage() {
@@ -51,6 +52,7 @@ export default function WebsiteCreationPage() {
     logoDesign: false,
     monthlySEO: false,
     thirdPartyIntegration: false,
+    googleBusiness: false,
   });
 
   const [urlError, setUrlError] = useState("");
@@ -145,7 +147,8 @@ export default function WebsiteCreationPage() {
         formData.notSure ? "Not sure" : "",
         formData.logoDesign ? "Website maintenance" : "",
         formData.monthlySEO ? "Monthly SEO" : "",
-        formData.thirdPartyIntegration ? "3rd Party Integration" : ""
+        formData.thirdPartyIntegration ? "3rd Party Integration" : "",
+        formData.googleBusiness ? "Google Business Optimisation" : ""
       ].filter(Boolean).join(", ")
     });
 
@@ -422,6 +425,19 @@ export default function WebsiteCreationPage() {
 
               <div className="flex items-center gap-4">
                 <Checkbox
+                  id="googleBusiness"
+                  checked={formData.googleBusiness}
+                  onCheckedChange={(checked) =>
+                    setFormData({ ...formData, googleBusiness: checked as boolean, notSure: false })
+                  }
+                />
+                <Label htmlFor="googleBusiness" className="text-base text-muted-foreground cursor-pointer">
+                  Google Business Optimisation
+                </Label>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <Checkbox
                   id="notSure"
                   checked={formData.notSure}
                   onCheckedChange={(checked) =>
@@ -430,7 +446,8 @@ export default function WebsiteCreationPage() {
                       notSure: checked as boolean,
                       logoDesign: false,
                       monthlySEO: false,
-                      thirdPartyIntegration: false
+                      thirdPartyIntegration: false,
+                      googleBusiness: false
                     })
                   }
                 />
@@ -478,27 +495,12 @@ export default function WebsiteCreationPage() {
 
                     <div className="space-y-3">
                       <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground">Setup cost:</span>
+                        <span className="text-sm text-muted-foreground">One-time cost:</span>
                         <span className="text-xl font-bold">
-                          {formData.websitePurpose === "simple" && "£450*"}
-                          {formData.websitePurpose === "grow" && "£550*"}
-                          {formData.websitePurpose === "sell" && "£700*"}
+                          {formData.websitePurpose === "simple" && "£397"}
+                          {formData.websitePurpose === "grow" && "£597"}
+                          {formData.websitePurpose === "sell" && "£797"}
                         </span>
-                      </div>
-
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground">Monthly:</span>
-                        <span className="text-xl font-bold">
-                          {formData.websitePurpose === "simple" && "£38*/month"}
-                          {formData.websitePurpose === "grow" && "£49*/month"}
-                          {formData.websitePurpose === "sell" && "£59*/month"}
-                        </span>
-                      </div>
-
-                      <div className="text-sm text-muted-foreground mt-2">
-                        {formData.websitePurpose === "simple" && "(24 month min. term)"}
-                        {formData.websitePurpose === "grow" && "(12 month min. term)"}
-                        {formData.websitePurpose === "sell" && "(12 month min. term)"}
                       </div>
                     </div>
                   </div>
@@ -527,7 +529,7 @@ export default function WebsiteCreationPage() {
               </div>
 
               {/* Additional Services */}
-              {(formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration) && (
+              {(formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration || formData.googleBusiness) && (
                 <div className="border-t border-border pt-4">
                   <h4 className="text-sm font-semibold mb-3 text-muted-foreground">Additional Services:</h4>
                   <div className="space-y-2">
@@ -538,7 +540,9 @@ export default function WebsiteCreationPage() {
                         </svg>
                         <div>
                           <p className="text-sm font-medium">Website maintenance</p>
-                          <p className="text-xs text-muted-foreground">Keep your site fresh and up-to-date with ongoing maintenance.</p>
+                          <p className="text-xs text-muted-foreground">
+                            From £{formData.websitePurpose === "simple" ? "79" : formData.websitePurpose === "grow" ? "115" : "147"}/month
+                          </p>
                         </div>
                       </div>
                     )}
@@ -549,7 +553,7 @@ export default function WebsiteCreationPage() {
                         </svg>
                         <div>
                           <p className="text-sm font-medium">Monthly SEO</p>
-                          <p className="text-xs text-muted-foreground">From just £50 per month.</p>
+                          <p className="text-xs text-muted-foreground">From £225 per month.</p>
                         </div>
                       </div>
                     )}
@@ -561,6 +565,17 @@ export default function WebsiteCreationPage() {
                         <div>
                           <p className="text-sm font-medium">Integration with 3rd party systems</p>
                           <p className="text-xs text-muted-foreground">From £45 setup cost.</p>
+                        </div>
+                      </div>
+                    )}
+                    {formData.googleBusiness && (
+                      <div className="flex items-start gap-2">
+                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                        <div>
+                          <p className="text-sm font-medium">Google Business Optimisation</p>
+                          <p className="text-xs text-muted-foreground">£97 one-time.</p>
                         </div>
                       </div>
                     )}
@@ -688,7 +703,7 @@ export default function WebsiteCreationPage() {
               <div className="bg-secondary/30 rounded-lg p-6 mb-8">
                 <h3 className="font-semibold mb-4">Your Selected Package:</h3>
                 <p className="text-2xl font-bold capitalize mb-4">{formData.package} Package</p>
-                {(formData.notSure || formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration) && (
+                {(formData.notSure || formData.logoDesign || formData.monthlySEO || formData.thirdPartyIntegration || formData.googleBusiness) && (
                   <div className="mt-4 pt-4 border-t border-border">
                     <p className="text-sm font-semibold mb-2">Additional Services:</p>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -696,6 +711,7 @@ export default function WebsiteCreationPage() {
                       {formData.logoDesign && <li>• Website maintenance</li>}
                       {formData.monthlySEO && <li>• Monthly Search Engine Optimisation (SEO)</li>}
                       {formData.thirdPartyIntegration && <li>• 3rd Party Integration</li>}
+                      {formData.googleBusiness && <li>• Google Business Optimisation</li>}
                     </ul>
                   </div>
                 )}
