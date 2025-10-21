@@ -65,7 +65,7 @@ export default function Home() {
               </Link>
 
               <Link
-                href="/ad-funnel"
+                href="/consulting"
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
@@ -110,7 +110,7 @@ export default function Home() {
             </Link>
 
             <Link
-              href="/ad-funnel"
+              href="/consulting"
               className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
             >
               <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
