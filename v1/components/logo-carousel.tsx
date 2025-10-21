@@ -13,11 +13,20 @@ const logos = [
   { name: "Hydrogen", src: "/logos/hydrogen.png" },
   { name: "Ople", src: "/logos/ople.png" },
   { name: "RevID AI", src: "/logos/revidai.png" },
+  { name: "KS", src: "/logos/KS.png" },
+  { name: "Arabian Souq", src: "/logos/arabiansouq.png" },
+  { name: "Austis Life", src: "/logos/austislife.png" },
+  { name: "Chairish", src: "/logos/chairish.png" },
+  { name: "Coffea", src: "/logos/coffea.jpg" },
+  { name: "Golf", src: "/logos/golf.png" },
+  { name: "Nutrizen Life", src: "/logos/nutrizenlife.png" },
+  { name: "Quick Travel", src: "/logos/quicktravel.png" },
+  { name: "Tech Terra World", src: "/logos/techterraworld.png" },
+  { name: "Venice", src: "/logos/venice.png" },
 ];
 
 export function LogoCarousel() {
-  // Duplicate twice for seamless loop
-  const duplicatedLogos = [...logos, ...logos];
+  const duplicatedLogos = [...logos, ...logos]; // For seamless looping
 
   return (
     <div className="w-full overflow-hidden py-16 lg:py-10 relative bg-background">
@@ -31,17 +40,22 @@ export function LogoCarousel() {
         <div className="absolute right-0 top-0 bottom-0 w-36 md:w-48 lg:w-64 z-10 pointer-events-none bg-gradient-to-l from-background via-background/90 to-transparent" />
 
         {/* scrolling container */}
-        <div className="scroll-track flex gap-12 md:gap-16 lg:gap-20">
+        <div className="scroll-track flex gap-16 md:gap-20 lg:gap-24">
           {duplicatedLogos.map((logo, index) => (
-            <div key={index} className="flex-shrink-0 relative h-28 w-44 sm:h-32 sm:w-48 md:h-36 md:w-56 lg:h-40 lg:w-64">
-              <Image
-                src={logo.src}
-                alt={logo.name}
-                fill
-                className="object-contain"
-                sizes="(max-width: 640px) 176px, (max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
-                priority={index < 10}
-              />
+            <div
+              key={index}
+              className="flex-shrink-0 flex items-center justify-center h-28 w-44 sm:h-32 sm:w-48 md:h-36 md:w-56 lg:h-40 lg:w-64 px-4 md:px-6"
+            >
+              <div className="relative w-full h-full">
+                <Image
+                  src={logo.src}
+                  alt={logo.name}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 176px, (max-width: 768px) 192px, (max-width: 1024px) 224px, 256px"
+                  priority={index < 10}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -57,22 +71,31 @@ export function LogoCarousel() {
           }
         }
 
+        /* Desktop - slower, natural */
         .scroll-track {
           display: flex;
           width: max-content;
-          animation: scroll 25s linear infinite;
+          animation: scroll 60s linear infinite;
           will-change: transform;
         }
 
-        @media (max-width: 768px) {
+        /* Tablet - slightly faster */
+        @media (max-width: 1024px) {
           .scroll-track {
-            animation-duration: 15s;
+            animation-duration: 45s;
           }
         }
 
-        @media (max-width: 640px) {
+        /* Mobile - not too fast */
+        @media (max-width: 768px) {
           .scroll-track {
-            animation-duration: 12s;
+            animation-duration: 40s;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .scroll-track {
+            animation-duration: 35s;
           }
         }
       `}</style>

@@ -17,6 +17,16 @@ const portfolioItems: PortfolioItem[] = [
   { name: "Oyple", image: "/portfolio/oyple.jpg", title: "Digital Services" },
   { name: "Revid", image: "/portfolio/revid.jpg", title: "Video Platform" },
   { name: "SuperX", image: "/portfolio/superx.jpg", title: "Tech Solutions" },
+  { name: "NutrizenLife", image: "/portfolio/NutrizenLife.jpg", title: "Health & Wellness" },
+  { name: "AutisLife", image: "/portfolio/autislife.jpg", title: "Support Services" },
+  { name: "Chairish", image: "/portfolio/chairish.jpg", title: "Home Furnishings" },
+  { name: "Coffea Alchemy", image: "/portfolio/coffeaalchemy.jpg", title: "Coffee Roastery" },
+  { name: "Inside The Golf Gear", image: "/portfolio/insidethegolfgear.jpg", title: "Golf Equipment" },
+  { name: "Quick Travel Diary", image: "/portfolio/quicktraveldiary.jpg", title: "Travel Blog" },
+  { name: "Tech Terra World", image: "/portfolio/techterraworld.jpg", title: "Technology Platform" },
+  { name: "Venice Insight", image: "/portfolio/veniceinsight.jpg", title: "Travel & Culture" },
+  { name: "Arabian Souq", image: "/portfolio/arabiansouq.jpg", title: "Marketplace Platform" },
+  { name: "Khubshohoj", image: "/portfolio/KS.jpg", title: "Leather Products" },
 ];
 
 export function PortfolioCarousel() {
