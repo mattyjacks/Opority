@@ -90,7 +90,7 @@ export default function WebDesignPage() {
             {/* Emoji-based button cards - matching homepage style */}
             <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
               <Link
-                href="/ad-funnel?response=yes"
+                href="/consulting"
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
@@ -98,7 +98,7 @@ export default function WebDesignPage() {
               </Link>
 
               <Link
-                href="/ad-funnel?response=no"
+                href="/website-creation"
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-40 lg:w-44"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
