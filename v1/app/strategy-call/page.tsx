@@ -59,9 +59,6 @@ function StrategyCallContent() {
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 md:mb-4 lg:mb-6">
               Book a Strategy Call with Our Director
             </h1>
-            <p className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl mx-auto">
-              By scheduling a free consulting call with our team, we&apos;ll review your current setup, uncover the biggest opportunities for growth, and give you a clear plan on how Facebook can start driving inquiries.
-            </p>
           </div>
 
           {/* Two Column Layout */}
