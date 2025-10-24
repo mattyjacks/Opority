@@ -346,8 +346,8 @@ export default function WebsiteCreationPage() {
                     setContentError("");
                   }}
                 >
-                  <SelectTrigger id="contentProvision" className={`w-full pr-10 ${contentError ? 'border-red-500' : ''}`}>
-                    <SelectValue placeholder="- Please select -" className="truncate block overflow-hidden text-ellipsis whitespace-nowrap pr-2" />
+                  <SelectTrigger id="contentProvision" className={`w-full !w-full min-w-0 ${contentError ? 'border-red-500' : ''}`}>
+                    <SelectValue placeholder="- Please select -" className="truncate" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">I can provide all my content</SelectItem>
