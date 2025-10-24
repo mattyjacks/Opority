@@ -52,7 +52,7 @@ export default function Home() {
           </h1>
 
           <div className="flex flex-col items-center animate-slide-up" style={{animationDelay: "0.1s"}}>
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-6 sm:mb-8">
+            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white mb-6 sm:mb-8 text-center">
               Are you active on Facebook for your business or yourself?
             </p>
             <div className="flex flex-row gap-3 sm:gap-6 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto">
@@ -61,7 +61,7 @@ export default function Home() {
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👍</span>
-                <span className="text-base sm:text-xl font-bold text-white">Yes</span>
+                <span className="text-base sm:text-xl font-bold text-white">Yeah I am</span>
               </Link>
 
               <Link
@@ -69,7 +69,7 @@ export default function Home() {
                 className="group relative flex flex-col items-center justify-center bg-card/50 backdrop-blur-sm border-2 border-muted hover:border-red-500/50 rounded-xl p-3 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-32 lg:w-36"
               >
                 <span className="text-4xl sm:text-6xl mb-1.5 sm:mb-2.5">👎</span>
-                <span className="text-base sm:text-xl font-bold text-white">No</span>
+                <span className="text-base sm:text-xl font-bold text-white">Not Yet</span>
               </Link>
             </div>
           </div>
