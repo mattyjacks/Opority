@@ -62,12 +62,12 @@ function StrategyCallContent() {
           </div>
 
           {/* Two Column Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
             {/* LEFT COLUMN - Content */}
-            <div className="space-y-4 md:space-y-6 animate-slide-in-left flex flex-col lg:justify-center lg:min-h-[700px]">
+            <div className="contents lg:flex lg:flex-col lg:space-y-6 animate-slide-in-left lg:justify-center lg:min-h-[700px]">
               {/* Show user info if available */}
               {name && (
-                <div className="relative bg-gradient-to-br from-primary/10 via-accent/5 to-card border-2 border-primary/30 rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg shadow-primary/10 backdrop-blur-sm overflow-hidden group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300">
+                <div className="relative w-full bg-gradient-to-br from-primary/10 via-accent/5 to-card border-2 border-primary/30 rounded-2xl p-4 md:p-6 lg:p-8 shadow-lg shadow-primary/10 backdrop-blur-sm overflow-hidden group hover:shadow-xl hover:shadow-primary/20 transition-all duration-300 order-0 lg:order-none">
                   {/* Decorative gradient orb */}
                   <div className="absolute -top-12 -right-12 w-32 h-32 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-all duration-500"></div>
 
@@ -117,7 +117,7 @@ function StrategyCallContent() {
               )}
 
               {/* Contact Information Section */}
-              <div className="relative bg-card border border-border rounded-2xl p-4 md:p-6 lg:p-8 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group">
+              <div className="relative w-full bg-card border border-border rounded-2xl p-4 md:p-6 lg:p-8 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden group order-3 lg:order-none">
                 {/* Subtle gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -203,7 +203,7 @@ function StrategyCallContent() {
               </div>
 
               {/* Call to Action Text */}
-              <div className="relative bg-gradient-to-br from-accent/10 via-primary/5 to-card border border-accent/30 rounded-2xl p-4 md:p-6 lg:p-8 shadow-md hover:shadow-lg hover:border-accent/50 transition-all duration-300 overflow-hidden group">
+              <div className="relative w-full bg-gradient-to-br from-accent/10 via-primary/5 to-card border border-accent/30 rounded-2xl p-4 md:p-6 lg:p-8 shadow-md hover:shadow-lg hover:border-accent/50 transition-all duration-300 overflow-hidden group order-1 lg:order-none">
                 {/* Animated gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
 
@@ -225,7 +225,7 @@ function StrategyCallContent() {
               </div>
 
               {/* Footer Note - Only visible on desktop */}
-              <div className="hidden lg:block">
+              <div className="hidden lg:block w-full lg:order-none">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/30 rounded-lg p-4 border border-border/50">
                   <MessageCircle className="w-4 h-4 flex-shrink-0" />
                   <p>
@@ -236,7 +236,7 @@ function StrategyCallContent() {
             </div>
 
             {/* RIGHT COLUMN - Calendly Embed */}
-            <div className="lg:sticky lg:top-24 animate-slide-in-right">
+            <div className="w-full lg:sticky lg:top-24 animate-slide-in-right order-2 lg:order-none">
               <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <iframe
                   src={calendlyUrl}
