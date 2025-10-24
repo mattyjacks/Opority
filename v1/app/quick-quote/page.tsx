@@ -480,8 +480,8 @@ export default function WebsiteCreationPage() {
                 return (
                   <div className="bg-primary/5 border-2 border-primary rounded-lg p-4 sm:p-6 md:p-8">
                     {/* Package Header with Icon */}
-                    <div className="flex items-start justify-between gap-4 mb-6">
-                      <div className="flex-1">
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                      <div className="flex-shrink-0">
                         <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
                           {formData.websitePurpose === "simple" && "Base Package"}
                           {formData.websitePurpose === "grow" && "Plus Package"}
