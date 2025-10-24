@@ -3,7 +3,7 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { Marquee } from "@/components/marquee";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -57,6 +57,11 @@ export default function WebsiteCreationPage() {
   const [urlError, setUrlError] = useState("");
   const [purposeError, setPurposeError] = useState("");
   const [contentError, setContentError] = useState("");
+
+  // Scroll to top when step changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [step]);
 
   // SQL injection prevention - sanitize input
   const sanitizeInput = (input: string): string => {
