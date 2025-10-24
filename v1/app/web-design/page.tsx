@@ -245,6 +245,33 @@ export default function WebDesignPage() {
         title="We get to work for the most innovative <span>B2B Companies</span>"
       />
 
+      {/* Website CTA Section */}
+      <section className="py-12 sm:py-14 md:py-16 bg-[#2D2043] relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-10 animate-slide-up">
+            Do you have an active website for yourself or your business?
+          </h2>
+
+          <div className="flex flex-row gap-3 sm:gap-4 md:gap-5 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+            <Link
+              href="/consulting"
+              className="group relative flex flex-col items-center justify-center bg-card/30 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-2xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-32 md:w-36"
+            >
+              <span className="text-4xl sm:text-5xl mb-2">👍</span>
+              <span className="text-base sm:text-lg font-bold text-white">Sure do</span>
+            </Link>
+
+            <Link
+              href="/quick-quote"
+              className="group relative flex flex-col items-center justify-center bg-card/30 backdrop-blur-sm border-2 border-muted/30 hover:border-red-500/50 rounded-2xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-32 md:w-36"
+            >
+              <span className="text-4xl sm:text-5xl mb-2">👎</span>
+              <span className="text-base sm:text-lg font-bold text-white">Not yet</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </main>
   );
