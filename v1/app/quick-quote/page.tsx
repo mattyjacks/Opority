@@ -140,10 +140,9 @@ export default function WebsiteCreationPage() {
 
     // Redirect to strategy-call page with pre-filled data as URL parameters
     const params = new URLSearchParams({
-      name: `${formData.firstName} ${formData.lastName}`,
+      name: formData.firstName,
       email: formData.email,
       phone: formData.phone,
-      company: formData.companyName,
       package: formData.websitePurpose === "simple" ? "Base Package" :
                formData.websitePurpose === "grow" ? "Plus Package" :
                formData.websitePurpose === "sell" ? "Max Package" : "",
@@ -350,8 +349,8 @@ export default function WebsiteCreationPage() {
                     setContentError("");
                   }}
                 >
-                  <SelectTrigger id="contentProvision" className={contentError ? 'border-red-500' : ''}>
-                    <SelectValue placeholder="- Please select -" />
+                  <SelectTrigger id="contentProvision" className={`w-full pr-10 ${contentError ? 'border-red-500' : ''}`}>
+                    <SelectValue placeholder="- Please select -" className="truncate block overflow-hidden text-ellipsis whitespace-nowrap pr-2" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">I can provide all my content</SelectItem>
@@ -595,36 +594,19 @@ export default function WebsiteCreationPage() {
             </h2>
 
             <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl p-8 space-y-6 max-w-2xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <Label htmlFor="firstName">First name</Label>
-                  <Input
-                    id="firstName"
-                    type="text"
-                    required
-                    value={formData.firstName}
-                    onChange={(e) => {
-                      const sanitized = sanitizeNameInput(e.target.value);
-                      setFormData({ ...formData, firstName: sanitized });
-                    }}
-                    className="mt-2"
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="lastName">Last name</Label>
-                  <Input
-                    id="lastName"
-                    type="text"
-                    required
-                    value={formData.lastName}
-                    onChange={(e) => {
-                      const sanitized = sanitizeNameInput(e.target.value);
-                      setFormData({ ...formData, lastName: sanitized });
-                    }}
-                    className="mt-2"
-                  />
-                </div>
+              <div>
+                <Label htmlFor="firstName">Name</Label>
+                <Input
+                  id="firstName"
+                  type="text"
+                  required
+                  value={formData.firstName}
+                  onChange={(e) => {
+                    const sanitized = sanitizeNameInput(e.target.value);
+                    setFormData({ ...formData, firstName: sanitized });
+                  }}
+                  className="mt-2"
+                />
               </div>
 
               <div>
@@ -654,21 +636,6 @@ export default function WebsiteCreationPage() {
                     // Email sanitization - remove dangerous characters but keep @ and .
                     const sanitized = e.target.value.replace(/['";\\<>]/g, '');
                     setFormData({ ...formData, email: sanitized });
-                  }}
-                  className="mt-2"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="companyName">Company name</Label>
-                <Input
-                  id="companyName"
-                  type="text"
-                  required
-                  value={formData.companyName}
-                  onChange={(e) => {
-                    const sanitized = sanitizeNameInput(e.target.value);
-                    setFormData({ ...formData, companyName: sanitized });
                   }}
                   className="mt-2"
                 />
