@@ -469,96 +469,134 @@ export default function WebsiteCreationPage() {
             <div className="bg-card border border-border rounded-xl p-6 mb-8 max-w-2xl mx-auto">
               <h3 className="text-xl font-bold mb-6">Your Selected Package</h3>
 
-              {/* Package Pricing Card */}
-              <div className="bg-primary/5 border-2 border-primary rounded-lg p-6 mb-6">
-                <div className="flex items-center justify-between">
-                  <div className="flex-1">
-                    <h4 className="text-2xl font-bold text-primary mb-4">
-                      {formData.websitePurpose === "simple" && "Base Package"}
-                      {formData.websitePurpose === "grow" && "Plus Package"}
-                      {formData.websitePurpose === "sell" && "Max Package"}
-                    </h4>
+              {/* Package Pricing Card - All-in-One */}
+              {(() => {
+                const basePrice = formData.websitePurpose === "simple" ? 397 :
+                                 formData.websitePurpose === "grow" ? 597 : 797;
+                const oneTimeTotal = basePrice + (formData.googleBusiness ? 97 : 0);
+                const monthlyTotal = (formData.logoDesign ? 147 : 0) + (formData.monthlySEO ? 197 : 0);
+                const grandTotal = oneTimeTotal + monthlyTotal;
 
-                    <div className="space-y-3">
-                      <div className="flex items-baseline gap-2">
-                        <span className="text-sm text-muted-foreground">One-time cost:</span>
-                        <span className="text-xl font-bold">
-                          {formData.websitePurpose === "simple" && "£397"}
-                          {formData.websitePurpose === "grow" && "£597"}
-                          {formData.websitePurpose === "sell" && "£797"}
+                return (
+                  <div className="bg-primary/5 border-2 border-primary rounded-lg p-4 sm:p-6 md:p-8">
+                    {/* Package Header with Icon */}
+                    <div className="flex items-start justify-between gap-4 mb-6">
+                      <div className="flex-1">
+                        <h4 className="text-xl sm:text-2xl md:text-3xl font-bold text-primary">
+                          {formData.websitePurpose === "simple" && "Base Package"}
+                          {formData.websitePurpose === "grow" && "Plus Package"}
+                          {formData.websitePurpose === "sell" && "Max Package"}
+                        </h4>
+                      </div>
+
+                      {/* Package Icon */}
+                      <div className="flex-shrink-0">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-primary/10 rounded-full flex items-center justify-center">
+                          {formData.websitePurpose === "simple" && (
+                            <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                          )}
+                          {formData.websitePurpose === "grow" && (
+                            <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                            </svg>
+                          )}
+                          {formData.websitePurpose === "sell" && (
+                            <svg className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M12 2L7 7H17L12 2Z" />
+                              <path d="M7 7L2 12L12 22L22 12L17 7H7Z" opacity="0.8" />
+                              <path d="M7 7L12 22L17 7H7Z" opacity="0.4" />
+                            </svg>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Base Package Price */}
+                    <div className="mb-6 pb-6 border-b border-primary/20">
+                      <div className="flex items-baseline justify-between gap-2">
+                        <span className="text-sm sm:text-base text-muted-foreground font-medium">Base package price:</span>
+                        <span className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
+                          £{basePrice}
                         </span>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Package Icon */}
-                  <div className="ml-4">
-                    <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center">
-                      {formData.websitePurpose === "simple" && (
-                        <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
+                    {/* Additional Services Section */}
+                    {(formData.logoDesign || formData.monthlySEO || formData.googleBusiness) && (
+                      <div className="mb-6 pb-6 border-b border-primary/20">
+                        <h4 className="text-sm sm:text-base font-semibold mb-4 text-foreground">Additional Services:</h4>
+                        <div className="space-y-3">
+                          {formData.logoDesign && (
+                            <div className="flex items-start gap-3">
+                              <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm sm:text-base font-medium text-foreground">Website maintenance</p>
+                                <p className="text-xs sm:text-sm text-muted-foreground">£147/month</p>
+                              </div>
+                            </div>
+                          )}
+                          {formData.monthlySEO && (
+                            <div className="flex items-start gap-3">
+                              <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm sm:text-base font-medium text-foreground">Monthly SEO</p>
+                                <p className="text-xs sm:text-sm text-muted-foreground">£197/month</p>
+                              </div>
+                            </div>
+                          )}
+                          {formData.googleBusiness && (
+                            <div className="flex items-start gap-3">
+                              <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm sm:text-base font-medium text-foreground">Google Business Optimisation</p>
+                                <p className="text-xs sm:text-sm text-muted-foreground">£97 one-time</p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Totals Section */}
+                    <div className="space-y-4">
+                      <h4 className="text-sm sm:text-base font-semibold text-foreground">Pricing Summary:</h4>
+
+                      {/* One-time Total */}
+                      <div className="flex items-center justify-between gap-4 bg-background/50 rounded-lg p-3 sm:p-4">
+                        <span className="text-sm sm:text-base font-semibold text-foreground">One-time Total:</span>
+                        <span className="text-xl sm:text-2xl font-bold text-primary">£{oneTimeTotal}</span>
+                      </div>
+
+                      {/* Monthly Total */}
+                      {monthlyTotal > 0 && (
+                        <div className="flex items-center justify-between gap-4 bg-background/50 rounded-lg p-3 sm:p-4">
+                          <span className="text-sm sm:text-base font-semibold text-foreground">Monthly Total:</span>
+                          <span className="text-xl sm:text-2xl font-bold text-primary">£{monthlyTotal}<span className="text-sm font-normal">/mo</span></span>
+                        </div>
                       )}
-                      {formData.websitePurpose === "grow" && (
-                        <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                        </svg>
-                      )}
-                      {formData.websitePurpose === "sell" && (
-                        <svg className="w-12 h-12 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2L7 7H17L12 2Z" />
-                          <path d="M7 7L2 12L12 22L22 12L17 7H7Z" opacity="0.8" />
-                          <path d="M7 7L12 22L17 7H7Z" opacity="0.4" />
-                        </svg>
+
+                      {/* Grand Total - Most Prominent */}
+                      {monthlyTotal > 0 && (
+                        <div className="flex items-center justify-between gap-4 bg-primary/10 rounded-lg p-4 sm:p-5 mt-4 border-2 border-primary/30">
+                          <div className="flex flex-col">
+                            <span className="text-base sm:text-lg font-bold text-foreground">Total Quote</span>
+                            <span className="text-xs sm:text-sm text-muted-foreground">(First Payment)</span>
+                          </div>
+                          <span className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">£{grandTotal}</span>
+                        </div>
                       )}
                     </div>
                   </div>
-                </div>
-              </div>
-
-              {/* Additional Services */}
-              {(formData.logoDesign || formData.monthlySEO || formData.googleBusiness) && (
-                <div className="border-t border-border pt-4">
-                  <h4 className="text-sm font-semibold mb-3 text-muted-foreground">Additional Services:</h4>
-                  <div className="space-y-2">
-                    {formData.logoDesign && (
-                      <div className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <div>
-                          <p className="text-sm font-medium">Website maintenance</p>
-                          <p className="text-xs text-muted-foreground">
-                            From £{formData.websitePurpose === "simple" ? "79" : formData.websitePurpose === "grow" ? "115" : "147"}/month
-                          </p>
-                        </div>
-                      </div>
-                    )}
-                    {formData.monthlySEO && (
-                      <div className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <div>
-                          <p className="text-sm font-medium">Monthly SEO</p>
-                          <p className="text-xs text-muted-foreground">From £225 per month.</p>
-                        </div>
-                      </div>
-                    )}
-                    {formData.googleBusiness && (
-                      <div className="flex items-start gap-2">
-                        <svg className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                        <div>
-                          <p className="text-sm font-medium">Google Business Optimisation</p>
-                          <p className="text-xs text-muted-foreground">£97 one-time.</p>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
+                );
+              })()}
             </div>
 
             <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
