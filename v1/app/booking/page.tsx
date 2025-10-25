@@ -5,7 +5,7 @@ import { Footer } from "@/components/footer";
 import { LogoCarousel } from "@/components/logo-carousel";
 import { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { User, Mail, CheckCircle2, ChevronDown } from "lucide-react";
+import { User, Mail, ChevronDown } from "lucide-react";
 import Link from "next/link";
 
 function BookingContent() {
@@ -74,15 +74,9 @@ function BookingContent() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-8">
-            <p className="text-primary font-semibold mb-4 text-sm uppercase tracking-wider">
-              Last step. Please only arrange a meeting with us if you are actually interested 👋
-            </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-              Ready to Transform Your Facebook?
+              Let&apos;s Map Out How You&apos;ll Get More Clients From Facebook
             </h1>
-            <h2 className="text-2xl sm:text-3xl font-bold text-muted-foreground">
-              Schedule Your Free Call Now!
-            </h2>
           </div>
 
           {/* Form */}
@@ -179,10 +173,10 @@ function BookingContent() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-center mb-4">
-                Schedule Your Appointment
+                Book Your Free Strategy Call
               </h3>
               <p className="text-muted-foreground text-center leading-relaxed">
-                Begin your journey by booking a convenient appointment with our team. We&apos;ll discuss your business goals and understand your unique needs.
+                Grab a time that works best for you. We&apos;ll chat about your goals, what you&apos;re currently doing to get clients, and whether our system makes sense for your business.
               </p>
             </div>
 
@@ -194,25 +188,25 @@ function BookingContent() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-center mb-4">
-                Custom Potential Analysis
+                Custom Growth Plan
               </h3>
               <p className="text-muted-foreground text-center leading-relaxed">
-                Our experts perform a thorough analysis of your current digital presence and market opportunities. This detailed evaluation identifies key areas for growth.
+                After the call, our team reviews your socials, offer, and website then builds a personalised plan showing exactly how to start attracting more qualified leads.
               </p>
             </div>
 
             {/* Step 3 */}
             <div className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="flex justify-center mb-6">
-                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center">
-                  <CheckCircle2 className="w-10 h-10 text-green-500" />
+                <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center">
+                  <span className="text-3xl font-bold text-blue-500">3</span>
                 </div>
               </div>
               <h3 className="text-xl font-bold text-center mb-4">
-                Free & Personal Strategy Creation
+                Launch & Scale
               </h3>
               <p className="text-muted-foreground text-center leading-relaxed">
-                Based on our analysis, we develop a customized marketing strategy tailored to your objectives. Our strategic plan ensures optimal results and sustained success.
+                Once you&apos;re ready, we&apos;ll help you roll out your campaign, refine your funnel, and scale your results so you can grow consistently month after month.
               </p>
             </div>
           </div>

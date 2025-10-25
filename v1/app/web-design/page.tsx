@@ -239,37 +239,38 @@ export default function WebDesignPage() {
         </div>
       </section>
 
-      {/* Get on with growing your business CTA */}
-      <section className="py-12 sm:py-16 md:py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
-              Get on with <span className="dark:text-gradient-purple text-gradient-blue">growing your business</span>
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
-              We&apos;d love to hear from you – get in touch with us to get started.
-            </p>
-            <div className="flex justify-center">
-              <Link
-                href="/quick-quote"
-                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 dark:gradient-purple gradient-blue text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:shadow-2xl hover:shadow-primary/30 transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg overflow-hidden"
-              >
-                <span className="relative z-10">Take the first step</span>
-                <svg className="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-                <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-out" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials Section */}
       <TestimonialsSection
         testimonials={webDesignTestimonials}
         title="We get to work for the most innovative <span>B2B Companies</span>"
       />
+
+      {/* Website CTA Section */}
+      <section className="py-12 sm:py-14 md:py-16 bg-[#2D2043] relative overflow-hidden">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-10 animate-slide-up">
+            Do you have an active website for yourself or your business?
+          </h2>
+
+          <div className="flex flex-row gap-3 sm:gap-4 md:gap-5 justify-center items-center w-full sm:w-auto px-4 max-w-md sm:max-w-none mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
+            <Link
+              href="/consulting"
+              className="group relative flex flex-col items-center justify-center bg-card/30 backdrop-blur-sm border-2 border-primary/30 hover:border-primary rounded-2xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-primary/20 flex-1 sm:flex-none sm:w-32 md:w-36"
+            >
+              <span className="text-4xl sm:text-5xl mb-2">👍</span>
+              <span className="text-base sm:text-lg font-bold text-white">Sure do</span>
+            </Link>
+
+            <Link
+              href="/quick-quote"
+              className="group relative flex flex-col items-center justify-center bg-card/30 backdrop-blur-sm border-2 border-muted/30 hover:border-red-500/50 rounded-2xl p-4 sm:p-5 transition-all transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-red-500/20 flex-1 sm:flex-none sm:w-32 md:w-36"
+            >
+              <span className="text-4xl sm:text-5xl mb-2">👎</span>
+              <span className="text-base sm:text-lg font-bold text-white">Not yet</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </main>

@@ -206,23 +206,23 @@ function AdFunnelContent() {
                       <button
                         key={option.id}
                         onClick={() => toggleGoalSelection(option.id)}
-                        className={`group relative bg-card hover:bg-card/80 border-2 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-left ${
+                        className={`group relative bg-card hover:bg-card/80 border-2 rounded-2xl p-4 sm:p-6 pr-12 sm:pr-14 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-left ${
                           isSelected ? 'border-primary shadow-lg' : 'border-border hover:border-primary'
                         }`}
                       >
-                        <div className="flex items-center gap-4">
-                          <Icon className={`flex-shrink-0 w-8 h-8 ${option.color}`} />
-                          <span className="text-lg font-medium text-foreground">
+                        <div className="flex items-center gap-2 sm:gap-4">
+                          <Icon className={`flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 ${option.color}`} />
+                          <span className="text-base sm:text-lg font-medium text-foreground">
                             {option.label}
                           </span>
                         </div>
-                        <div className={`absolute right-6 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full border-2 transition-all ${
-                          isSelected 
-                            ? 'border-primary bg-primary' 
+                        <div className={`absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 transition-all ${
+                          isSelected
+                            ? 'border-primary bg-primary'
                             : 'border-border group-hover:border-primary'
                         }`}>
                           {isSelected && (
-                            <svg className="w-full h-full text-primary-foreground p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-full h-full text-primary-foreground p-0.5 sm:p-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                           )}
@@ -262,7 +262,7 @@ function AdFunnelContent() {
                   What&apos;s the price range of your products?
                 </h1>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                   {question2Options.map((option) => {
                     const Icon = option.icon;
                     return (
@@ -297,7 +297,7 @@ function AdFunnelContent() {
                   Which position best describes your role?
                 </h1>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                   {question3Options.map((option) => {
                     const Icon = option.icon;
                     return (
@@ -306,10 +306,10 @@ function AdFunnelContent() {
                         onClick={() => handleAnswer(option.id)}
                         className="group flex flex-col overflow-hidden rounded-2xl hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                       >
-                        <div className={`w-full aspect-[4/3] ${option.bgColor} relative overflow-hidden flex items-center justify-center`}>
-                          <Icon className={`w-20 h-20 ${option.iconColor}`} strokeWidth={1.5} />
+                        <div className={`w-full aspect-square ${option.bgColor} relative overflow-hidden flex items-center justify-center`}>
+                          <Icon className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 ${option.iconColor}`} strokeWidth={1.5} />
                         </div>
-                        <div className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-4 transition-colors">
+                        <div className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold py-3 sm:py-4 text-sm sm:text-base transition-colors">
                           {option.label}
                         </div>
                       </button>
