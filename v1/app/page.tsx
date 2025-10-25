@@ -86,10 +86,8 @@ export default function Home() {
       <ConsultingCtaSection />
 
       {/* Testimonials Section */}
-      <TestimonialsSection 
+      <TestimonialsSection
         testimonials={homeTestimonials}
-        ctaText="See more success stories"
-        ctaLink="/web-design"
       />
 
       {/* CTA Section */}
