@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export interface Testimonial {
   id: number;
   name: string;
@@ -19,16 +17,12 @@ interface TestimonialsSectionProps {
   testimonials: Testimonial[];
   title?: string;
   subtitle?: string;
-  ctaText?: string;
-  ctaLink?: string;
 }
 
 export function TestimonialsSection({
   testimonials,
   title = "We get to work for the most innovative <span>B2B Companies</span>",
-  subtitle,
-  ctaText = "Start your success story",
-  ctaLink = "/ad-funnel"
+  subtitle
 }: TestimonialsSectionProps) {
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-secondary/30 to-background relative overflow-hidden">
