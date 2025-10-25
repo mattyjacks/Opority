@@ -39,7 +39,7 @@ export default function Home() {
       <Marquee text="Rated Top 3 Advertising & Marketing StartUp in the East Of England 2025" />
       
       {/* Hero Section */}
-      <section className="relative bg-background min-h-[100vh] sm:min-h-[60vh] lg:min-h-0 flex items-center overflow-hidden">
+      <section className="relative bg-background min-h-[70vh] sm:min-h-[60vh] lg:min-h-0 flex items-center overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <AnimatedGradientBackground />
@@ -47,7 +47,7 @@ export default function Home() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full py-12 sm:py-16 lg:py-20 xl:py-24">
           {/* Main Heading */}
-          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-center text-white mb-[60vh] sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-black text-center text-white mb-5 sm:mb-6 lg:mb-8 xl:mb-10 leading-tight animate-slide-up">
             Tired of <span className="dark:text-gradient-purple text-gradient-blue">Chasing Clients</span> who<br /><span className="dark:text-gradient-purple text-gradient-blue">Don&apos;t Pay</span> Enough?
           </h1>
 
