@@ -25,7 +25,7 @@ export default function ConsultingPage() {
             Business <span className="dark:text-gradient-purple text-gradient-blue">Growth</span> Consulting
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            Expert guidance to help you leverage digital marketing and social media to impact your personal and business growth.
+            Consulting that actually moves the needle.
           </p>
         </div>
       </section>
@@ -43,19 +43,17 @@ export default function ConsultingPage() {
                 <div className="flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full bg-primary/10 border-2 border-primary/20 flex-shrink-0">
                   <Grid3x3 className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-primary" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Social Media Management</h2>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">Client Acquisition Consulting</h2>
               </div>
               <div className="space-y-4 sm:space-y-5 text-muted-foreground px-2 sm:px-0">
                 <p className="leading-relaxed text-base sm:text-lg">
-                  Ideal if you&apos;re a business looking to outsource your social media - saving you time to focus on your expertise.
+                  We&apos;ll guide you to build a clear system for getting clients, whether that&apos;s figuring out cold calling, DMs, or improving how you sell.
                 </p>
                 <p className="leading-relaxed text-base sm:text-lg">
-                  We specialise in delivering social media with impact - generating increased engagement and awareness for your business.
+                  You&apos;ll get direct feedback and actionable steps you can use immediately to start booking meetings and closing deals.
                 </p>
                 <p className="leading-relaxed text-base sm:text-lg">
-                  We will work with you on a monthly basis to make an impact on your marketing and your profits.
-                  And, we&apos;re a little different to other agencies - we&apos;ve done it ourselves! We&apos;ve built a huge online community,
-                  so we know exactly what it takes to be hugely successful on social media.
+                  This is for business owners who want predictable growth.
                 </p>
               </div>
             </div>
