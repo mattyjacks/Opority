@@ -22,10 +22,10 @@ export default function ConsultingPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-slide-up">
-            Business <span className="dark:text-gradient-purple text-gradient-blue">Growth</span> Consulting
+          Consulting that actually moves the needle.
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-slide-up" style={{animationDelay: "0.1s"}}>
-            Consulting that actually moves the needle.
+  
           </p>
         </div>
       </section>
