@@ -39,7 +39,7 @@ export default function RootLayout({
         <Script
           id="cookieyes"
           type="text/javascript"
-          src="https://cdn-cookieyes.com/client_data/ce18fde58935a2e35188ddf3/script.js"
+          src="https://cdn-cookieyes.com/client_data/058ba3240756a396ca391d05b07d6407/script.js"
           strategy="afterInteractive"
         />
       </head>
